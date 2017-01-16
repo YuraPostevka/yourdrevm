@@ -1,0 +1,10 @@
+D:\softserve\webApiTask\Common\bin\Debug\Common.dll.config
+D:\softserve\webApiTask\Common\bin\Debug\Common.dll
+D:\softserve\webApiTask\Common\bin\Debug\Common.pdb
+D:\softserve\webApiTask\Common\bin\Debug\EntityFramework.dll
+D:\softserve\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.dll
+D:\softserve\webApiTask\Common\bin\Debug\EntityFramework.xml
+D:\softserve\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.xml
+D:\softserve\webApiTask\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\softserve\webApiTask\Common\obj\Debug\Common.dll
+D:\softserve\webApiTask\Common\obj\Debug\Common.pdb

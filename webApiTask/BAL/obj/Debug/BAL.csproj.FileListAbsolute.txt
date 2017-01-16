@@ -1,0 +1,16 @@
+D:\softserve\webApiTask\BAL\bin\Debug\BAL.dll.config
+D:\softserve\webApiTask\BAL\bin\Debug\BAL.dll
+D:\softserve\webApiTask\BAL\bin\Debug\BAL.pdb
+D:\softserve\webApiTask\BAL\bin\Debug\EntityFramework.dll
+D:\softserve\webApiTask\BAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\softserve\webApiTask\BAL\bin\Debug\EntityFramework.xml
+D:\softserve\webApiTask\BAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\softserve\webApiTask\BAL\obj\Debug\BAL.dll
+D:\softserve\webApiTask\BAL\obj\Debug\BAL.pdb
+D:\softserve\webApiTask\BAL\bin\Debug\Schedules.mdf
+D:\softserve\webApiTask\BAL\bin\Debug\Schedules_log.ldf
+D:\softserve\webApiTask\BAL\bin\Debug\DAL.dll
+D:\softserve\webApiTask\BAL\bin\Debug\Models.dll
+D:\softserve\webApiTask\BAL\bin\Debug\DAL.pdb
+D:\softserve\webApiTask\BAL\bin\Debug\Models.pdb
+D:\softserve\webApiTask\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
