@@ -21,6 +21,7 @@ namespace BAL.Manager
         /// <returns></returns>
         public List<User> GetAll()
         {
+
             return uOW.UserRepo.All.ToList();
         }
         /// <summary>

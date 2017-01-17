@@ -8,13 +8,13 @@ namespace DAL
 		public MainContext()
 			: base("ConnStr")
 		{
-			this.Configuration.LazyLoadingEnabled = true;
+			this.Configuration.LazyLoadingEnabled = false;
 		}
 
 		public MainContext(string connString)
 			: base(connString)
 		{
-			this.Configuration.LazyLoadingEnabled = true;
+			this.Configuration.LazyLoadingEnabled = false;
 		}
 
 		public DbSet<User> Users { get; set; }

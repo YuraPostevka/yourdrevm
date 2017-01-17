@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using webApiTask.ActionFilters;
 
 namespace webApiTask.Controllers
 {
     public class UserController : ApiController
     {
         private IUserManager userManager;
-
+        private GlobalExceptionAttribute exc;
         public UserController(IUserManager userManager)
         {
             this.userManager = userManager;
@@ -24,17 +25,15 @@ namespace webApiTask.Controllers
         }
 
         // GET: api/User/5
-        public User GetById(int id)
+        public HttpResponseMessage GetById(int id)
         {
-            try
-            {
-                return userManager.GetById(id);
-            }
-            catch
-            {
+            var user = userManager.GetById(id);
+            if (user == null)
+            { 
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
-            
+            return Request.CreateResponse(HttpStatusCode.OK, user);
+
         }
 
         // POST: api/User
@@ -52,7 +51,7 @@ namespace webApiTask.Controllers
         // DELETE: api/User/5
         public void Delete(int id)
         {
-            
+
         }
     }
 }

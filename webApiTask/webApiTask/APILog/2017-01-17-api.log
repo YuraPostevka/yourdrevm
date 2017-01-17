@@ -1,0 +1,72 @@
+2017-01-17 17:49:17.4218|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 17:50:12.7570|ERROR|webApiTask.Helpers.NLogger|Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"exception":{"ClassName":"System.Exception","Message":"No user found for this id","Data":{},"InnerException":null,"HelpURL":null,"StackTraceString":"   at webApiTask.Controllers.UserController.GetById(Int32 id) in C:\\gitRepo\\webApiTask\\webApiTask\\Controllers\\UserController.cs:line 35\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":"8\nGetById\nwebApiTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\nwebApiTask.Controllers.UserController\nSystem.Net.Http.HttpResponseMessage GetById(Int32)","HResult":-2146233088,"Source":"webApiTask","WatsonBuckets":null}}
+Error: No user found for this id
+
+
+2017-01-17 18:02:05.8845|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 18:04:37.5955|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 18:04:46.2791|ERROR|webApiTask.Helpers.NLogger|Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"exception":{"ClassName":"System.Exception","Message":null,"Data":{},"InnerException":null,"HelpURL":null,"StackTraceString":"   at webApiTask.Controllers.UserController.GetById(Int32 id) in C:\\gitRepo\\webApiTask\\webApiTask\\Controllers\\UserController.cs:line 36\r\n   at lambda_method(Closure , Object , Object[] )\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)\r\n   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()\r\n--- End of stack trace from previous location where exception was thrown ---\r\n   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)\r\n   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)\r\n   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()","RemoteStackTraceString":null,"RemoteStackIndex":0,"ExceptionMethod":"8\nGetById\nwebApiTask, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\nwebApiTask.Controllers.UserController\nSystem.Net.Http.HttpResponseMessage GetById(Int32)","HResult":-2146233088,"Source":"webApiTask","WatsonBuckets":null}}
+Error: Exception of type 'System.Exception' was thrown.
+
+
+2017-01-17 18:12:12.5732|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 18:14:52.1154|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 18:15:44.5690|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 18:21:41.2470|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-17 18:24:12.6483|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User/1
+Controller : webApiTask.Controllers.UserController
+Action : GetById
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
