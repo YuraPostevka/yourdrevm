@@ -10,48 +10,112 @@ using webApiTask.ActionFilters;
 
 namespace webApiTask.Controllers
 {
+    /// <summary>
+    /// User
+    /// </summary>
     public class UserController : ApiController
     {
         private IUserManager userManager;
-        private GlobalExceptionAttribute exc;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userManager"></param>
+        ///
         public UserController(IUserManager userManager)
         {
             this.userManager = userManager;
         }
+
+        /// <summary>
+        /// Get all users
+        /// </summary>
+        /// <returns></returns>
         // GET: api/User
-        public List<User> GetAll()
+        public IHttpActionResult GetAll()
         {
-            return userManager.GetAll();
-        }
-
-        // GET: api/User/5
-        public HttpResponseMessage GetById(int id)
-        {
-            var user = userManager.GetById(id);
-            if (user == null)
-            { 
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            try
+            {
+                var users = userManager.GetAll();
+                if (users != null) { return Ok(users); }
+                else { return NotFound(); }
             }
-            return Request.CreateResponse(HttpStatusCode.OK, user);
+            catch
+            {
+                return NotFound();
+            }
 
         }
-
+        /// <summary>
+        /// Get by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        // GET: api/User/5
+        public IHttpActionResult GetById(int? id)
+        {
+            try
+            {
+                var user = userManager.GetById(id);
+                if (user != null) { return Ok(user); }
+                else { return NotFound(); }
+            }
+            catch
+            {
+                return NotFound();
+            }
+        }
+        /// <summary>
+        /// Insert user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         // POST: api/User
-        public void Post(User user)
+        public IHttpActionResult Post(User user)
         {
-            userManager.Insert(user);
-        }
+            try
+            {
+                userManager.Insert(user);
+                return Ok();
+            }
+            catch
+            {
+                return InternalServerError();
+            }
 
+        }
+        /// <summary>
+        /// Update user
+        /// </summary>
+        /// <param name="user"></param>
         // PUT: api/User/5
-        public void Put(User user)
+        public IHttpActionResult Put(User user)
         {
-            userManager.UpdateUser(user);
+            try
+            {
+                userManager.Update(user);
+                return Ok();
+            }
+            catch
+            {
+                return InternalServerError();
+            }
         }
-
+        /// <summary>
+        /// Delete user
+        /// </summary>
+        /// <param name="id"></param>
         // DELETE: api/User/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-
+            try
+            {
+                userManager.Delete(id);
+                return Ok();
+            }
+            catch
+            {
+                return InternalServerError();
+            }
         }
     }
 }

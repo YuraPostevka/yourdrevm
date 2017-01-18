@@ -17,41 +17,88 @@ namespace webApiTask.Controllers
         {
             this.toDoListManager = toDoListManager;
         }
-        // GET: api/ToDoList
-        public List<ToDoList> Get()
-        {
-            return toDoListManager.GetAll();
-        }
 
-        // GET: api/ToDoList/5
-        public ToDoList Get(int id)
+        /// <summary>
+        /// Get all Todo lists
+        /// </summary>
+        /// <returns></returns>
+        // GET: api/ToDoList
+        public IHttpActionResult GetAll()
         {
             try
             {
-                return toDoListManager.GetById(id);
+                var todoLists = toDoListManager.GetAll();
+                if (todoLists != null) return Ok(todoLists);
+                else { return NotFound(); }
+            }
+            catch { return NotFound(); }
+        }
+
+        /// <summary>
+        /// Get Todo list by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        // GET: api/ToDoList/5
+        public IHttpActionResult Get(int id)
+        {
+            try
+            {
+                var list = toDoListManager.GetById(id);
+                if (list != null) return Ok(list);
+                else { return NotFound(); }
             }
             catch
             {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+                return NotFound();
             }
         }
 
+        /// <summary>
+        /// Insert Todo list
+        /// </summary>
+        /// <param name="toDoList"></param>
         // POST: api/ToDoList
-        public void Post(ToDoList toDoList)
+        public IHttpActionResult Post(ToDoList toDoList)
         {
-            toDoListManager.Insert(toDoList);
+            try
+            {
+                toDoListManager.Insert(toDoList);
+                return Ok();
+            }
+            catch { return InternalServerError(); }
         }
 
+        /// <summary>
+        /// Update Todo list
+        /// </summary>
+        /// <param name="toDoList"></param>
         // PUT: api/ToDoList/5
-        public void Put(ToDoList toDoList)
+        public IHttpActionResult Put(ToDoList toDoList)
         {
-            toDoListManager.Update(toDoList);
+            try
+            {
+                toDoListManager.Update(toDoList);
+                return Ok();
+            }
+            catch { return InternalServerError(); }
+          
         }
 
+        /// <summary>
+        /// Delete Todo list
+        /// </summary>
+        /// <param name="id"></param>
         // DELETE: api/ToDoList/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
-            toDoListManager.Delete(id);
+            try
+            {
+                toDoListManager.Delete(id);
+                return Ok();
+            }
+            catch { return InternalServerError(); }
+           
         }
     }
 }

@@ -10,9 +10,9 @@ namespace BAL.Interfaces
     public interface IToDoListManager
     {
         List<ToDoList> GetAll();
-        ToDoList GetById(int id);
+        ToDoList GetById(int? id);
         void Insert(ToDoList item);
-        void Delete(int id);
+        void Delete(int? id);
         void Update(ToDoList item);
     }
 }

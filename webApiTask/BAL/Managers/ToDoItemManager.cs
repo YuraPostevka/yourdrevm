@@ -15,63 +15,96 @@ namespace BAL.Managers
             : base(uOW)
         { }
 
-        public void Delete(int id)
+        /// <summary>
+        /// Delete todo item
+        /// </summary>
+        /// <param name="id"></param>
+        public void Delete(int? id)
         {
+            if (id == null) return;
             var item = uOW.ToDoItemRepo.GetByID(id);
             uOW.ToDoItemRepo.Delete(item);
         }
 
+        /// <summary>
+        /// Get all todo items
+        /// </summary>
+        /// <returns></returns>
         public List<ToDoItem> GetAll()
         {
             return uOW.ToDoItemRepo.All.ToList();
         }
 
-        public ToDoItem GetById(int id)
+        /// <summary>
+        /// Get todo item by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ToDoItem GetById(int? id)
         {
+            if (id == null) return null;
             return uOW.ToDoItemRepo.GetByID(id);
         }
 
+        /// <summary>
+        /// Get not completed todo items
+        /// </summary>
+        /// <returns></returns>
         public List<ToDoItem> GetNotCompletedItems()
         {
             return uOW.ToDoItemRepo.All.Where(n => n.IsCompleted == false).ToList();
         }
 
+        /// <summary>
+        /// Insert todo item
+        /// </summary>
+        /// <param name="item"></param>
         public void Insert(ToDoItem item)
         {
-            item.Created = DateTime.Now;
-
-            uOW.ToDoItemRepo.Insert(item);
-            uOW.Save();
-        }
-
-        public bool IsAnyPropertyNotNull(ToDoItem item)
-        {
-            bool result = false;
-            foreach (var property in item.GetType().GetProperties())
+            try
             {
-                if (property != null) result = true;
-                else result = false;
+                item.Created = DateTime.Now;
+
+                uOW.ToDoItemRepo.Insert(item);
+                uOW.Save();
             }
-            return result;
+            catch { }
         }
 
+        /// <summary>
+        /// Mark tidi item as comleted
+        /// </summary>
+        /// <param name="item"></param>
         public void MarkAsCompleted(ToDoItem item)
         {
-            var dbItem = uOW.ToDoItemRepo.GetByID(item.Id);
+            try
+            {
+                var dbItem = uOW.ToDoItemRepo.GetByID(item.Id);
 
-            dbItem.IsCompleted = true;
-            dbItem.Modified = DateTime.Now;
+                dbItem.IsCompleted = true;
+                dbItem.Modified = DateTime.Now;
 
-            uOW.Save();
+                uOW.Save();
+            }
+            catch { }
         }
 
+        /// <summary>
+        /// Update todo item
+        /// </summary>
+        /// <param name="item"></param>
         public void Update(ToDoItem item)
         {
-            var dbItem = uOW.ToDoItemRepo.GetByID(item.Id);
-            dbItem = item;
-            dbItem.Modified = DateTime.Now;
+            try
+            {
+                var dbItem = uOW.ToDoItemRepo.GetByID(item.Id);
+                dbItem = item;
+                dbItem.Modified = DateTime.Now;
 
-            uOW.Save();
+                uOW.Save();
+            }
+            catch { }
+
         }
     }
 }

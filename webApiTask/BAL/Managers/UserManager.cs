@@ -21,7 +21,6 @@ namespace BAL.Manager
         /// <returns></returns>
         public List<User> GetAll()
         {
-
             return uOW.UserRepo.All.ToList();
         }
         /// <summary>
@@ -29,9 +28,10 @@ namespace BAL.Manager
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public User GetById(int id)
+        public User GetById(int? id)
         {
-            var user = uOW.UserRepo.GetByID(id);
+            if (id == null) return null;
+            var user = uOW.UserRepo.GetByID(id.Value);
             if (user == null) return null;
 
             return user;
@@ -48,21 +48,28 @@ namespace BAL.Manager
             return user;
         }
 
-        public string GetEmail(int Id)
+        public string GetEmail(int? id)
         {
-            var email = uOW.UserRepo.GetByID(Id).Email;
+            if (id == null) return null;
+
+            var email = uOW.UserRepo.GetByID(id.Value).Email;
             return email;
         }
 
        /// <summary>
-       /// update user in database
+       /// Update user in database
        /// </summary>
        /// <param name="user"></param>
-        public void UpdateUser(User user)
+        public void Update(User user)
         {
-            user.Modified = DateTime.Now;
-            uOW.UserRepo.Update(user);
-            uOW.Save();
+            try
+            {
+                user.Modified = DateTime.Now;
+                uOW.UserRepo.Update(user);
+                uOW.Save();
+            }
+            catch { }
+            
         }
 
         /// <summary>
@@ -71,10 +78,14 @@ namespace BAL.Manager
         /// <param name="user">User</param>
         public void Insert(User user)
         {
-            if (user == null) return;
-            user.Created = DateTime.Now;
-            uOW.UserRepo.Insert(user);
-            uOW.Save();
+            try
+            {
+                if (user == null) return;
+                user.Created = DateTime.Now;
+                uOW.UserRepo.Insert(user);
+                uOW.Save();
+            }
+            catch { }
         }
 
         /// <summary>
@@ -85,6 +96,17 @@ namespace BAL.Manager
 		public bool EmailIsExist(string email)
         {
             return uOW.UserRepo.All.Any(x => x.Email == email);
+        }
+
+        /// <summary>
+        /// Delete user by id
+        /// </summary>
+        /// <param name="id"></param>
+        public void Delete(int? id)
+        {
+            if (id == null) return;
+            var user = uOW.UserRepo.GetByID(id.Value);
+            uOW.UserRepo.Delete(user);
         }
     }
 }

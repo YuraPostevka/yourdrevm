@@ -12,9 +12,9 @@ namespace BAL.Interfaces
     public interface IToDoItemManager
     {
         List<ToDoItem> GetAll();
-        ToDoItem GetById(int id);
+        ToDoItem GetById(int? id);
         void Insert(ToDoItem item);
-        void Delete(int id);
+        void Delete(int? id);
         void Update(ToDoItem item);
         void MarkAsCompleted(ToDoItem item);
         List<ToDoItem> GetNotCompletedItems();

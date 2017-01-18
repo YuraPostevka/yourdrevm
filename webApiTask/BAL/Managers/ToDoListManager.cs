@@ -14,12 +14,25 @@ namespace BAL.Managers
         public ToDoListManager(IUnitOfWork uOW)
             : base(uOW) { }
 
-        public void Delete(int id)
+        /// <summary>
+        /// Delete todo list
+        /// </summary>
+        /// <param name="id"></param>
+        public void Delete(int? id)
         {
-            var item = uOW.ToDoListRepo.GetByID(id);
-            uOW.ToDoListRepo.Delete(item);
+            if (id == null) return;
+            try
+            {
+                var item = uOW.ToDoListRepo.GetByID(id);
+                uOW.ToDoListRepo.Delete(item);
+            }
+            catch { }
         }
 
+        /// <summary>
+        /// Get all todo lists
+        /// </summary>
+        /// <returns></returns>
         public List<ToDoList> GetAll()
         {
             var toDoList = uOW.ToDoListRepo.All.ToList();
@@ -27,28 +40,41 @@ namespace BAL.Managers
             return toDoList;
         }
 
-        public ToDoList GetById(int id)
+        /// <summary>
+        /// Get todo list by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ToDoList GetById(int? id)
         {
+            if (id == null) return null;
             return uOW.ToDoListRepo.GetByID(id);
         }
 
+        /// <summary>
+        /// Insert todo list
+        /// </summary>
+        /// <param name="item"></param>
         public void Insert(ToDoList item)
         {
-            if (item == null) return;
-            item.Created = DateTime.Now;
-            uOW.ToDoListRepo.Insert(item);
-            uOW.Save();
+            try
+            {
+                if (item == null) return;
+                item.Created = DateTime.Now;
+                uOW.ToDoListRepo.Insert(item);
+                uOW.Save();
+            }
+            catch { }
         }
 
+       /// <summary>
+       /// Update todo list
+       /// </summary>
+       /// <param name="item"></param>
         public void Update(ToDoList item)
         {
-            var dbItem = uOW.ToDoListRepo.GetByID(item.Id);
-
-            dbItem.Items = item.Items;
-            dbItem.Name = item.Name;
-            dbItem.User = item.User;
-            dbItem.User_Id = dbItem.User_Id;
-            dbItem.Modified = DateTime.Now;
+            item.Modified = DateTime.Now;
+            uOW.ToDoListRepo.Update(item);
 
             uOW.Save();
         }

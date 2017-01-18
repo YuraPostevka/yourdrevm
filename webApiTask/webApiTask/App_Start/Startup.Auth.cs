@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using webApiTask.Providers;
 using webApiTask.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace webApiTask
 {
