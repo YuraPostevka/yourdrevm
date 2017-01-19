@@ -23,6 +23,7 @@ namespace webApiTask
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+        public static Container container;
         protected void Application_Start()
         {
             InjectorContainer();
@@ -44,13 +45,14 @@ namespace webApiTask
         {
             try
             {
-                var container = new Container();
+                container = new Container();
                 container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
 
                 container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
                 container.Register<IUserManager, UserManager>();
                 container.Register<IToDoListManager, ToDoListManager>();
                 container.Register<IToDoItemManager, ToDoItemManager>();
+                
 
                 container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
                 GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);

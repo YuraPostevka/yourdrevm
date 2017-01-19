@@ -61,3 +61,80 @@ Controller : webApiTask.Controllers.ToDoItemController
 Action : MarkAsCompleted
 Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
 
+2017-01-19 15:10:13.8407|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"a@a.a","Password":"pass","ConfirmPassword":"pass"}}]}
+
+2017-01-19 15:11:11.8554|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"pass","ConfirmPassword":"pass"}}]}
+
+2017-01-19 15:12:00.0875|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"pass","ConfirmPassword":"pass"}}]}
+
+2017-01-19 15:12:47.2014|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"password","ConfirmPassword":"password"}}]}
+
+2017-01-19 15:13:11.7936|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"Password1","ConfirmPassword":"Password1"}}]}
+
+2017-01-19 15:13:42.7360|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"p@ssword1","ConfirmPassword":"p@ssword1"}}]}
+
+2017-01-19 15:14:06.2817|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"p@ssworD1","ConfirmPassword":"p@ssworD1"}}]}
+
+2017-01-19 15:18:58.4368|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/Account/UserInfo
+Controller : webApiTask.Controllers.AccountController
+Action : GetUserInfo
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-19 16:05:58.1585|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"admin@admin.com","Password":"p@ssworD1","ConfirmPassword":"p@ssworD1"}}]}
+
+2017-01-19 16:07:07.8255|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/Account/Register
+Controller : webApiTask.Controllers.AccountController
+Action : Register
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"model":{"Email":"a@admin.com","Password":"p@ssworD1","ConfirmPassword":"p@ssworD1"}}]}
+
+2017-01-19 16:15:26.8052|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/Account/UserInfo
+Controller : webApiTask.Controllers.AccountController
+Action : GetUserInfo
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

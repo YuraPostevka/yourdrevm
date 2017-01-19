@@ -10,15 +10,20 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using webApiTask.Models;
+using BAL.Interface;
+using BAL.Manager;
+using DAL;
+using System.Web.Http;
 
 namespace webApiTask.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
-
+        
         public ApplicationOAuthProvider(string publicClientId)
         {
+           
             if (publicClientId == null)
             {
                 throw new ArgumentNullException("publicClientId");
@@ -29,23 +34,36 @@ namespace webApiTask.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            var userManager = new UserManager(new UnitOfWork());
+            var userDb = userManager.Find(context.UserName, context.Password);
+            //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
 
-            if (user == null)
+            if (userDb == null)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
                 return;
             }
+            ApplicationUser user = new ApplicationUser()
+            {
+                Id = userDb.Id.ToString(),
+                Email = userDb.Email
+            };
 
-            ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
-               OAuthDefaults.AuthenticationType);
-            ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
-                CookieAuthenticationDefaults.AuthenticationType);
+            ClaimsIdentity claim = new ClaimsIdentity(OAuthDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            claim.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString(), ClaimValueTypes.String));
+            claim.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email, ClaimValueTypes.String));
+            claim.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
+                "OWIN Provider", ClaimValueTypes.String));
+
+            ClaimsIdentity cookiesIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            claim.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString(), ClaimValueTypes.String));
+            claim.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email, ClaimValueTypes.String));
+            claim.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
+                "OWIN Provider", ClaimValueTypes.String));
 
             AuthenticationProperties properties = CreateProperties(user.UserName);
-            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
+            AuthenticationTicket ticket = new AuthenticationTicket(claim, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
         }

@@ -56,10 +56,10 @@ namespace BAL.Manager
             return email;
         }
 
-       /// <summary>
-       /// Update user in database
-       /// </summary>
-       /// <param name="user"></param>
+        /// <summary>
+        /// Update user in database
+        /// </summary>
+        /// <param name="user"></param>
         public void Update(User user)
         {
             try
@@ -69,7 +69,7 @@ namespace BAL.Manager
                 uOW.Save();
             }
             catch { }
-            
+
         }
 
         /// <summary>
@@ -107,6 +107,10 @@ namespace BAL.Manager
             if (id == null) return;
             var user = uOW.UserRepo.GetByID(id.Value);
             uOW.UserRepo.Delete(user);
+        }
+        public User Find(string email, string passwrod)
+        {
+            return uOW.UserRepo.All.FirstOrDefault(c => c.Email == email && c.Password == passwrod);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace BAL.Interface
         string GetEmail(int? Id);
         bool EmailIsExist(string email);
         void Delete(int? id);
+        User Find(string email, string passwrod);
     }
 }

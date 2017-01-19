@@ -8,6 +8,10 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using webApiTask.ActionFilters;
+using webApiTask.Providers;
+using Microsoft.AspNet.Identity;
+using webApiTask.Models;
+using System.Security.Claims;
 
 namespace webApiTask.Controllers
 {
@@ -119,6 +123,24 @@ namespace webApiTask.Controllers
             {
                 return InternalServerError();
             }
+        }
+
+        [HttpPost]
+        public IHttpActionResult LogIn(string email, string password)
+        {
+            var dbUser = userManager.Find(email, password);
+
+            var prov = new ApplicationOAuthProvider("self");
+
+     
+
+            
+
+      
+
+
+            return Ok();
+
         }
     }
 }
