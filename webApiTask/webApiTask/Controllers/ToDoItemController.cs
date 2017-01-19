@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace webApiTask.Controllers
 {
@@ -24,6 +25,7 @@ namespace webApiTask.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: api/ToDoItem
+        [ResponseType(typeof(List<ToDoItem>))]
         public IHttpActionResult GetAll()
         {
             try
@@ -41,6 +43,7 @@ namespace webApiTask.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/ToDoItem/5
+        [ResponseType(typeof(ToDoItem))]
         public IHttpActionResult Get(int id)
         {
             try

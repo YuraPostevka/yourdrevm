@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using webApiTask.ActionFilters;
 
 namespace webApiTask.Controllers
@@ -31,6 +32,7 @@ namespace webApiTask.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: api/User
+        [ResponseType(typeof(List<User>))]
         public IHttpActionResult GetAll()
         {
             try
@@ -51,6 +53,7 @@ namespace webApiTask.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/User/5
+        [ResponseType(typeof(User))]
         public IHttpActionResult GetById(int? id)
         {
             try

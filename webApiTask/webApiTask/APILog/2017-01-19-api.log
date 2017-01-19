@@ -1,0 +1,63 @@
+2017-01-19 10:33:00.8332|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/User
+Controller : webApiTask.Controllers.UserController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-19 10:34:47.0238|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"item":{"Id":0,"Text":"string","Priority":0,"IsCompleted":false,"IsNotify":true,"NextNotifyTime":"2017-01-19T08:29:40.474Z","ToDoList":{"Id":0,"Name":"string","Items":[{"Id":0,"Text":null,"Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}],"User":{"Id":0,"Email":"string","Password":"string","ToDoLists":[{"Id":0,"Name":null,"Items":null,"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}],"Created":"2017-01-19T08:29:40.474Z","Modified":"2017-01-19T08:29:40.474Z"},"User_Id":0,"Created":"2017-01-19T08:29:40.475Z","Modified":"2017-01-19T08:29:40.475Z"},"ToDoList_Id":0,"Created":"2017-01-19T08:29:40.475Z","Modified":"2017-01-19T08:29:40.475Z"}}]}
+
+2017-01-19 10:37:16.4256|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"item":{"Id":0,"Text":"string","Priority":0,"IsCompleted":false,"IsNotify":true,"NextNotifyTime":"2017-01-19T08:29:40.474Z","ToDoList":{"Id":0,"Name":"string","Items":[{"Id":0,"Text":null,"Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}],"User":{"Id":0,"Email":"string","Password":"string","ToDoLists":[{"Id":0,"Name":null,"Items":null,"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}],"Created":"2017-01-19T08:29:40.474Z","Modified":"2017-01-19T08:29:40.474Z"},"User_Id":0,"Created":"2017-01-19T08:29:40.475Z","Modified":"2017-01-19T08:29:40.475Z"},"ToDoList_Id":0,"Created":"2017-01-19T08:29:40.475Z","Modified":"2017-01-19T08:29:40.475Z"}}]}
+
+2017-01-19 10:38:53.6681|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"item":{"Id":0,"Text":"string","Priority":0,"IsCompleted":false,"IsNotify":true,"NextNotifyTime":"2017-01-19T08:29:40.474Z","ToDoList":null,"ToDoList_Id":1,"Created":"2017-01-19T08:29:40.475Z","Modified":"2017-01-19T08:29:40.475Z"}}]}
+
+2017-01-19 10:42:53.8461|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-19 10:43:26.2086|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-19 10:43:33.5359|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:55624/api/ToDoItem/1
+Controller : webApiTask.Controllers.ToDoItemController
+Action : MarkAsCompleted
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
+2017-01-19 10:44:01.7597|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-19 10:44:01.9883|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:55624/api/ToDoItem/1
+Controller : webApiTask.Controllers.ToDoItemController
+Action : MarkAsCompleted
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1}]}
+
