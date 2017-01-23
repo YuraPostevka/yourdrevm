@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Owin;
 using Owin;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using BAL.Manager;
+using DAL;
+using Microsoft.Owin.Security.OAuth;
 
 [assembly: OwinStartup(typeof(webApiTask.Startup))]
 
@@ -13,6 +18,19 @@ namespace webApiTask
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+        }
+        private async Task<IEnumerable<Claim>> Authenticate(string username, string password)
+        {
+            // authenticate user
+            var userManager = new UserManager(new UnitOfWork());
+            var userDb = userManager.Find(username, password);
+
+
+
+
+
+
+            return null;
         }
     }
 }

@@ -15,6 +15,5 @@ C:\gitRepo\webApiTask\Common\bin\Debug\EntityFramework.dll
 C:\gitRepo\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.dll
 C:\gitRepo\webApiTask\Common\bin\Debug\EntityFramework.xml
 C:\gitRepo\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.xml
-C:\gitRepo\webApiTask\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\Common\obj\Debug\Common.dll
 C:\gitRepo\webApiTask\Common\obj\Debug\Common.pdb

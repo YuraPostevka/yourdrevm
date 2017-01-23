@@ -55,7 +55,11 @@ namespace webApiTask
                 
 
                 container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+          
                 GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+
+              
+                //System.Web.Mvc.DependencyResolver.SetResolver(new NinjectMvcDependencyResolver(container));
             }
             catch (Exception ex)
             {

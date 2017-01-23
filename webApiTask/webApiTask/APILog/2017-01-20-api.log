@@ -1,0 +1,98 @@
+2017-01-20 10:23:14.0247|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 10:23:14.3329|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:55624/api/ToDoItem/0
+Controller : webApiTask.Controllers.ToDoItemController
+Action : MarkAsCompleted
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":0}]}
+
+2017-01-20 11:16:33.9624|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 11:28:20.8836|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 11:57:16.0192|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 12:11:47.6177|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/Claims
+Controller : webApiTask.Controllers.ClaimsController
+Action : GetClaims
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 12:14:15.3032|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:55624/api/ToDoItem
+Controller : webApiTask.Controllers.ToDoItemController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 13:18:55.6324|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/User
+Controller : webApiTask.Controllers.UserController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 13:20:32.6063|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Claims
+Controller : webApiTask.Controllers.ClaimsController
+Action : GetClaims
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 13:28:56.1832|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Claims
+Controller : webApiTask.Controllers.ClaimsController
+Action : GetClaims
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 13:31:47.9185|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Claims
+Controller : webApiTask.Controllers.ClaimsController
+Action : GetClaims
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 13:31:55.2267|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/User
+Controller : webApiTask.Controllers.UserController
+Action : GetAll
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 15:39:19.4164|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Claims
+Controller : webApiTask.Controllers.ClaimsController
+Action : GetClaims
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-01-20 15:39:41.8402|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Claims
+Controller : webApiTask.Controllers.ClaimsController
+Action : GetClaims
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

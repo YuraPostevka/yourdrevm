@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using webApiTask.Models;
 using webApiTask.Providers;
 using webApiTask.Results;
+using BAL.Interface;
 
 namespace webApiTask.Controllers
 {
@@ -28,6 +29,7 @@ namespace webApiTask.Controllers
 
         public AccountController()
         {
+
         }
 
         public AccountController(ApplicationUserManager userManager,
@@ -73,6 +75,10 @@ namespace webApiTask.Controllers
             Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
             return Ok();
         }
+
+
+        [Route("Login")]
+
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
         [Route("ManageInfo")]

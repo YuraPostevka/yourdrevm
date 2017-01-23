@@ -21,6 +21,8 @@ namespace TestApp
             var id = 1;
 
             var putReq = new RestRequest("ToDoItem/MarkAsCompleted/?id=" + id, Method.PUT);
+
+
             client.Execute(putReq);
 
 

@@ -1,0 +1,36 @@
+﻿@model webApiTask.Models.LoginBindingModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<form action="/Home/Login" method="post" enctype="multipart/form-data"> 
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">Email</label>
+            <div class="col-md-4">
+                <input id="textinput" name="Email" type="text" value="@Model.Email" placeholder="placeholder" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Password</label>
+            <div class="col-md-4">
+                <input id="textinput" name="Password" type="password" value="@Model.Password" placeholder="placeholder" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+</form>

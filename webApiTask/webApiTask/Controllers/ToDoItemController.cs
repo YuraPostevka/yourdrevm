@@ -13,6 +13,8 @@ namespace webApiTask.Controllers
     /// <summary>
     /// ToDoItem
     /// </summary>
+
+    [Authorize]
     public class ToDoItemController : ApiController
     {
         private IToDoItemManager toDoItemMngr;
@@ -53,7 +55,7 @@ namespace webApiTask.Controllers
                 else return NotFound();
             }
             catch { return NotFound(); }
-          
+
         }
 
         /// <summary>
@@ -100,7 +102,7 @@ namespace webApiTask.Controllers
                 return Ok();
             }
             catch { return InternalServerError(); }
-        
+
         }
 
         /// <summary>

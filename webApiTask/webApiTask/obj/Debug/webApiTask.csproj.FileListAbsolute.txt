@@ -285,3 +285,5 @@ C:\gitRepo\webApiTask\webApiTask\bin\Swashbuckle.Swagger.dll
 C:\gitRepo\webApiTask\webApiTask\bin\Swashbuckle.SwaggerGen.dll
 C:\gitRepo\webApiTask\webApiTask\bin\Swashbuckle.SwaggerUi.dll
 C:\gitRepo\webApiTask\webApiTask\bin\webApiTask.XML
+C:\gitRepo\webApiTask\webApiTask\bin\Thinktecture.IdentityModel.Owin.BasicAuthentication.dll
+C:\gitRepo\webApiTask\webApiTask\bin\Thinktecture.IdentityModel.Owin.BasicAuthentication.pdb

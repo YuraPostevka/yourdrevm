@@ -11,6 +11,7 @@ using Owin;
 using webApiTask.Providers;
 using webApiTask.Models;
 using Microsoft.Extensions.DependencyInjection;
+using Thinktecture.IdentityModel.Owin;
 
 namespace webApiTask
 {
@@ -46,6 +47,9 @@ namespace webApiTask
 
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);
+
+            app.UseBasicAuthentication(new BasicAuthenticationOptions("SecureApi",
+                 async (username, password) => await Authenticate(username, password)));
             //app.UseBasicAuthentication(new BasicAuthenticationOptions("SecureApi",
             //    async (username, password) => await Authenticate(username, password)));
 

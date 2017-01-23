@@ -124,23 +124,5 @@ namespace webApiTask.Controllers
                 return InternalServerError();
             }
         }
-
-        [HttpPost]
-        public IHttpActionResult LogIn(string email, string password)
-        {
-            var dbUser = userManager.Find(email, password);
-
-            var prov = new ApplicationOAuthProvider("self");
-
-     
-
-            
-
-      
-
-
-            return Ok();
-
-        }
     }
 }
