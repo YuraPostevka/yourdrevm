@@ -35,7 +35,7 @@ namespace BAL.Managers
         /// <returns></returns>
         public List<ToDoList> GetAll()
         {
-            var toDoList = uOW.ToDoListRepo.All.ToList();
+            List<ToDoList> toDoList = uOW.ToDoListRepo.Get(includeProperties: "Items").ToList();
 
             return toDoList;
         }

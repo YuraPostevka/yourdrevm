@@ -1,1 +1,80 @@
 ﻿
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="toDoList">
+
+                <ul class="list-inline" data-bind="foreach:toDoLists">
+
+                    <li class="col-md-4 text-center">
+
+                        <h1><strong data-bind="text: Name"></strong></h1>
+
+                        <ul class="items" data-bind="foreach: Items">
+                           
+                             <li>
+                                <input type="checkbox" data-bind="" />
+                                <span data-bind="text: Text"></span>
+
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<style>
+    .toDoList{
+        background:url(/Content//stick1.png) no-repeat;
+        background-size: 100% auto;
+        max-width:600px;
+    }
+
+
+</style>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript" src="~/Scripts/knockout-3.4.1.js"></script>
+<script>
+
+    function viewModel() {
+        var self = this;
+
+        self.loadLists = function () {
+            $.ajax({
+                type: 'GET',
+                contentType: 'application/json',
+                url: '/Home/GetAllItems',
+                dataType: 'JSON',
+                success: function (data) {
+                    $.each(data, function (index, element) {
+                        if (element.Items != 0) {
+
+                            self.toDoLists.push(element);
+                        }
+                    });
+                },
+                error: function () {
+                    console.log('shit');
+                }
+            });
+
+        }
+
+        self.toDoLists = ko.observableArray([]);
+    }
+
+    var vm = new viewModel();
+    vm.loadLists();
+    ko.applyBindings(vm);
+
+
+</script>

@@ -14,7 +14,6 @@ namespace webApiTask.Controllers
     /// ToDoItem
     /// </summary>
 
-    [Authorize]
     public class ToDoItemController : ApiController
     {
         private IToDoItemManager toDoItemMngr;
@@ -30,6 +29,8 @@ namespace webApiTask.Controllers
         [ResponseType(typeof(List<ToDoItem>))]
         public IHttpActionResult GetAll()
         {
+
+
             try
             {
                 var items = toDoItemMngr.GetAll();

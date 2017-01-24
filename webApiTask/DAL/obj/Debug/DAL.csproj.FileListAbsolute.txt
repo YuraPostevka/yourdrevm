@@ -103,3 +103,6 @@ C:\gitRepo\webApiTask\DAL\bin\Debug\Microsoft.Net.Http.Headers.xml
 C:\gitRepo\webApiTask\DAL\bin\Debug\Newtonsoft.Json.xml
 C:\gitRepo\webApiTask\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\gitRepo\webApiTask\DAL\bin\Debug\System.Text.Encodings.Web.xml
+C:\gitRepo\webApiTask\DAL\bin\Debug\DbExtensions.dll
+C:\gitRepo\webApiTask\DAL\bin\Debug\DbExtensions.pdb
+C:\gitRepo\webApiTask\DAL\bin\Debug\DbExtensions.xml

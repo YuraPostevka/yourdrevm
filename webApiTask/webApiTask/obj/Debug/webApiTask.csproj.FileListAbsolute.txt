@@ -287,3 +287,7 @@ C:\gitRepo\webApiTask\webApiTask\bin\Swashbuckle.SwaggerUi.dll
 C:\gitRepo\webApiTask\webApiTask\bin\webApiTask.XML
 C:\gitRepo\webApiTask\webApiTask\bin\Thinktecture.IdentityModel.Owin.BasicAuthentication.dll
 C:\gitRepo\webApiTask\webApiTask\bin\Thinktecture.IdentityModel.Owin.BasicAuthentication.pdb
+C:\gitRepo\webApiTask\webApiTask\bin\SimpleInjector.Integration.Web.dll
+C:\gitRepo\webApiTask\webApiTask\bin\SimpleInjector.Integration.Web.Mvc.dll
+C:\gitRepo\webApiTask\webApiTask\bin\SimpleInjector.Integration.Web.xml
+C:\gitRepo\webApiTask\webApiTask\bin\SimpleInjector.Integration.Web.Mvc.xml
