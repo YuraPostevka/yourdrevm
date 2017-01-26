@@ -13,6 +13,6 @@ namespace BAL.Interfaces
         ToDoList GetById(int? id);
         void Insert(ToDoList item);
         void Delete(int? id);
-        void Update(ToDoList item);
+        void ChangeName(int id, string name);
     }
 }

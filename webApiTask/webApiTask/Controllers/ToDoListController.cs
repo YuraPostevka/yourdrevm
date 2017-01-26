@@ -81,7 +81,7 @@ namespace webApiTask.Controllers
         {
             try
             {
-                toDoListManager.Update(toDoList);
+                //toDoListManager.ChangeName(toDoList);
                 return Ok();
             }
             catch { return InternalServerError(); }

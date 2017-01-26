@@ -6,6 +6,7 @@ using DAL;
 using DAL.Interfaces;
 
 using SimpleInjector;
+using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
 using SimpleInjector.Integration.WebApi;
 using System;
@@ -47,7 +48,7 @@ namespace webApiTask
             try
             {
                 container = new Container();
-                container.Options.DefaultScopedLifestyle = new WebApiRequestLifestyle();
+                container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
                 container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
                 container.Register<IUserManager, UserManager>();

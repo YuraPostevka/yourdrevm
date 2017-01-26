@@ -83,7 +83,7 @@ namespace webApiTask.Controllers
         {
             try
             {
-                toDoItemMngr.Update(item);
+               // toDoItemMngr.UpdateText(item);
                 return Ok();
             }
             catch { return InternalServerError(); }
@@ -98,8 +98,7 @@ namespace webApiTask.Controllers
         {
             try
             {
-                var item = toDoItemMngr.GetById(id);
-                toDoItemMngr.MarkAsCompleted(item);
+                toDoItemMngr.ChangeCompletedItem(id, true );
                 return Ok();
             }
             catch { return InternalServerError(); }

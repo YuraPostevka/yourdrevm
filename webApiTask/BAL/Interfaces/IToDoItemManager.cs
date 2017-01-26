@@ -15,8 +15,8 @@ namespace BAL.Interfaces
         ToDoItem GetById(int? id);
         void Insert(ToDoItem item);
         void Delete(int? id);
-        void Update(ToDoItem item);
-        void MarkAsCompleted(ToDoItem item);
+        void ChangeItemText(int id, string text);
+        void ChangeCompletedItem(int id, bool isCompleted);
         List<ToDoItem> GetNotCompletedItems();
     }
 }

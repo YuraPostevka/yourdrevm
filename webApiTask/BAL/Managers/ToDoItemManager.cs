@@ -72,16 +72,16 @@ namespace BAL.Managers
         }
 
         /// <summary>
-        /// Mark tidi item as comleted
+        /// Mark/Unmark todoItem as completed
         /// </summary>
         /// <param name="item"></param>
-        public void MarkAsCompleted(ToDoItem item)
+        public void ChangeCompletedItem(int id, bool isCompleted)
         {
             try
             {
-                var dbItem = uOW.ToDoItemRepo.GetByID(item.Id);
+                var dbItem = uOW.ToDoItemRepo.GetByID(id);
 
-                dbItem.IsCompleted = true;
+                dbItem.IsCompleted = isCompleted;
                 dbItem.Modified = DateTime.Now;
 
                 uOW.Save();
@@ -93,12 +93,12 @@ namespace BAL.Managers
         /// Update todo item
         /// </summary>
         /// <param name="item"></param>
-        public void Update(ToDoItem item)
+        public void ChangeItemText(int id, string text)
         {
             try
             {
-                var dbItem = uOW.ToDoItemRepo.GetByID(item.Id);
-                dbItem = item;
+                var dbItem = uOW.ToDoItemRepo.GetByID(id);
+                dbItem.Text = text;
                 dbItem.Modified = DateTime.Now;
 
                 uOW.Save();

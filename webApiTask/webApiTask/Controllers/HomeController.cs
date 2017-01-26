@@ -16,17 +16,14 @@ using System.Web.Http.Controllers;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using webApiTask.Models;
+using Microsoft.AspNet.Identity;
 
 namespace webApiTask.Controllers
 {
     public class HomeController : BaseController
     {
         private IToDoItemManager itemManager;
-
-        public HomeController()
-        {
-
-        }
+        private IToDoListManager listManager;
         private IAuthenticationManager authManager
         {
             get
@@ -34,41 +31,63 @@ namespace webApiTask.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+        public HomeController(IToDoItemManager itemManager, IToDoListManager listManager)
+        {
+            this.itemManager = itemManager;
+            this.listManager = listManager;
+        }
 
         public ActionResult Index()
         {
-
             return View();
         }
-
+        /// <summary>
+        /// Get all toDoLists
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        public JsonResult GetAllItems()
+        public JsonResult GetAllToDoLists()
         {
+            var userId = User.Identity.GetUserId();
+            if(userId==null)
+            {
+                return Json(new {
+                    redirectUrl = Url.Action("Login", "Home"),
+                    isRedirect = false
+                }, "application/json", JsonRequestBehavior.AllowGet);
+            }
+            var lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
 
-            //var itemManager = new ToDoItemManager(new UnitOfWork());
-            //var items = itemManager.GetAll();
-            var userId = 2;
-            var listManager = new ToDoListManager(new UnitOfWork());
-
-            var lists = listManager.GetAll().Where(u => u.User_Id == userId).ToList();
-
-
-    //        var jsonList = JsonConvert.SerializeObject(lists,
-    //Formatting.None,
-    //new JsonSerializerSettings()
-    //{
-    //    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-    //});
-
-            var res = from l in lists
-                      select new
-                      {
-                          Name = l.Name,
-                          Items = l.Items
-                      };
 
             return Json(lists, "application/json", JsonRequestBehavior.AllowGet);
         }
+        /// <summary>
+        /// Change status of isCompleted property in todoItem
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="isCompleted"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ChangeStatusOfItem(int id, bool isCompleted)
+        {
+            itemManager.ChangeCompletedItem(id, isCompleted);
+            return Json("");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeItemText(int id, string text)
+        {
+            itemManager.ChangeItemText(id, text);
+            return Json("");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeListName(int id, string name)
+        {
+            listManager.ChangeName(id, name);
+            return Json("");
+        }
+
 
         [HttpGet]
         public ActionResult Login()

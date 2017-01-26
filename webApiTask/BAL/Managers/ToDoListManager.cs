@@ -71,10 +71,10 @@ namespace BAL.Managers
        /// Update todo list
        /// </summary>
        /// <param name="item"></param>
-        public void Update(ToDoList item)
+        public void ChangeName(int id, string name)
         {
-            item.Modified = DateTime.Now;
-            uOW.ToDoListRepo.Update(item);
+            var dbItem = uOW.ToDoListRepo.GetByID(id);
+            dbItem.Name = name;
 
             uOW.Save();
         }

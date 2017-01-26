@@ -11,6 +11,13 @@ namespace webApiTask
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                      "~/Scripts/knockout-{version}.js",
+                      "~/Scripts/knockout.mapping-latest.debug.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/knockoutHomePage").Include(
+                        "~/Scripts/HomePage/HomeKO.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -23,6 +30,9 @@ namespace webApiTask
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/IndexPage").Include(
+                      "~/Content/Home/Home.css"));
         }
     }
 }
