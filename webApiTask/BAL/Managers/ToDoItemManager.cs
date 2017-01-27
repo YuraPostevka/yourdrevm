@@ -22,8 +22,10 @@ namespace BAL.Managers
         public void Delete(int? id)
         {
             if (id == null) return;
-            var item = uOW.ToDoItemRepo.GetByID(id);
+            //var item = uOW.ToDoItemRepo.GetByID(id);
+            var item = new ToDoItem() { Id = id.Value };
             uOW.ToDoItemRepo.Delete(item);
+            uOW.Save();
         }
 
         /// <summary>
@@ -59,16 +61,13 @@ namespace BAL.Managers
         /// Insert todo item
         /// </summary>
         /// <param name="item"></param>
-        public void Insert(ToDoItem item)
+        public ToDoItem Insert(ToDoItem item)
         {
-            try
-            {
-                item.Created = DateTime.Now;
+            item.Created = DateTime.Now;
 
-                uOW.ToDoItemRepo.Insert(item);
-                uOW.Save();
-            }
-            catch { }
+            uOW.ToDoItemRepo.Insert(item);
+            uOW.Save();
+            return item;
         }
 
         /// <summary>

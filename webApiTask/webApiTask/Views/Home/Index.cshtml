@@ -1,7 +1,11 @@
 ﻿@{
-    Layout = null;
+//Layout = null;
 }
+
 @Styles.Render("~/Content/IndexPage")
+
+
+
 
 <link href="http://fonts.googleapis.com/css?
 family=Reenie+Beanie:regular"
@@ -9,31 +13,38 @@ family=Reenie+Beanie:regular"
       type="text/css">
 
 <body>
+    <br />
+    <div class="page-content notes-board">
+        <ul class="toDoList" data-bind="foreach: toDoLists">
 
-    <ul class="toDoList" data-bind="foreach: toDoLists">
-        <li>
+            <li>
+                <a href="#">
+                    <h1 class="text-center">
 
-            <a href="#">
-                <span data-bind="inline: Name" class="label" for="textBox1"></span>
+                        <span data-bind="inline: Name" class="text-center"></span>
+                        <span class="btn icon delicon glyphicon glyphicon-remove iconLeft" data-bind="click: $root.removeList"></span>
+                        <span class="btn glyphicon glyphicon-plus iconLeft" data-bind="click: $root.AddItem.bind($data)"></span>
 
-                <ul class="items" data-bind="foreach: Items">
+                    </h1>
 
-                    <li>
-                        <input type="checkbox" data-bind="checked: IsCompleted" />
-                        <label data-bind="inline: Text, css: {lineThrough:  IsCompleted} "></label>
-                    </li>
+                    <ul class="items" data-bind="foreach: Items">
 
-                </ul>
+                        <li>
+                            <input type="checkbox" data-bind="checked: IsCompleted" />
+                            <label data-bind="inline: Text, css: {lineThrough:  IsCompleted} "></label>
+                            <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
+                        </li>
 
-            </a>
-        </li>
-    </ul>
+                    </ul>
 
-
+                </a>
+            </li>
+        </ul>
+    </div>
 
 </body>
-
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/knockout")
 @Scripts.Render("~/bundles/knockoutHomePage")
+

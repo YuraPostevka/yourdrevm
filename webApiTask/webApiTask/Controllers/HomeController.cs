@@ -17,6 +17,7 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using webApiTask.Models;
 using Microsoft.AspNet.Identity;
+using Models;
 
 namespace webApiTask.Controllers
 {
@@ -49,9 +50,10 @@ namespace webApiTask.Controllers
         public JsonResult GetAllToDoLists()
         {
             var userId = User.Identity.GetUserId();
-            if(userId==null)
+            if (userId == null)
             {
-                return Json(new {
+                return Json(new
+                {
                     redirectUrl = Url.Action("Login", "Home"),
                     isRedirect = false
                 }, "application/json", JsonRequestBehavior.AllowGet);
@@ -88,6 +90,27 @@ namespace webApiTask.Controllers
             return Json("");
         }
 
+        [HttpPost]
+        public JsonResult DeleteItem(int? id)
+        {
+            itemManager.Delete(id);
+            return Json("");
+        }
+
+        [HttpPost]
+        public JsonResult DeleteList(int? id)
+        {
+            listManager.Delete(id);
+            return Json("");
+        }
+
+        [HttpPost]
+        public JsonResult AddItem(ToDoItem item)
+        {
+            var result = itemManager.Insert(item);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
 
         [HttpGet]
         public ActionResult Login()

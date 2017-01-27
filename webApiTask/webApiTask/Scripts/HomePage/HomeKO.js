@@ -15,16 +15,7 @@ function viewModel() {
         'ignore': ["Created", "Modified", "User", "User_Id"],
         "Items": {
             create: function (options) {
-                var m = ko.mapping.fromJS(options.data, itemMapping);
-
-                m.Text.subscribe(function (newValue) {
-                    //send ajax
-                    self.SendItemText(m.Id(), newValue);
-                });
-                m.IsCompleted.subscribe(function (newValue) {
-                    //send ajax
-                    self.SendStatus(m.Id(), newValue);
-                });
+                var m = newItem(options.data);
                 return m;
             }
         },
@@ -69,9 +60,9 @@ function viewModel() {
             dataType: "json",
             data: { "id": id, "name": value },
             success: function (data) {
-                
+
             },
-            error:function(data){
+            error: function (data) {
                 alert('pizda');
             }
         });
@@ -104,37 +95,109 @@ function viewModel() {
             }
         });
 
-        ko.bindingHandlers.inline = {
-            init: function (element, valueAccessor) {
-                var span = $(element);
-                var input = $('<input />', { 'type': 'text', 'style': 'display:none' });
-                span.after(input);
+    }
+    self.removeItem = function (data, item) {
+        data.Items.remove(item);
 
-                ko.applyBindingsToNode(input.get(0), { value: valueAccessor() });
-                ko.applyBindingsToNode(span.get(0), { text: valueAccessor() });
+        var id = item.Id();
+        $.ajax({
+            type: 'POST',
+            url: '/Home/DeleteItem',
+            dataType: "json",
+            data: { "id": id },
+            success: function (data) {
 
-                span.click(function () {
-                    input.width(span.width());
-                    span.hide();
-                    input.show();
-                    input.focus();
-                });
-
-                input.blur(function () {
-                    span.show();
-                    input.hide();
-                });
-
-                input.keypress(function (e) {
-                    if (e.keyCode == 13) {
-                        span.show();
-                        input.hide();
-                    };
-                });
+            },
+            error: function (data) {
+                alert('pizda');
             }
-        };
+        });
+    };
+
+    self.removeList = function (list) {
+        self.toDoLists.remove(list);
+        var id = list.Id();
+        $.ajax({
+            type: 'POST',
+            url: '/Home/DeleteList',
+            dataType: "json",
+            data: { "id": id },
+            success: function (data) {
+
+            },
+            error: function (data) {
+                alert('pizda');
+            }
+        });
+
+    };
+
+
+    var newItem = function (data) {
+        var m = ko.mapping.fromJS(data, itemMapping);
+
+        m.Text.subscribe(function (newValue) {
+            //send ajax
+            self.SendItemText(m.Id(), newValue);
+        });
+        m.IsCompleted.subscribe(function (newValue) {
+            //send ajax
+            self.SendStatus(m.Id(), newValue);
+        });
+        return m;
+    };
+
+    self.AddItem = function (data) {
+        var listId = data.Id();
+
+        $.ajax({
+            type: 'POST',
+            url: '/Home/AddItem',
+            dataType: "json",
+            data: { "ToDoList_Id": listId, "Text": "newValue", "IsCompleted": false },
+
+            success: function (item) {
+                var m = newItem(item);
+                data.Items.push(m);
+            },
+            error: function (data) {
+                alert('pizda');
+            }
+        });
+        return data;
 
     }
+
+    ko.bindingHandlers.inline = {
+        init: function (element, valueAccessor) {
+            var span = $(element);
+            var input = $('<input />', { 'type': 'text', 'style': 'display:none' });
+            span.after(input);
+
+            ko.applyBindingsToNode(input.get(0), { value: valueAccessor() });
+            ko.applyBindingsToNode(span.get(0), { text: valueAccessor() });
+
+            span.click(function () {
+                input.width(span.width());
+                span.hide();
+                input.show();
+                input.focus();
+            });
+
+            input.blur(function () {
+                span.show();
+                input.hide();
+            });
+
+            input.keypress(function (e) {
+                if (e.keyCode == 13) {
+                    span.show();
+                    input.hide();
+                };
+            });
+        }
+    };
+
 
     self.toDoLists = ko.observableArray();
 }

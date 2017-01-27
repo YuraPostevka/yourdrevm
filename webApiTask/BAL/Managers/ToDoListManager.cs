@@ -23,8 +23,9 @@ namespace BAL.Managers
             if (id == null) return;
             try
             {
-                var item = uOW.ToDoListRepo.GetByID(id);
+                var item = new ToDoList() { Id = id.Value };
                 uOW.ToDoListRepo.Delete(item);
+                uOW.Save();
             }
             catch { }
         }
