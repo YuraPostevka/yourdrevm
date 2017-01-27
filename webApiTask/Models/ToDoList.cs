@@ -18,7 +18,7 @@ namespace Models
         [ForeignKey("User_Id")]
         public virtual User User { get; set; }
         public int User_Id { get; set; }
-
+        [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime Created { get; set; }
         public DateTime? Modified { get; set; }
 

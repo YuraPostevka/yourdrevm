@@ -8,3 +8,15 @@ C:\gitRepo\webApiTask\TestApp\bin\Debug\RestSharp.xml
 C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.exe
 C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.pdb
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\qwerty.mdf
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\qwerty_log.ldf
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\TestApp.exe.config
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\TestApp.exe
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\TestApp.pdb
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\Models.dll
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\RestSharp.dll
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\Models.pdb
+D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\RestSharp.xml
+D:\softserve\yourdrevm\webApiTask\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
+D:\softserve\yourdrevm\webApiTask\TestApp\obj\Debug\TestApp.exe
+D:\softserve\yourdrevm\webApiTask\TestApp\obj\Debug\TestApp.pdb

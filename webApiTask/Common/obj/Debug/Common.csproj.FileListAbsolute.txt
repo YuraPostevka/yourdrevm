@@ -18,3 +18,13 @@ C:\gitRepo\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.xml
 C:\gitRepo\webApiTask\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\Common\obj\Debug\Common.dll
 C:\gitRepo\webApiTask\Common\obj\Debug\Common.pdb
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\Common.dll.config
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\Common.dll
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\Common.pdb
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\EntityFramework.dll
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.dll
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\EntityFramework.xml
+D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.xml
+D:\softserve\yourdrevm\webApiTask\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\softserve\yourdrevm\webApiTask\Common\obj\Debug\Common.dll
+D:\softserve\yourdrevm\webApiTask\Common\obj\Debug\Common.pdb

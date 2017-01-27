@@ -22,7 +22,6 @@ namespace BAL.Managers
         public void Delete(int? id)
         {
             if (id == null) return;
-            //var item = uOW.ToDoItemRepo.GetByID(id);
             var item = new ToDoItem() { Id = id.Value };
             uOW.ToDoItemRepo.Delete(item);
             uOW.Save();
@@ -63,8 +62,6 @@ namespace BAL.Managers
         /// <param name="item"></param>
         public ToDoItem Insert(ToDoItem item)
         {
-            item.Created = DateTime.Now;
-
             uOW.ToDoItemRepo.Insert(item);
             uOW.Save();
             return item;

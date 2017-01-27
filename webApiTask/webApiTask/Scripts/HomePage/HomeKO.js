@@ -1,10 +1,4 @@
-﻿var ToDoList = function (data) {
-    var self = this;
-
-    self.Lists = ko.observableArray(data);
-}
-
-function viewModel() {
+﻿function viewModel() {
     var self = this;
 
     var itemMapping = {
@@ -76,8 +70,9 @@ function viewModel() {
             dataType: 'JSON',
             success: function (data) {
 
-                if (data.IsRedirect) {
-                    window.location.href = data.redirectUrl;
+                if (data.message != null) {
+                    alert(data.message);
+                    return;
                 }
 
                 self.toDoLists.removeAll();
@@ -154,7 +149,7 @@ function viewModel() {
             type: 'POST',
             url: '/Home/AddItem',
             dataType: "json",
-            data: { "ToDoList_Id": listId, "Text": "newValue", "IsCompleted": false },
+            data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
 
             success: function (item) {
                 var m = newItem(item);
@@ -165,8 +160,37 @@ function viewModel() {
             }
         });
         return data;
+    };
 
-    }
+
+    self.AddList = function () {
+
+        var data =
+           {
+               'Name': "newList",
+               'Items': [
+                   {
+                       'Text': 'newItem',
+                       'IsCompleted': false
+                   }
+               ]
+           };
+
+        $.ajax({
+            type: 'POST',
+            url: '/Home/AddList',
+            dataType: "json",
+            data: data,
+            success: function (list) {
+
+                var model = ko.mapping.fromJS(list, mapping);
+
+                self.toDoLists.push(model);
+            }
+
+        });
+
+    };
 
     ko.bindingHandlers.inline = {
         init: function (element, valueAccessor) {

@@ -62,13 +62,9 @@ namespace BAL.Manager
         /// <param name="user"></param>
         public void Update(User user)
         {
-            try
-            {
-                user.Modified = DateTime.Now;
-                uOW.UserRepo.Update(user);
-                uOW.Save();
-            }
-            catch { }
+            user.Modified = DateTime.Now;
+            uOW.UserRepo.Update(user);
+            uOW.Save();
 
         }
 
@@ -76,20 +72,18 @@ namespace BAL.Manager
         /// Insert user into database
         /// </summary>
         /// <param name="user">User</param>
-        public void Insert(User user)
+        public User Insert(User user)
         {
-            try
-            {
-                if (user == null) return;
-                user.Created = DateTime.Now;
-                uOW.UserRepo.Insert(user);
-                uOW.Save();
-            }
-            catch { }
+            if (user == null) return null;
+
+            uOW.UserRepo.Insert(user);
+            uOW.Save();
+
+            return user;
         }
 
         /// <summary>
-        /// Check the email's exictance in database
+        /// Check the email's existance in database
         /// </summary>
         /// <param name="email"></param>
         /// <returns></returns>

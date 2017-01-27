@@ -230,6 +230,10 @@
     <Compile Include="Migrations\201701161026146_Initial.Designer.cs">
       <DependentUpon>201701161026146_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701271950189_Automatically_Generate_CreateDate.cs" />
+    <Compile Include="Migrations\201701271950189_Automatically_Generate_CreateDate.Designer.cs">
+      <DependentUpon>201701271950189_Automatically_Generate_CreateDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -265,6 +269,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701161026146_Initial.resx">
       <DependentUpon>201701161026146_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701271950189_Automatically_Generate_CreateDate.resx">
+      <DependentUpon>201701271950189_Automatically_Generate_CreateDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

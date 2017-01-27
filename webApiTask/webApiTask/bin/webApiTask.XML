@@ -486,6 +486,24 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:webApiTask.Controllers.HomeController">
+            <summary>
+            Home controller
+            </summary>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.#ctor(BAL.Interfaces.IToDoItemManager,BAL.Interfaces.IToDoListManager)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="itemManager"></param>
+            <param name="listManager"></param>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.Index">
+            <summary>
+            Index page
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:webApiTask.Controllers.HomeController.GetAllToDoLists">
             <summary>
             Get all toDoLists
@@ -498,6 +516,69 @@
             </summary>
             <param name="id"></param>
             <param name="isCompleted"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.ChangeItemText(System.Int32,System.String)">
+            <summary>
+            Change item text
+            </summary>
+            <param name="id"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.ChangeListName(System.Int32,System.String)">
+            <summary>
+            Change list name
+            </summary>
+            <param name="id"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.DeleteItem(System.Nullable{System.Int32})">
+            <summary>
+            Delete item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.DeleteList(System.Nullable{System.Int32})">
+            <summary>
+            Delete list
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.AddItem(Models.ToDoItem)">
+            <summary>
+            Add new item
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.AddList(Models.ToDoList)">
+            <summary>
+            Add new list
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.Login">
+            <summary>
+            Login page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.Login(webApiTask.Models.LoginBindingModel)">
+            <summary>
+            Authentication
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.Logout">
+            <summary>
+            Logout
+            </summary>
             <returns></returns>
         </member>
         <member name="T:webApiTask.Controllers.ToDoItemController">

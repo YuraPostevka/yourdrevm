@@ -8,7 +8,7 @@ namespace BAL.Interface
         void Update(User user);
         User GetById(int? id);
         List<User> GetAll();
-        void Insert(User user);
+        User Insert(User user);
         string GetEmail(int? Id);
         bool EmailIsExist(string email);
         void Delete(int? id);

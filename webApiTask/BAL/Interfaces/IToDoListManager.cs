@@ -11,7 +11,7 @@ namespace BAL.Interfaces
     {
         List<ToDoList> GetAll();
         ToDoList GetById(int? id);
-        void Insert(ToDoList item);
+        ToDoList Insert(ToDoList item);
         void Delete(int? id);
         void ChangeName(int id, string name);
     }

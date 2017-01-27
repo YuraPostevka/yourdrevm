@@ -56,22 +56,21 @@ namespace BAL.Managers
         /// Insert todo list
         /// </summary>
         /// <param name="item"></param>
-        public void Insert(ToDoList item)
+        public ToDoList Insert(ToDoList item)
         {
-            try
-            {
-                if (item == null) return;
-                item.Created = DateTime.Now;
-                uOW.ToDoListRepo.Insert(item);
-                uOW.Save();
-            }
-            catch { }
+
+            if (item == null) return null;
+
+            uOW.ToDoListRepo.Insert(item);
+            uOW.Save();
+
+            return item;
         }
 
-       /// <summary>
-       /// Update todo list
-       /// </summary>
-       /// <param name="item"></param>
+        /// <summary>
+        /// Update todo list
+        /// </summary>
+        /// <param name="item"></param>
         public void ChangeName(int id, string name)
         {
             var dbItem = uOW.ToDoListRepo.GetByID(id);

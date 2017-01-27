@@ -21,6 +21,9 @@ using Models;
 
 namespace webApiTask.Controllers
 {
+    /// <summary>
+    /// Home controller
+    /// </summary>
     public class HomeController : BaseController
     {
         private IToDoItemManager itemManager;
@@ -32,16 +35,25 @@ namespace webApiTask.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="itemManager"></param>
+        /// <param name="listManager"></param>
         public HomeController(IToDoItemManager itemManager, IToDoListManager listManager)
         {
             this.itemManager = itemManager;
             this.listManager = listManager;
         }
-
+        /// <summary>
+        /// Index page
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View();
         }
+
         /// <summary>
         /// Get all toDoLists
         /// </summary>
@@ -54,8 +66,7 @@ namespace webApiTask.Controllers
             {
                 return Json(new
                 {
-                    redirectUrl = Url.Action("Login", "Home"),
-                    isRedirect = false
+                    message = "You need to LogIn",
                 }, "application/json", JsonRequestBehavior.AllowGet);
             }
             var lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
@@ -76,6 +87,12 @@ namespace webApiTask.Controllers
             return Json("");
         }
 
+        /// <summary>
+        /// Change item text
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="text"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult ChangeItemText(int id, string text)
         {
@@ -83,6 +100,12 @@ namespace webApiTask.Controllers
             return Json("");
         }
 
+        /// <summary>
+        /// Change list name
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult ChangeListName(int id, string name)
         {
@@ -90,6 +113,11 @@ namespace webApiTask.Controllers
             return Json("");
         }
 
+        /// <summary>
+        /// Delete item
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult DeleteItem(int? id)
         {
@@ -97,13 +125,22 @@ namespace webApiTask.Controllers
             return Json("");
         }
 
+        /// <summary>
+        /// Delete list
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult DeleteList(int? id)
         {
             listManager.Delete(id);
             return Json("");
         }
-
+        /// <summary>
+        /// Add new item
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult AddItem(ToDoItem item)
         {
@@ -112,12 +149,36 @@ namespace webApiTask.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+        /// <summary>
+        /// Add new list
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult AddList(ToDoList list)
+        {
+            list.User_Id = Convert.ToInt32(User.Identity.GetUserId());
+            var result = listManager.Insert(list);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Login page
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult Login()
         {
             var model = new LoginBindingModel();
             return View(model);
         }
+
+        /// <summary>
+        /// Authentication
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Login(LoginBindingModel model)
         {
@@ -155,6 +216,11 @@ namespace webApiTask.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        /// <summary>
+        /// Logout
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Logout()
         {
             authManager.SignOut(CookieAuthenticationDefaults.AuthenticationType);
