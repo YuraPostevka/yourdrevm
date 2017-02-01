@@ -10,8 +10,8 @@ using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using webApiTask.Models;
-using BAL.Interface;
-using BAL.Manager;
+
+using BAL.Managers;
 using DAL;
 using System.Web.Http;
 

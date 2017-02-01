@@ -78,7 +78,6 @@ namespace BAL.Managers
                 var dbItem = uOW.ToDoItemRepo.GetByID(id);
 
                 dbItem.IsCompleted = isCompleted;
-                dbItem.Modified = DateTime.Now;
 
                 uOW.Save();
             }
@@ -95,7 +94,7 @@ namespace BAL.Managers
             {
                 var dbItem = uOW.ToDoItemRepo.GetByID(id);
                 dbItem.Text = text;
-                dbItem.Modified = DateTime.Now;
+
 
                 uOW.Save();
             }

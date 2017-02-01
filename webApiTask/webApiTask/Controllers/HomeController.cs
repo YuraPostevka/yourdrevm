@@ -1,6 +1,4 @@
-﻿using BAL.Interface;
-using BAL.Interfaces;
-using BAL.Manager;
+﻿using BAL.Interfaces;
 using BAL.Managers;
 using DAL;
 using Microsoft.Owin.Security;
@@ -18,6 +16,9 @@ using System.Web.Script.Serialization;
 using webApiTask.Models;
 using Microsoft.AspNet.Identity;
 using Models;
+using webApiTask.Helpers;
+using System.Configuration;
+using System.IO;
 
 namespace webApiTask.Controllers
 {
@@ -28,6 +29,8 @@ namespace webApiTask.Controllers
     {
         private IToDoItemManager itemManager;
         private IToDoListManager listManager;
+        private IUserManager userManager;
+        private IInviteUserManager inviteUserManager;
         private IAuthenticationManager authManager
         {
             get
@@ -35,16 +38,106 @@ namespace webApiTask.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="itemManager"></param>
         /// <param name="listManager"></param>
-        public HomeController(IToDoItemManager itemManager, IToDoListManager listManager)
+        /// <param name="userManager"></param>
+        public HomeController(IToDoItemManager itemManager, IToDoListManager listManager, IUserManager userManager, IInviteUserManager inviteUserManager)
         {
             this.itemManager = itemManager;
             this.listManager = listManager;
+            this.userManager = userManager;
+            this.inviteUserManager = inviteUserManager;
         }
+
+        [HttpGet]
+        public ActionResult InviteUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult InviteUser(InviteUser user)
+        {
+            inviteUserManager.CreateInvite(user);
+            return RedirectToAction("Index", "Home");
+        }
+
+        //GET: localhost/webApi/RegisterInviteUser/id
+        [HttpGet]
+        public ActionResult RegisterInviteUser(string id)
+        {
+            var inviteUser = inviteUserManager.GetByGuid(id);
+            if (inviteUser == null) { return HttpNotFound(); }
+
+            var userDb = userManager.GetByEmail(inviteUser.Email);
+            if (userDb == null)
+            {
+                userDb = new User()
+                {
+                    Email = inviteUser.Email
+                };
+                return View(userDb);
+            }
+
+            return View(userDb);
+        }
+
+        [HttpPost]
+        public ActionResult RegisterInviteUser(User user)
+        {
+            userManager.Insert(user);
+            return RedirectToAction("Index", "Home");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Photo()
+        {
+            var userId = User.Identity.GetUserId();
+            if (userId == null) { return null; }
+
+            var imgHelper = new ImageHelper();
+            var imgPath = imgHelper.GetImage(Convert.ToInt32(userId));
+
+            return View(new UserModel() { ProfileImgUrl = imgPath });
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult ConfiguringUser()
+        {
+            var id = User.Identity.GetUserId();
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var user = userManager.GetById(Convert.ToInt32(id));
+            return View(user);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="Profile"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ConfiguringUser(User user, string Profile)
+        {
+            var imgHelper = new ImageHelper();
+            imgHelper.SaveImage(user.Id, Profile);
+            return RedirectToAction("Index", "Home");
+        }
+
         /// <summary>
         /// Index page
         /// </summary>

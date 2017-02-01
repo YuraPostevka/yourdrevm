@@ -1,5 +1,4 @@
-﻿using BAL.Interface;
-using Models;
+﻿using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +11,7 @@ using webApiTask.Providers;
 using Microsoft.AspNet.Identity;
 using webApiTask.Models;
 using System.Security.Claims;
+using BAL.Interfaces;
 
 namespace webApiTask.Controllers
 {

@@ -447,10 +447,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\NLogger.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -463,7 +465,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\croppie.css" />
     <Content Include="Content\Home\Home.css" />
+    <Content Include="Content\stick\profile.jpg" />
     <Content Include="Content\stick\sctickHeader.png" />
     <Content Include="Content\stick\stickFooter.png" />
     <Content Include="favicon.ico" />
@@ -493,6 +497,8 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\croppie.js" />
+    <Content Include="Scripts\HomePage\Cropper.js" />
     <Content Include="Scripts\HomePage\HomeKO.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -531,6 +537,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\ConfiguringUser.cshtml" />
+    <Content Include="Views\Home\InviteUser.cshtml" />
+    <Content Include="Views\Home\RegisterInviteUser.cshtml" />
+    <Content Include="Views\Home\Photo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

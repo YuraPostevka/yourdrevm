@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Owin;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using BAL.Manager;
+using BAL.Managers;
 using DAL;
 using Microsoft.Owin.Security.OAuth;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class User
+    public class User : BaseEntity
     {
         [Key]
         public int Id { get; set; }
@@ -24,6 +24,5 @@ namespace Models
         public List<ToDoList> ToDoLists { get; set; }
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime Created { get; set; }
-        public DateTime? Modified { get; set; }
     }
 }

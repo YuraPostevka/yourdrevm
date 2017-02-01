@@ -46,6 +46,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,10 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IInviteUserManager.cs" />
     <Compile Include="Interfaces\IToDoItemManager.cs" />
     <Compile Include="Interfaces\IToDoListManager.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Managers\InviteUserManager.cs" />
     <Compile Include="Managers\ToDoItemManager.cs" />
     <Compile Include="Managers\ToDoListManager.cs" />
     <Compile Include="Managers\UserManager.cs" />

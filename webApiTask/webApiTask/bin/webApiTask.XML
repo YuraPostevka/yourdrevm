@@ -491,12 +491,33 @@
             Home controller
             </summary>
         </member>
-        <member name="M:webApiTask.Controllers.HomeController.#ctor(BAL.Interfaces.IToDoItemManager,BAL.Interfaces.IToDoListManager)">
+        <member name="M:webApiTask.Controllers.HomeController.#ctor(BAL.Interfaces.IToDoItemManager,BAL.Interfaces.IToDoListManager,BAL.Interfaces.IUserManager,BAL.Interfaces.IInviteUserManager)">
             <summary>
             Constructor
             </summary>
             <param name="itemManager"></param>
             <param name="listManager"></param>
+            <param name="userManager"></param>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.Photo">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.ConfiguringUser">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:webApiTask.Controllers.HomeController.ConfiguringUser(Models.User,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="user"></param>
+            <param name="Profile"></param>
+            <returns></returns>
         </member>
         <member name="M:webApiTask.Controllers.HomeController.Index">
             <summary>
@@ -659,7 +680,7 @@
             User
             </summary>
         </member>
-        <member name="M:webApiTask.Controllers.UserController.#ctor(BAL.Interface.IUserManager)">
+        <member name="M:webApiTask.Controllers.UserController.#ctor(BAL.Interfaces.IUserManager)">
              <summary>
              
              </summary>

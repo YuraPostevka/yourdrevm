@@ -234,6 +234,14 @@
     <Compile Include="Migrations\201701271950189_Automatically_Generate_CreateDate.Designer.cs">
       <DependentUpon>201701271950189_Automatically_Generate_CreateDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701301459573_AddedBaseEntityModel.cs" />
+    <Compile Include="Migrations\201701301459573_AddedBaseEntityModel.Designer.cs">
+      <DependentUpon>201701301459573_AddedBaseEntityModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701310900332_AddInviteUser.cs" />
+    <Compile Include="Migrations\201701310900332_AddInviteUser.Designer.cs">
+      <DependentUpon>201701310900332_AddInviteUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -272,6 +280,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701271950189_Automatically_Generate_CreateDate.resx">
       <DependentUpon>201701271950189_Automatically_Generate_CreateDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701301459573_AddedBaseEntityModel.resx">
+      <DependentUpon>201701301459573_AddedBaseEntityModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701310900332_AddInviteUser.resx">
+      <DependentUpon>201701310900332_AddInviteUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

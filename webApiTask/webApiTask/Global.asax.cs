@@ -1,6 +1,5 @@
-﻿using BAL.Interface;
-using BAL.Interfaces;
-using BAL.Manager;
+﻿using BAL.Interfaces;
+
 using BAL.Managers;
 using DAL;
 using DAL.Interfaces;
@@ -54,10 +53,10 @@ namespace webApiTask
                 container.Register<IUserManager, UserManager>();
                 container.Register<IToDoListManager, ToDoListManager>();
                 container.Register<IToDoItemManager, ToDoItemManager>();
-                
+                container.Register<IInviteUserManager, InviteUserManager>();
 
                 container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
-          
+
                 GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
 
                 DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));

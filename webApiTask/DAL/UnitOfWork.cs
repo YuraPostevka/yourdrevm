@@ -2,41 +2,45 @@
 using DAL.Repositories;
 using Models;
 using System;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.Linq;
 
 namespace DAL
 {
-	public class UnitOfWork : IUnitOfWork, IDisposable
-	{
-		private MainContext context;
+    public class UnitOfWork : IUnitOfWork, IDisposable
+    {
+        private MainContext context;
 
-		#region Private Repositories
+        #region Private Repositories
 
-		private IGenericRepository<User> userRepo;
+        private IGenericRepository<User> userRepo;
         private IGenericRepository<ToDoList> toDoListRepo;
         private IGenericRepository<ToDoItem> toDoItemRepo;
+        private IGenericRepository<InviteUser> inviteUserRepo;
 
         #endregion Private Repositories
 
         public UnitOfWork()
-		{
-			context = new MainContext();
+        {
+            context = new MainContext();
 
             userRepo = new GenericRepository<User>(context);
             toDoListRepo = new GenericRepository<ToDoList>(context);
             toDoItemRepo = new GenericRepository<ToDoItem>(context);
+            inviteUserRepo = new GenericRepository<InviteUser>(context);
         }
 
-		#region Repositories Getters
+        #region Repositories Getters
 
-		public IGenericRepository<User> UserRepo
-		{
-			get
-			{
-				if (userRepo == null) userRepo = new GenericRepository<User>(context);
-				return userRepo;
-			}
-		}
+        public IGenericRepository<User> UserRepo
+        {
+            get
+            {
+                if (userRepo == null) userRepo = new GenericRepository<User>(context);
+                return userRepo;
+            }
+        }
 
         public IGenericRepository<ToDoList> ToDoListRepo
         {
@@ -55,49 +59,68 @@ namespace DAL
                 return toDoItemRepo;
             }
         }
+        public IGenericRepository<InviteUser> InviteUserRepo
+        {
+            get
+            {
+                if (inviteUserRepo == null) inviteUserRepo = new GenericRepository<InviteUser>(context);
+                return inviteUserRepo;
+            }
+        }
 
         #endregion Repositories Getters
 
         public void UpdateContext()
-	    {
-	        context = new MainContext();
-	    }
-		public int Save()
-		{
-			try
-			{
-				return context.SaveChanges();
-			}
-			catch (DbEntityValidationException ex)
-			{
-			    return 0;
-			}
-		}
+        {
+            context = new MainContext();
+        }
+        public int Save()
+        {
+            try
+            {
+                UpdateTrackedEntities();
+                return context.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                return 0;
+            }
+        }
 
-		#region Dispose
+        private void UpdateTrackedEntities()
+        {
+            var entities = context.ChangeTracker.Entries().Where(x => x.State == EntityState.Modified);
 
-		// https://msdn.microsoft.com/ru-ru/library/system.idisposable(v=vs.110).aspx
+            foreach (var ent in entities)
+            {
+                ((BaseEntity)ent.Entity).Modified = DateTime.UtcNow;
+            }
+        }
 
-		private bool disposed = false;
+        #region Dispose
 
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!this.disposed)
-			{
-				if (disposing)
-				{
-					context.Dispose();
-				}
-			}
-			this.disposed = true;
-		}
+        // https://msdn.microsoft.com/ru-ru/library/system.idisposable(v=vs.110).aspx
 
-		public void Dispose()
-		{
-			Dispose(true);
-			GC.SuppressFinalize(this);
-		}
+        private bool disposed = false;
 
-		#endregion Dispose
-	}
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion Dispose
+    }
 }

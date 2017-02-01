@@ -1,12 +1,14 @@
-﻿using BAL.Interface;
-using DAL.Interfaces;
+﻿using DAL.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System;
 using BAL.Managers;
 using Models;
+using BAL.Interfaces;
+using System.Web;
+using System.IO;
 
-namespace BAL.Manager
+namespace BAL.Managers
 {
     public class UserManager : BaseManager, IUserManager
     {
@@ -48,6 +50,12 @@ namespace BAL.Manager
             return user;
         }
 
+        public User GetByEmail(string email)
+        {
+            var user = uOW.UserRepo.All.FirstOrDefault(x => x.Email == email);
+            return user;
+        }
+
         public string GetEmail(int? id)
         {
             if (id == null) return null;
@@ -62,7 +70,7 @@ namespace BAL.Manager
         /// <param name="user"></param>
         public void Update(User user)
         {
-            user.Modified = DateTime.Now;
+
             uOW.UserRepo.Update(user);
             uOW.Save();
 

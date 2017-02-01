@@ -28,7 +28,7 @@
     self.SendStatus = function (id, value) {
         $.ajax({
             type: 'POST',
-            url: '/Home/ChangeStatusOfItem',
+            url: appContext.buildUrl('Home/ChangeStatusOfItem'),
             dataType: "json",
             data: { "id": id, "IsCompleted": value },
             success: function (data) {
@@ -39,7 +39,7 @@
     self.SendItemText = function (id, value) {
         $.ajax({
             type: 'POST',
-            url: '/Home/ChangeItemText',
+            url: appContext.buildUrl('Home/ChangeItemText'),
             dataType: "json",
             data: { "id": id, "text": value },
             success: function (data) {
@@ -50,7 +50,7 @@
     self.SendListName = function (id, value) {
         $.ajax({
             type: 'POST',
-            url: '/Home/ChangeListName',
+            url: appContext.buildUrl('Home/ChangeListName'),
             dataType: "json",
             data: { "id": id, "name": value },
             success: function (data) {
@@ -66,7 +66,7 @@
         $.ajax({
             type: 'GET',
             contentType: 'application/json',
-            url: '/Home/GetAllToDoLists',
+            url: appContext.buildUrl('/Home/GetAllToDoLists'),
             dataType: 'JSON',
             success: function (data) {
 
@@ -97,7 +97,7 @@
         var id = item.Id();
         $.ajax({
             type: 'POST',
-            url: '/Home/DeleteItem',
+            url: appContext.buildUrl('Home/DeleteItem'),
             dataType: "json",
             data: { "id": id },
             success: function (data) {
@@ -114,7 +114,7 @@
         var id = list.Id();
         $.ajax({
             type: 'POST',
-            url: '/Home/DeleteList',
+            url: appContext.buildUrl('Home/DeleteList'),
             dataType: "json",
             data: { "id": id },
             success: function (data) {
@@ -147,7 +147,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/Home/AddItem',
+            url: appContext.buildUrl('Home/AddItem'),
             dataType: "json",
             data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
 
@@ -156,7 +156,7 @@
                 data.Items.push(m);
             },
             error: function (data) {
-                alert('pizda');
+                alert('oops');
             }
         });
         return data;
@@ -178,7 +178,7 @@
 
         $.ajax({
             type: 'POST',
-            url: '/Home/AddList',
+            url: appContext.buildUrl('Home/AddList'),
             dataType: "json",
             data: data,
             success: function (list) {
