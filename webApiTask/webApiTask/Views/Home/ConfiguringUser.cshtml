@@ -47,13 +47,18 @@
                 <label for="Profile" class="control-label col-md-2">FileName:</label>
 
                 <div class="col-md-10">
-                    <input name="prof" id="ProfilePicture" type="file" onchange="readFile(this);" max-size="12" />
+                    <a class="btn btn-default">
+                        <span>Upload</span>
+                        <input id="ProfilePicture" type="file" onchange="readFile(this);" max-size="12" accept="image/*" value="Choose a file" name="image"/>
+                    </a>
+                   
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-10">
-
+                    <input type="hidden" name="points" id="points" />
+                    <input type="hidden" name="zoom" id="zoom" />
                     <input type="hidden" value="" name="Profile" id="profile" />
 
                     <div id="crop_image" style="width: 300px;">
@@ -64,7 +69,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <div class="col-md-10 pull-right">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </div>

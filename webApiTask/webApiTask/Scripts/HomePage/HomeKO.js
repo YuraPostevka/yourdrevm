@@ -5,7 +5,12 @@
         'ignore': ["Created", "Modified", "IsNotify", "Priority", "NextNotifyTime", "ToDoList_Id"]
     }
 
-    var mapping = {
+    var tagMapping = {
+        'ignore': ["Created", "Modified"]
+    }
+
+
+    var listMapping = {
         'ignore': ["Created", "Modified", "User", "User_Id"],
         "Items": {
             create: function (options) {
@@ -13,8 +18,9 @@
                 return m;
             }
         },
-        "Name": {
+        'Name': {
             create: function (options) {
+
                 var m = ko.mapping.fromJS(options.data);
 
                 m.subscribe(function (newValue) {
@@ -23,12 +29,19 @@
 
                 return m;
             }
+        },
+        "Tags": {
+            create: function (options) {
+                var m = newTag(options.data);
+                return m;
+            }
         }
     }
+
     self.SendStatus = function (id, value) {
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/ChangeStatusOfItem'),
+            url: appContext.buildUrl('/Home/ChangeStatusOfItem'),
             dataType: "json",
             data: { "id": id, "IsCompleted": value },
             success: function (data) {
@@ -39,7 +52,7 @@
     self.SendItemText = function (id, value) {
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/ChangeItemText'),
+            url: appContext.buildUrl('/Home/ChangeItemText'),
             dataType: "json",
             data: { "id": id, "text": value },
             success: function (data) {
@@ -50,17 +63,18 @@
     self.SendListName = function (id, value) {
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/ChangeListName'),
+            url: appContext.buildUrl('/Home/ChangeListName'),
             dataType: "json",
             data: { "id": id, "name": value },
             success: function (data) {
 
             },
             error: function (data) {
-                alert('pizda');
+                alert('ouuuu');
             }
         });
     }
+
 
     self.loadLists = function () {
         $.ajax({
@@ -79,14 +93,14 @@
 
                 $.each(data, function (index, element) {
 
-                    var model = ko.mapping.fromJS(element, mapping);
+                    var listModel = ko.mapping.fromJS(element, listMapping);
 
-                    self.toDoLists.push(model);
+                    self.toDoLists.push(listModel);
 
                 });
             },
             error: function () {
-                console.log('shit');
+                console.log('ouuu');
             }
         });
 
@@ -97,14 +111,14 @@
         var id = item.Id();
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/DeleteItem'),
+            url: appContext.buildUrl('/Home/DeleteItem'),
             dataType: "json",
             data: { "id": id },
             success: function (data) {
 
             },
             error: function (data) {
-                alert('pizda');
+                alert('ouuu');
             }
         });
     };
@@ -114,14 +128,14 @@
         var id = list.Id();
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/DeleteList'),
+            url: appContext.buildUrl('/Home/DeleteList'),
             dataType: "json",
             data: { "id": id },
             success: function (data) {
 
             },
             error: function (data) {
-                alert('pizda');
+                alert('ooou');
             }
         });
 
@@ -142,12 +156,32 @@
         return m;
     };
 
+    var newTag = function (data) {
+        var m = ko.mapping.fromJS(data, tagMapping);
+
+        return m;
+    };
+
+    function newList(data) {
+        var self = this;
+        self.Name = ko.observable(data.Name);
+        self.Items = ko.observableArray(data.Items);
+        self.IsCompleted = ko.observable(data.IsCompleted);
+
+        self.Tags = function (tagList) {
+            this.name = ko.observableArray();
+            $.each(tagList, function (index, element) {
+                name.push(element.Name);
+            });
+
+        }
+    }
     self.AddItem = function (data) {
         var listId = data.Id();
 
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/AddItem'),
+            url: appContext.buildUrl('/Home/AddItem'),
             dataType: "json",
             data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
 
@@ -178,7 +212,7 @@
 
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('Home/AddList'),
+            url: appContext.buildUrl('/Home/AddList'),
             dataType: "json",
             data: data,
             success: function (list) {

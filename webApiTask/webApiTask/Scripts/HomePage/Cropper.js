@@ -39,6 +39,10 @@ var crop = function (src) {
         c.result('base64', 'viewport').then(function (resp) {
             var input = $('#profile');
             input.attr('value', resp);
+            var pos = c.get();
+            $('#zoom').val(pos.zoom);
+            $('#points').val(pos.points);
+
         });
     });
 }

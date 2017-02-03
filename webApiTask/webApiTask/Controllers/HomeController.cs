@@ -31,6 +31,7 @@ namespace webApiTask.Controllers
         private IToDoListManager listManager;
         private IUserManager userManager;
         private IInviteUserManager inviteUserManager;
+        private ITagManager tagManager;
         private IAuthenticationManager authManager
         {
             get
@@ -45,7 +46,7 @@ namespace webApiTask.Controllers
         /// <param name="itemManager"></param>
         /// <param name="listManager"></param>
         /// <param name="userManager"></param>
-        public HomeController(IToDoItemManager itemManager, IToDoListManager listManager, IUserManager userManager, IInviteUserManager inviteUserManager)
+        public HomeController(IToDoItemManager itemManager, IToDoListManager listManager, IUserManager userManager, IInviteUserManager inviteUserManager, ITagManager tagManager)
         {
             this.itemManager = itemManager;
             this.listManager = listManager;
@@ -131,10 +132,13 @@ namespace webApiTask.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ConfiguringUser(User user, string Profile)
+        public ActionResult ConfiguringUser(User user, string Profile, HttpPostedFileBase image, string points, string zoom)
         {
             var imgHelper = new ImageHelper();
+            //imgHelper.CropAndSaveImage(user.Id, image, points, zoom);
             imgHelper.SaveImage(user.Id, Profile);
+
+
             return RedirectToAction("Index", "Home");
         }
 
@@ -162,7 +166,8 @@ namespace webApiTask.Controllers
                     message = "You need to LogIn",
                 }, "application/json", JsonRequestBehavior.AllowGet);
             }
-            var lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
+            var lists = listManager.GetAll().Where(u => u.UserId == Convert.ToInt32(userId)).ToList();
+
 
 
             return Json(lists, "application/json", JsonRequestBehavior.AllowGet);

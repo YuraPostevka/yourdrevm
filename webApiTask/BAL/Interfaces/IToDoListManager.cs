@@ -1,4 +1,5 @@
 ﻿using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace BAL.Interfaces
 {
     public interface IToDoListManager
     {
-        List<ToDoList> GetAll();
+        List<ListTagDTO> GetAll();
         ToDoList GetById(int? id);
         ToDoList Insert(ToDoList item);
         void Delete(int? id);

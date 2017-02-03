@@ -27,3 +27,4 @@ D:\softserve\yourdrevm\webApiTask\Common\bin\Debug\EntityFramework.SqlServer.xml
 D:\softserve\yourdrevm\webApiTask\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 D:\softserve\yourdrevm\webApiTask\Common\obj\Debug\Common.dll
 D:\softserve\yourdrevm\webApiTask\Common\obj\Debug\Common.pdb
+C:\gitRepo\webApiTask\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

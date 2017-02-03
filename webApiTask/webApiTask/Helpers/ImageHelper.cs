@@ -52,5 +52,35 @@ namespace webApiTask.Helpers
             Image image = Image.FromStream(ms, true);
             return image;
         }
+        public void CropAndSaveImage(int userId, HttpPostedFileBase image, string points, string zoom)
+        {
+
+            var path = ConfigurationManager.AppSettings["directoryRoot"];
+            var directoryForUser = path + userId.ToString();
+
+            var pointsArray = points.Split(',');
+            zoom = zoom.Replace(",", ".");
+            var doubleZoom = Convert.ToDouble(zoom);
+            var originalImage = Image.FromStream(image.InputStream, true, true);
+
+            var croppedImage = CropImage(originalImage, pointsArray);
+
+            croppedImage.Save(directoryForUser + "/profile.png", ImageFormat.Png);
+
+        }
+        public Image CropImage(Image originalImage, string[] points)
+        {
+
+            var x = Convert.ToInt32(points[0]);
+            var y = Convert.ToInt32(points[1]);
+            var w = Convert.ToInt32(points[2]);
+            var h = Convert.ToInt32(points[3]);
+            Rectangle rect = new Rectangle(x, y, w, h);
+
+
+            Bitmap bmpImage = new Bitmap(originalImage);
+
+            return bmpImage.Clone(rect, bmpImage.PixelFormat);
+        }
     }
 }

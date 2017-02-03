@@ -242,6 +242,14 @@
     <Compile Include="Migrations\201701310900332_AddInviteUser.Designer.cs">
       <DependentUpon>201701310900332_AddInviteUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702031406089_addTags.cs" />
+    <Compile Include="Migrations\201702031406089_addTags.Designer.cs">
+      <DependentUpon>201702031406089_addTags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702031408036_addToDoListTag.cs" />
+    <Compile Include="Migrations\201702031408036_addToDoListTag.Designer.cs">
+      <DependentUpon>201702031408036_addToDoListTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -286,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701310900332_AddInviteUser.resx">
       <DependentUpon>201701310900332_AddInviteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702031406089_addTags.resx">
+      <DependentUpon>201702031406089_addTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702031408036_addToDoListTag.resx">
+      <DependentUpon>201702031408036_addToDoListTag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

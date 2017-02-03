@@ -56,13 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IInviteUserManager.cs" />
+    <Compile Include="Interfaces\ITagManager.cs" />
     <Compile Include="Interfaces\IToDoItemManager.cs" />
     <Compile Include="Interfaces\IToDoListManager.cs" />
+    <Compile Include="Interfaces\IToDoListTagManager.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\InviteUserManager.cs" />
+    <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Managers\ToDoItemManager.cs" />
     <Compile Include="Managers\ToDoListManager.cs" />
+    <Compile Include="Managers\ToDoListTagManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

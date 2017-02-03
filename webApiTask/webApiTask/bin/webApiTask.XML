@@ -491,7 +491,7 @@
             Home controller
             </summary>
         </member>
-        <member name="M:webApiTask.Controllers.HomeController.#ctor(BAL.Interfaces.IToDoItemManager,BAL.Interfaces.IToDoListManager,BAL.Interfaces.IUserManager,BAL.Interfaces.IInviteUserManager)">
+        <member name="M:webApiTask.Controllers.HomeController.#ctor(BAL.Interfaces.IToDoItemManager,BAL.Interfaces.IToDoListManager,BAL.Interfaces.IUserManager,BAL.Interfaces.IInviteUserManager,BAL.Interfaces.ITagManager)">
             <summary>
             Constructor
             </summary>
@@ -511,7 +511,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:webApiTask.Controllers.HomeController.ConfiguringUser(Models.User,System.String)">
+        <member name="M:webApiTask.Controllers.HomeController.ConfiguringUser(Models.User,System.String,System.Web.HttpPostedFileBase,System.String,System.String)">
             <summary>
             
             </summary>

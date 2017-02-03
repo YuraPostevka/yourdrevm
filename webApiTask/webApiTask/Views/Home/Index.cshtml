@@ -2,20 +2,16 @@
 @{
 //Layout = null;
 }
-
 @Styles.Render("~/Content/IndexPage")
-
 <link href="http://fonts.googleapis.com/css?
 family=Reenie+Beanie:regular"
       rel="stylesheet"
       type="text/css">
-
 <body>
     <label data-bind="click: $root.AddList" class="addItemLabel">Add new list</label>
     <br />
     <div class="page-content notes-board">
         <ul class="toDoList" data-bind="foreach: toDoLists">
-
             <li>
                 <a href="#">
                     <h1 class="text-center">
@@ -23,28 +19,22 @@ family=Reenie+Beanie:regular"
                         <span data-bind="inline: Name" class="text-center"></span>
                         <span class="iconRight" data-bind="click: $root.removeList"><strong>X</strong></span>
                         <span class="btn glyphicon glyphicon-plus" data-bind="click: $root.AddItem.bind($data)"></span>
-
                     </h1>
-
+                    <ul data-bind="foreach: Tags">
+                        <li><span data-bind="text: Name"></span></li>
+                    </ul>
                     <ul class="items" data-bind="foreach: Items">
-
                         <li>
                             <input type="checkbox" data-bind="checked: IsCompleted" />
                             <label data-bind="inline: Text, css: {lineThrough:  IsCompleted} "></label>
                             <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
                         </li>
-
                     </ul>
-
                 </a>
             </li>
-
         </ul>
     </div>
-
 </body>
-
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/knockout")
 @Scripts.Render("~/bundles/knockoutHomePage")
-

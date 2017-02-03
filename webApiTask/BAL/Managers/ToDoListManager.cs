@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using DAL.Interfaces;
+using Models.DTO;
 
 namespace BAL.Managers
 {
@@ -34,11 +35,28 @@ namespace BAL.Managers
         /// Get all todo lists
         /// </summary>
         /// <returns></returns>
-        public List<ToDoList> GetAll()
+        public List<ListTagDTO> GetAll()
         {
-            List<ToDoList> toDoList = uOW.ToDoListRepo.Get(includeProperties: "Items").ToList();
+            var result = new List<ListTagDTO>();
+            List<ToDoList> toDoLists = uOW.ToDoListRepo.Get(includeProperties: "Items").ToList();
 
-            return toDoList;
+            foreach (var list in toDoLists)
+            {
+                var listTag = new ListTagDTO();
+                listTag.Items = list.Items;
+                listTag.Name = list.Name;
+                listTag.UserId = list.User_Id;
+
+                //get ids of tags with list
+                 var ids = uOW.ToDoListsTagsRepo.All.Where(i => i.ToDoListId == list.Id).Select(i=>i.TagId).ToList();
+                //get tags with list
+                var tags = uOW.TagRepo.All.Where(m => ids.Contains(m.Id)).ToList();
+
+                listTag.Tags.AddRange(tags);
+
+                result.Add(listTag);
+            }
+            return result;
         }
 
         /// <summary>
