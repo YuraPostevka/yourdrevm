@@ -15,12 +15,17 @@ namespace BAL.Managers
         {
         }
 
-        public void Delete(int id)
+        public void Delete(string name, int listId)
         {
-            uOW.TagRepo.Delete(id);
-            //var tgs = uOW.ToDoListsTagsRepo.All.Where(i => i.TagId == id);
+            if (name == null) return;
+            var tagId = GetByName(name).Id;
 
-            uOW.Save();
+            var taglistdb = uOW.ToDoListsTagsRepo.All.Where(i => i.TagId == tagId && i.ToDoListId == listId).FirstOrDefault();
+            uOW.ToDoListsTagsRepo.Delete(taglistdb);
+            // uOW.Save();
+
+            //правильно видаляти теги
+
         }
 
         public List<Tag> GetAll(int toDoListId)
@@ -28,11 +33,26 @@ namespace BAL.Managers
             return uOW.TagRepo.All.ToList();
         }
 
-        public Tag Insert(Tag item, int toDoListId)
+        public Tag Insert(string tag, int toDoListId)
         {
-            uOW.TagRepo.Insert(item);
+            //check if name is exist in db
+            Tag newTag = new Tag()
+            {
+                Name = tag
+            };
+            uOW.TagRepo.Insert(newTag);
             uOW.Save();
-            return item;
+
+            uOW.ToDoListsTagsRepo.Insert(new ToDoListsTags() { TagId = newTag.Id, ToDoListId = toDoListId });
+            uOW.Save();
+
+            return newTag;
+        }
+        public Tag GetByName(string name)
+        {
+            if (name == null) return null;
+            var tag = uOW.TagRepo.All.FirstOrDefault(n => n.Name == name);
+            return tag;
         }
     }
 }

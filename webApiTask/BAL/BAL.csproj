@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DbExtensions, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DbExtensions.6.0.0\lib\net45\DbExtensions.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="Interfaces\IInviteUserManager.cs" />
     <Compile Include="Interfaces\ITagManager.cs" />
     <Compile Include="Interfaces\IToDoItemManager.cs" />
@@ -68,6 +73,7 @@
     <Compile Include="Managers\ToDoListManager.cs" />
     <Compile Include="Managers\ToDoListTagManager.cs" />
     <Compile Include="Managers\UserManager.cs" />
+    <Compile Include="MappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

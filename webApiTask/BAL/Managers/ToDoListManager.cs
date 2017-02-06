@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Models;
 using DAL.Interfaces;
 using Models.DTO;
+using AutoMapper;
 
 namespace BAL.Managers
 {
@@ -42,13 +43,10 @@ namespace BAL.Managers
 
             foreach (var list in toDoLists)
             {
-                var listTag = new ListTagDTO();
-                listTag.Items = list.Items;
-                listTag.Name = list.Name;
-                listTag.UserId = list.User_Id;
+                var listTag = Mapper.Map<ListTagDTO>(list);
 
                 //get ids of tags with list
-                 var ids = uOW.ToDoListsTagsRepo.All.Where(i => i.ToDoListId == list.Id).Select(i=>i.TagId).ToList();
+                var ids = uOW.ToDoListsTagsRepo.All.Where(i => i.ToDoListId == list.Id).Select(i => i.TagId).ToList();
                 //get tags with list
                 var tags = uOW.TagRepo.All.Where(m => ids.Contains(m.Id)).ToList();
 
@@ -74,7 +72,7 @@ namespace BAL.Managers
         /// Insert todo list
         /// </summary>
         /// <param name="item"></param>
-        public ToDoList Insert(ToDoList item)
+        public ListTagDTO Insert(ToDoList item)
         {
 
             if (item == null) return null;
@@ -82,7 +80,8 @@ namespace BAL.Managers
             uOW.ToDoListRepo.Insert(item);
             uOW.Save();
 
-            return item;
+            var mappedItem = Mapper.Map<ListTagDTO>(item);
+            return mappedItem;
         }
 
         /// <summary>

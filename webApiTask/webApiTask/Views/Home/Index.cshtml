@@ -7,34 +7,59 @@
 family=Reenie+Beanie:regular"
       rel="stylesheet"
       type="text/css">
+<link href="~/Content/Home/jquery.tag-editor.css" rel="stylesheet" type="text/css" />
+
 <body>
-    <label data-bind="click: $root.AddList" class="addItemLabel">Add new list</label>
+
+    <div class="page-content notes-board" data-bind="template: { name:'notes-board', data: $data}">
+    </div>
+
     <br />
-    <div class="page-content notes-board">
-        <ul class="toDoList" data-bind="foreach: toDoLists">
+    <script type="text/html" id="notes-board">
+
+        <label data-bind="click: $root.AddList" class="addItemLabel">Add new list</label>
+
+        <ul class="toDoList" data-bind="foreach:{data: toDoLists }">
+
             <li>
-                <a href="#">
+
+                <a>
                     <h1 class="text-center">
 
                         <span data-bind="inline: Name" class="text-center"></span>
                         <span class="iconRight" data-bind="click: $root.removeList"><strong>X</strong></span>
-                        <span class="btn glyphicon glyphicon-plus" data-bind="click: $root.AddItem.bind($data)"></span>
+                        <span class="btn glyphicon glyphicon-plus" data-bind="click: $root.AddItem.bind($data.Items)"></span>
                     </h1>
-                    <ul data-bind="foreach: Tags">
-                        <li><span data-bind="text: Name"></span></li>
-                    </ul>
-                    <ul class="items" data-bind="foreach: Items">
+
+                    @*<ul data-bind="foreach: Tags" class="tags">
+                            <li><span data-bind="text: Name"></span></li>
+                        </ul>*@
+
+                    <div data-bind="template: { afterRender: bindTagsEditor }">
+                        <input type="text" class="tag-editor" />
+                    </div>
+
+                    <ul class="items" data-bind="foreach: {data:Items }">
                         <li>
                             <input type="checkbox" data-bind="checked: IsCompleted" />
                             <label data-bind="inline: Text, css: {lineThrough:  IsCompleted} "></label>
                             <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
                         </li>
                     </ul>
+
                 </a>
             </li>
+
         </ul>
-    </div>
+    </script>
+
 </body>
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/knockout")
-@Scripts.Render("~/bundles/knockoutHomePage")
+
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/HomePage/jquery.tag-editor.min.js"></script>
+    <script src="~/Scripts/HomePage/jquery.tag-editor.js"></script>
+    <script src="~/Scripts/HomePage/jquery.caret.min.js"></script>
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/knockoutHomePage")
+}

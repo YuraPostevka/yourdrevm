@@ -1,4 +1,5 @@
-﻿using BAL.Interfaces;
+﻿using BAL;
+using BAL.Interfaces;
 
 using BAL.Managers;
 using DAL;
@@ -28,7 +29,7 @@ namespace webApiTask
         protected void Application_Start()
         {
             InjectorContainer();
-
+            AutoMapperConfig.Configure();
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

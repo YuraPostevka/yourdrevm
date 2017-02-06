@@ -51,6 +51,7 @@ namespace webApiTask.Controllers
             this.itemManager = itemManager;
             this.listManager = listManager;
             this.userManager = userManager;
+            this.tagManager = tagManager;
             this.inviteUserManager = inviteUserManager;
         }
 
@@ -166,7 +167,7 @@ namespace webApiTask.Controllers
                     message = "You need to LogIn",
                 }, "application/json", JsonRequestBehavior.AllowGet);
             }
-            var lists = listManager.GetAll().Where(u => u.UserId == Convert.ToInt32(userId)).ToList();
+            var lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
 
 
 
@@ -234,6 +235,14 @@ namespace webApiTask.Controllers
             listManager.Delete(id);
             return Json("");
         }
+
+        public JsonResult AddTag(string tag, int listId)
+        {
+            var item = tagManager.Insert(tag, listId);
+
+            return Json(item, JsonRequestBehavior.AllowGet);
+        }
+
         /// <summary>
         /// Add new item
         /// </summary>

@@ -1,13 +1,3 @@
-C:\gitRepo\webApiTask\TestApp\bin\Debug\TestApp.exe.config
-C:\gitRepo\webApiTask\TestApp\bin\Debug\TestApp.exe
-C:\gitRepo\webApiTask\TestApp\bin\Debug\TestApp.pdb
-C:\gitRepo\webApiTask\TestApp\bin\Debug\Models.dll
-C:\gitRepo\webApiTask\TestApp\bin\Debug\RestSharp.dll
-C:\gitRepo\webApiTask\TestApp\bin\Debug\Models.pdb
-C:\gitRepo\webApiTask\TestApp\bin\Debug\RestSharp.xml
-C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
-C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.exe
-C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.pdb
 D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\qwerty.mdf
 D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\qwerty_log.ldf
 D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\TestApp.exe.config
@@ -20,3 +10,13 @@ D:\softserve\yourdrevm\webApiTask\TestApp\bin\Debug\RestSharp.xml
 D:\softserve\yourdrevm\webApiTask\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
 D:\softserve\yourdrevm\webApiTask\TestApp\obj\Debug\TestApp.exe
 D:\softserve\yourdrevm\webApiTask\TestApp\obj\Debug\TestApp.pdb
+C:\gitRepo\webApiTask\TestApp\bin\Debug\TestApp.exe.config
+C:\gitRepo\webApiTask\TestApp\bin\Debug\TestApp.exe
+C:\gitRepo\webApiTask\TestApp\bin\Debug\TestApp.pdb
+C:\gitRepo\webApiTask\TestApp\bin\Debug\Models.dll
+C:\gitRepo\webApiTask\TestApp\bin\Debug\RestSharp.dll
+C:\gitRepo\webApiTask\TestApp\bin\Debug\Models.pdb
+C:\gitRepo\webApiTask\TestApp\bin\Debug\RestSharp.xml
+C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
+C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.exe
+C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.pdb

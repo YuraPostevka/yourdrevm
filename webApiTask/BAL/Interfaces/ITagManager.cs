@@ -10,7 +10,8 @@ namespace BAL.Interfaces
     public interface ITagManager
     {
         List<Tag> GetAll(int toDoListId);
-        Tag Insert(Tag item, int toDoListId);
-        void Delete(int id);
+        Tag Insert(string item, int toDoListId);
+        void Delete(string name, int listId);
+        Tag GetByName(string name);
     }
 }

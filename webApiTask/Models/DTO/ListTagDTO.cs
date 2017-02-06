@@ -13,7 +13,9 @@ namespace Models.DTO
             Tags = new List<Tag>();
             Items = new List<ToDoItem>();
         }
-        public int UserId { get; set; }
+
+        public int Id { get; set;}
+        public int User_Id { get; set; }
         public  string Name { get; set; }
         public List<ToDoItem> Items { get; set; }
         public List<Tag> Tags { get; set; }

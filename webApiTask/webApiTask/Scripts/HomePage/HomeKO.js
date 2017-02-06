@@ -1,6 +1,10 @@
 ﻿function viewModel() {
     var self = this;
 
+    self.bindTagsEditor = function () {
+
+    }
+
     var itemMapping = {
         'ignore': ["Created", "Modified", "IsNotify", "Priority", "NextNotifyTime", "ToDoList_Id"]
     }
@@ -12,6 +16,7 @@
 
     var listMapping = {
         'ignore': ["Created", "Modified", "User", "User_Id"],
+
         "Items": {
             create: function (options) {
                 var m = newItem(options.data);
@@ -36,6 +41,7 @@
                 return m;
             }
         }
+
     }
 
     self.SendStatus = function (id, value) {
@@ -93,7 +99,7 @@
 
                 $.each(data, function (index, element) {
 
-                    var listModel = ko.mapping.fromJS(element, listMapping);
+                    var listModel = newList(element);
 
                     self.toDoLists.push(listModel);
 
@@ -142,6 +148,8 @@
     };
 
 
+
+
     var newItem = function (data) {
         var m = ko.mapping.fromJS(data, itemMapping);
 
@@ -156,26 +164,74 @@
         return m;
     };
 
+    var newList = function (data) {
+        var m = ko.mapping.fromJS(data, listMapping);
+
+        var tags = [];
+        $.each(m.Tags(), function (index, element) {
+            tags.push(element.Name());
+        });
+
+        m.bindTagsEditor = function (elements) {
+            $.each(elements, function (index, elem) {
+                if (elem.nodeName == "INPUT") {
+
+                    $(elem).tagEditor({
+                        initialTags: tags,
+                        placeholder: 'Enter tags ...',
+
+                        beforeTagDelete: function (field, editor, tags, val) {
+
+                            if (true) $('#response').prepend('Tag ' + val + ' deleted.');
+                            else $('#response').prepend('Removal of ' + val + ' discarded.');
+
+
+                            self.removeTag(val, m.Id());
+                        },
+
+                        beforeTagSave: function (field, editor, tags, tag, val) {
+                            $('#response').prepend('Tag ' + val + ' saved' + (tag ? ' over ' + tag : '') + '.');
+
+                            self.addTag(val, m.Id());
+                        },
+
+                    });
+                }
+            });
+        }
+        return m;
+    };
+
+    self.removeTag = function (value) {
+
+    };
+
+    self.addTag = function (value, listId) {
+
+
+
+        $.ajax({
+            type: 'POST',
+            url: appContext.buildUrl('/Home/AddTag'),
+            dataType: "json",
+            data: { 'tag': value, 'listId': listId },
+            success: function (item) {
+
+            },
+            error: function (data) {
+                alert('oops');
+            }
+        });
+    };
+
+
     var newTag = function (data) {
         var m = ko.mapping.fromJS(data, tagMapping);
 
         return m;
     };
 
-    function newList(data) {
-        var self = this;
-        self.Name = ko.observable(data.Name);
-        self.Items = ko.observableArray(data.Items);
-        self.IsCompleted = ko.observable(data.IsCompleted);
 
-        self.Tags = function (tagList) {
-            this.name = ko.observableArray();
-            $.each(tagList, function (index, element) {
-                name.push(element.Name);
-            });
-
-        }
-    }
     self.AddItem = function (data) {
         var listId = data.Id();
 
@@ -217,7 +273,7 @@
             data: data,
             success: function (list) {
 
-                var model = ko.mapping.fromJS(list, mapping);
+                var model = newList(list);
 
                 self.toDoLists.push(model);
             }
@@ -259,8 +315,14 @@
 
     self.toDoLists = ko.observableArray();
 }
+
+
 var vm = new viewModel();
+
 $(function () {
+
+
+
     vm.loadLists();
     ko.applyBindings(vm);
 })

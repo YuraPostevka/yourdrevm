@@ -12,7 +12,7 @@ namespace BAL.Interfaces
     {
         List<ListTagDTO> GetAll();
         ToDoList GetById(int? id);
-        ToDoList Insert(ToDoList item);
+        ListTagDTO Insert(ToDoList item);
         void Delete(int? id);
         void ChangeName(int id, string name);
     }
