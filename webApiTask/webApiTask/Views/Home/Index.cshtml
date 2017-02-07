@@ -17,6 +17,10 @@ family=Reenie+Beanie:regular"
     <br />
     <script type="text/html" id="notes-board">
 
+
+        <h1 class="tagName"></h1>
+
+
         <label data-bind="click: $root.AddList" class="addItemLabel">Add new list</label>
 
         <ul class="toDoList" data-bind="foreach:{data: toDoLists }">
@@ -35,10 +39,11 @@ family=Reenie+Beanie:regular"
                             <li><span data-bind="text: Name"></span></li>
                         </ul>*@
 
-                    <div data-bind="template: { afterRender: bindTagsEditor }">
-                        <input type="text" class="tag-editor" />
+                    <div data-bind="template:{ afterRender: findTag}">
+                        <div data-bind="template: { afterRender: bindTagsEditor  }">
+                            <input type="text" class="tag-editor" />
+                        </div>
                     </div>
-
                     <ul class="items" data-bind="foreach: {data:Items }">
                         <li>
                             <input type="checkbox" data-bind="checked: IsCompleted" />
@@ -62,4 +67,10 @@ family=Reenie+Beanie:regular"
     <script src="~/Scripts/HomePage/jquery.caret.min.js"></script>
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/knockoutHomePage")
+
+    <script>
+
+
+
+    </script>
 }

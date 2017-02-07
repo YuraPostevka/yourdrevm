@@ -148,8 +148,6 @@
     };
 
 
-
-
     var newItem = function (data) {
         var m = ko.mapping.fromJS(data, itemMapping);
 
@@ -173,24 +171,17 @@
         });
 
         m.bindTagsEditor = function (elements) {
+
             $.each(elements, function (index, elem) {
                 if (elem.nodeName == "INPUT") {
-
                     $(elem).tagEditor({
                         initialTags: tags,
                         placeholder: 'Enter tags ...',
 
                         beforeTagDelete: function (field, editor, tags, val) {
-
-                            if (true) $('#response').prepend('Tag ' + val + ' deleted.');
-                            else $('#response').prepend('Removal of ' + val + ' discarded.');
-
-
                             self.removeTag(val, m.Id());
                         },
-
                         beforeTagSave: function (field, editor, tags, tag, val) {
-                            $('#response').prepend('Tag ' + val + ' saved' + (tag ? ' over ' + tag : '') + '.');
 
                             self.addTag(val, m.Id());
                         },
@@ -199,23 +190,72 @@
                 }
             });
         }
+        m.findTag = function () {
+
+            $('.tag-editor-tag').each(function () {
+                $(this).click(function () {
+                    tagName = $(this).html();
+
+                    $.ajax({
+                        type: 'GET',
+                        url: appContext.buildUrl('/Home/GetAllToDoLists'),
+                        dataType: "json",
+                        data: { 'tagName': tagName },
+                        success: function (data) {
+
+                            self.toDoLists.removeAll();
+
+                            $.each(data, function (index, element) {
+
+                                var listModel = newList(element);
+
+                                self.toDoLists.push(listModel);
+
+                                $('.tagName').empty();
+                                $('.tagName').append("#" + tagName + "<span onclick = 'vm.RefreshLists();' style='cursor:pointer; font-size=20px;'><i></i></span>");
+                            });
+
+                        },
+                        error: function (data) {
+                            alert('oops');
+                        }
+                    });
+
+                });
+            });
+
+        }
         return m;
     };
 
-    self.removeTag = function (value) {
+    self.RefreshLists = function () {
+        self.loadLists();
+        $('.tagName').empty();
+    }
 
+    self.removeTag = function (value, listId) {
+
+        $.ajax({
+            type: 'POST',
+            url: appContext.buildUrl('/Home/DeleteTag'),
+            dataType: "json",
+            data: { 'tag': value, 'listId': listId },
+            success: function (data) {
+
+            },
+            error: function (data) {
+                alert('oops');
+            }
+        });
     };
 
     self.addTag = function (value, listId) {
-
-
-
         $.ajax({
             type: 'POST',
             url: appContext.buildUrl('/Home/AddTag'),
             dataType: "json",
             data: { 'tag': value, 'listId': listId },
-            success: function (item) {
+            success: function (data) {
 
             },
             error: function (data) {
@@ -320,8 +360,6 @@
 var vm = new viewModel();
 
 $(function () {
-
-
 
     vm.loadLists();
     ko.applyBindings(vm);

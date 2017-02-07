@@ -20,12 +20,13 @@ namespace BAL.Managers
             if (name == null) return;
             var tagId = GetByName(name).Id;
 
+            if (tagId == 0) return;
+
             var taglistdb = uOW.ToDoListsTagsRepo.All.Where(i => i.TagId == tagId && i.ToDoListId == listId).FirstOrDefault();
+            if (taglistdb == null) return;
             uOW.ToDoListsTagsRepo.Delete(taglistdb);
-            // uOW.Save();
 
-            //правильно видаляти теги
-
+            uOW.Save();
         }
 
         public List<Tag> GetAll(int toDoListId)
@@ -33,21 +34,48 @@ namespace BAL.Managers
             return uOW.TagRepo.All.ToList();
         }
 
-        public Tag Insert(string tag, int toDoListId)
+        public Tag Insert(Tag tag, int toDoListId)
         {
             //check if name is exist in db
-            Tag newTag = new Tag()
+            var tagDb = uOW.TagRepo.All.Where(n => n.Name == tag.Name).FirstOrDefault();
+
+            if (tagDb != null)
+            {
+                return tagDb;
+            }
+            else
+            {
+                //insert new tag
+                uOW.TagRepo.Insert(tag);
+                uOW.Save();
+            }
+
+            return tag;
+        }
+
+        public void AttachToList(string tag, int toDoListId)
+        {
+            var Tag = new Tag()
             {
                 Name = tag
             };
-            uOW.TagRepo.Insert(newTag);
-            uOW.Save();
 
-            uOW.ToDoListsTagsRepo.Insert(new ToDoListsTags() { TagId = newTag.Id, ToDoListId = toDoListId });
-            uOW.Save();
+            // inserted/returned tag
+            var tagDb = Insert(Tag, toDoListId);
+            //check if relationship is exist
+            var tagsLists = uOW.ToDoListsTagsRepo.All.FirstOrDefault(i => i.TagId == tagDb.Id && i.ToDoListId == toDoListId);
+            //if true, return
+            if (tagsLists != null) return;
 
-            return newTag;
+            //else, insert new relationship
+            else
+            {
+                uOW.ToDoListsTagsRepo.Insert(new ToDoListsTags() { TagId = tagDb.Id, ToDoListId = toDoListId });
+                uOW.Save();
+            }
+
         }
+
         public Tag GetByName(string name)
         {
             if (name == null) return null;

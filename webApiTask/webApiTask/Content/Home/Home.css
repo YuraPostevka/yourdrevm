@@ -10,9 +10,36 @@ body {
     background: #666;
     color: #fff;
 }
-.tags li{
-    list-style:none !important;
-    padding:0 !important;
+
+.tagName {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    color: #0C9CCC;
+}
+
+    .tagName i {
+        line-height: 18px;
+        display: inline-block;
+    }
+
+        .tagName i:before {
+            font-size: 35px;
+            color: #0C9CCC;
+            content: "×";
+            font-style: normal;
+        }
+
+    /*.tagName>i:hover {
+            color: #d65454;
+        }*/
+    .tagName span {
+        margin-right: 5px !important;
+    }
+
+.tags li {
+    list-style: none !important;
+    padding: 0 !important;
 }
 
 input[type="submit"] {
@@ -59,7 +86,7 @@ a {
         text-decoration: none;
         text-shadow: none;
         display: inline-block;
-        cursor:pointer;
+        cursor: pointer;
     }
 
 .iconRight {

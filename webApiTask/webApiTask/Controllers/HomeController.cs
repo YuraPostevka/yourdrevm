@@ -19,6 +19,7 @@ using Models;
 using webApiTask.Helpers;
 using System.Configuration;
 using System.IO;
+using Models.DTO;
 
 namespace webApiTask.Controllers
 {
@@ -157,7 +158,7 @@ namespace webApiTask.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public JsonResult GetAllToDoLists()
+        public JsonResult GetAllToDoLists(string tagName)
         {
             var userId = User.Identity.GetUserId();
             if (userId == null)
@@ -167,9 +168,15 @@ namespace webApiTask.Controllers
                     message = "You need to LogIn",
                 }, "application/json", JsonRequestBehavior.AllowGet);
             }
-            var lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
-
-
+            List<ListTagDTO> lists;
+            if (tagName == null)
+            {
+                lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
+            }
+            else
+            {
+                lists = listManager.GetListsByTagName(tagName);
+            }
 
             return Json(lists, "application/json", JsonRequestBehavior.AllowGet);
         }
@@ -238,9 +245,15 @@ namespace webApiTask.Controllers
 
         public JsonResult AddTag(string tag, int listId)
         {
-            var item = tagManager.Insert(tag, listId);
+            tagManager.AttachToList(tag, listId);
 
-            return Json(item, JsonRequestBehavior.AllowGet);
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult DeleteTag(string tag, int listId)
+        {
+            tagManager.Delete(tag, listId);
+
+            return Json("", JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>

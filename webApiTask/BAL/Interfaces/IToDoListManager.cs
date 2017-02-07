@@ -15,5 +15,6 @@ namespace BAL.Interfaces
         ListTagDTO Insert(ToDoList item);
         void Delete(int? id);
         void ChangeName(int id, string name);
+        List<ListTagDTO> GetListsByTagName(string tagName);
     }
 }
