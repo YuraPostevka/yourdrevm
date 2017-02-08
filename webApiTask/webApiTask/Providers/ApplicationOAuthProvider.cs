@@ -20,10 +20,10 @@ namespace webApiTask.Providers
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
-        
+
         public ApplicationOAuthProvider(string publicClientId)
         {
-           
+
             if (publicClientId == null)
             {
                 throw new ArgumentNullException("publicClientId");

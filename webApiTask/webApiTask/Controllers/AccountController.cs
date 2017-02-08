@@ -16,7 +16,9 @@ using Microsoft.Owin.Security.OAuth;
 using webApiTask.Models;
 using webApiTask.Providers;
 using webApiTask.Results;
-
+using BAL.Interfaces;
+using BAL.Managers;
+using DAL;
 
 namespace webApiTask.Controllers
 {
@@ -29,7 +31,7 @@ namespace webApiTask.Controllers
 
         public AccountController()
         {
-
+            
         }
 
         public AccountController(ApplicationUserManager userManager,
@@ -428,6 +430,52 @@ namespace webApiTask.Controllers
             return null;
         }
 
+        [HttpPost]
+        public IHttpActionResult Login(LoginBindingModel model)
+        {
+
+            var userManager = new UserManager(new UnitOfWork());
+            var userDb = userManager.Find(model.Email, model.Password);
+
+            if (userDb == null) return NotFound();
+
+            ApplicationUser user = new ApplicationUser()
+            {
+                Id = userDb.Id.ToString(),
+                UserName = userDb.Email,
+                Email = userDb.Email
+            };
+
+            //ClaimsIdentity claim = new ClaimsIdentity(OAuthDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            //claim.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString(), ClaimValueTypes.String));
+            //claim.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email, ClaimValueTypes.String));
+            //claim.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
+            //    "OWIN Provider", ClaimValueTypes.String));
+
+
+            ClaimsIdentity cookiesIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            cookiesIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString(), ClaimValueTypes.String));
+            cookiesIdentity.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email, ClaimValueTypes.String));
+            cookiesIdentity.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
+                "OWIN Provider", ClaimValueTypes.String)); 
+
+            AuthenticationProperties properties = CreateProperties(user.UserName);
+            //AuthenticationTicket ticket = new AuthenticationTicket(claim, properties);
+
+
+            Authentication.SignIn(new AuthenticationProperties { IsPersistent = true }, cookiesIdentity);
+
+            return Ok();
+        }
+        public static AuthenticationProperties CreateProperties(string userName)
+        {
+            IDictionary<string, string> data = new Dictionary<string, string>
+            {
+                { "userName", userName }
+            };
+            return new AuthenticationProperties(data);
+        }
+
         private class ExternalLoginData
         {
             public string LoginProvider { get; set; }
@@ -476,6 +524,7 @@ namespace webApiTask.Controllers
             }
         }
 
+
         private static class RandomOAuthStateGenerator
         {
             private static RandomNumberGenerator _random = new RNGCryptoServiceProvider();
@@ -496,6 +545,7 @@ namespace webApiTask.Controllers
                 return HttpServerUtility.UrlTokenEncode(data);
             }
         }
+
 
         #endregion
     }

@@ -274,11 +274,15 @@
 
     self.AddItem = function (data) {
         var listId = data.Id();
+        var token = appContext.token;
+        var headers = {};
+        headers.Authorization = 'bearer ' + token;
 
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('/Home/AddItem'),
+            url: appContext.buildUrl('/api/ToDoItem'),
             dataType: "json",
+            headers:headers,
             data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
 
             success: function (item) {
@@ -354,6 +358,12 @@
 
 
     self.toDoLists = ko.observableArray();
+
+   
+
+    
+
+
 }
 
 
@@ -364,4 +374,6 @@ $(function () {
     vm.loadLists();
     ko.applyBindings(vm);
 })
+
+
 

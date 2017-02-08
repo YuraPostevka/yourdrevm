@@ -5,6 +5,7 @@
 /// <reference path="homepage/homeko.js" />
 /// <reference path="homepage/jquery.caret.min.js" />
 /// <reference path="homepage/jquery.tag-editor.min.js" />
+/// <reference path="jquery.cookie.js" />
 /// <reference path="jquery-3.1.1.js" />
 /// <reference path="jquery-3.1.1.min.js" />
 /// <reference path="jquery-3.1.1.slim.min.js" />

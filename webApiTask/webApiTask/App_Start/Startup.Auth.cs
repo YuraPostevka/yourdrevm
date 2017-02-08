@@ -48,8 +48,8 @@ namespace webApiTask
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);
 
-            app.UseBasicAuthentication(new BasicAuthenticationOptions("SecureApi",
-                 async (username, password) => await Authenticate(username, password)));
+            //app.UseBasicAuthentication(new BasicAuthenticationOptions("SecureApi",
+            //     async (username, password) => await Authenticate(username, password)));
             //app.UseBasicAuthentication(new BasicAuthenticationOptions("SecureApi",
             //    async (username, password) => await Authenticate(username, password)));
 

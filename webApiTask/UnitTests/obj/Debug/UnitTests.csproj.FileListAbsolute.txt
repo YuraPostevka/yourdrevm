@@ -42,7 +42,6 @@ C:\gitRepo\webApiTask\UnitTests\bin\Debug\Newtonsoft.Json.dll
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\System.Net.Http.Formatting.dll
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\EntityFramework.dll
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
-C:\gitRepo\webApiTask\UnitTests\bin\Debug\Thinktecture.IdentityModel.Owin.BasicAuthentication.dll
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\System.Web.Http.WebHost.dll
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\SimpleInjector.Integration.Web.dll
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\DAL.dll
@@ -79,7 +78,6 @@ C:\gitRepo\webApiTask\UnitTests\bin\Debug\Newtonsoft.Json.xml
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\System.Net.Http.Formatting.xml
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\EntityFramework.xml
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-C:\gitRepo\webApiTask\UnitTests\bin\Debug\Thinktecture.IdentityModel.Owin.BasicAuthentication.pdb
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\System.Web.Http.WebHost.xml
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\SimpleInjector.Integration.Web.xml
 C:\gitRepo\webApiTask\UnitTests\bin\Debug\DAL.pdb

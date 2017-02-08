@@ -1,5 +1,7 @@
 ﻿using BAL.Interfaces;
+using Microsoft.AspNet.Identity;
 using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ using System.Web.Http.Description;
 
 namespace webApiTask.Controllers
 {
+    [Authorize]
     public class ToDoListController : ApiController
     {
         private IToDoListManager toDoListManager;
@@ -25,13 +28,28 @@ namespace webApiTask.Controllers
         /// <returns></returns>
         // GET: api/ToDoList
         [ResponseType(typeof(List<ToDoList>))]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult GetAll(string tagName)
         {
             try
             {
-                var todoLists = toDoListManager.GetAll();
-                if (todoLists != null) return Ok(todoLists);
-                else { return NotFound(); }
+                var userId = User.Identity.GetUserId();
+                if (userId == null)
+                {
+                    return Json(new
+                    {
+                        message = "You need to LogIn"
+                    });
+                }
+                List<ListTagDTO> lists;
+                if (tagName == null)
+                {
+                    lists = toDoListManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
+                }
+                else
+                {
+                    lists = toDoListManager.GetListsByTagName(tagName);
+                }
+                return Ok(lists);
             }
             catch { return NotFound(); }
         }
@@ -85,7 +103,7 @@ namespace webApiTask.Controllers
                 return Ok();
             }
             catch { return InternalServerError(); }
-          
+
         }
 
         /// <summary>
@@ -101,7 +119,7 @@ namespace webApiTask.Controllers
                 return Ok();
             }
             catch { return InternalServerError(); }
-           
+
         }
     }
 }

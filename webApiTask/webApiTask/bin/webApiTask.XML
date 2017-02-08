@@ -644,7 +644,7 @@
             </summary>
             <param name="id"></param>
         </member>
-        <member name="M:webApiTask.Controllers.ToDoListController.GetAll">
+        <member name="M:webApiTask.Controllers.ToDoListController.GetAll(System.String)">
             <summary>
             Get all Todo lists
             </summary>

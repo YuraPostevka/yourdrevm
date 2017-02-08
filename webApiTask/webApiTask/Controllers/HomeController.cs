@@ -26,6 +26,7 @@ namespace webApiTask.Controllers
     /// <summary>
     /// Home controller
     /// </summary>
+
     public class HomeController : BaseController
     {
         private IToDoItemManager itemManager;
@@ -59,7 +60,11 @@ namespace webApiTask.Controllers
         [HttpGet]
         public ActionResult InviteUser()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]
@@ -315,11 +320,11 @@ namespace webApiTask.Controllers
                 Email = userDb.Email
             };
 
-            ClaimsIdentity claim = new ClaimsIdentity(OAuthDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
-            claim.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString(), ClaimValueTypes.String));
-            claim.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email, ClaimValueTypes.String));
-            claim.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
-                "OWIN Provider", ClaimValueTypes.String));
+            //ClaimsIdentity claim = new ClaimsIdentity(OAuthDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
+            //claim.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString(), ClaimValueTypes.String));
+            //claim.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email, ClaimValueTypes.String));
+            //claim.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
+            //    "OWIN Provider", ClaimValueTypes.String));
 
 
             ClaimsIdentity cookiesIdentity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationType, ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
@@ -328,12 +333,12 @@ namespace webApiTask.Controllers
             cookiesIdentity.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider",
                 "OWIN Provider", ClaimValueTypes.String));
 
-
-
             AuthenticationProperties properties = CreateProperties(user.UserName);
-            AuthenticationTicket ticket = new AuthenticationTicket(claim, properties);
-            authManager.SignIn(new AuthenticationProperties { IsPersistent = true }, cookiesIdentity);
+            //AuthenticationTicket ticket = new AuthenticationTicket(claim, properties);
 
+
+            authManager.SignIn(new AuthenticationProperties { IsPersistent = true }, cookiesIdentity);
+     
             return RedirectToAction("Index", "Home");
         }
 

@@ -13,7 +13,7 @@ namespace webApiTask.Controllers
     /// <summary>
     /// ToDoItem
     /// </summary>
-
+    [Authorize]
     public class ToDoItemController : ApiController
     {
         private IToDoItemManager toDoItemMngr;
