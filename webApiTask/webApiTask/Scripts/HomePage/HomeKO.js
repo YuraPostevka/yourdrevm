@@ -48,6 +48,7 @@
         $.ajax({
             type: 'POST',
             url: appContext.buildUrl('/Home/ChangeStatusOfItem'),
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
             data: { "id": id, "IsCompleted": value },
             success: function (data) {
@@ -59,6 +60,7 @@
         $.ajax({
             type: 'POST',
             url: appContext.buildUrl('/Home/ChangeItemText'),
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
             data: { "id": id, "text": value },
             success: function (data) {
@@ -68,10 +70,10 @@
     }
     self.SendListName = function (id, value) {
         $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/Home/ChangeListName'),
+            type: 'PUT',
+            url: appContext.buildUrl('/api/lists/changeListName/' + id + '/' + value),
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
-            data: { "id": id, "name": value },
             success: function (data) {
 
             },
@@ -86,7 +88,8 @@
         $.ajax({
             type: 'GET',
             contentType: 'application/json',
-            url: appContext.buildUrl('/Home/GetAllToDoLists'),
+            url: appContext.buildUrl('/api/lists'),
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: 'JSON',
             success: function (data) {
 
@@ -116,16 +119,16 @@
 
         var id = item.Id();
         $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/Home/DeleteItem'),
+            type: 'Delete',
+            url: appContext.buildUrl('/api/Item/') + id,
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
-            data: { "id": id },
-            success: function (data) {
+            statusCode: {
+                404: function () {
 
-            },
-            error: function (data) {
-                alert('ouuu');
+                }
             }
+
         });
     };
 
@@ -133,16 +136,15 @@
         self.toDoLists.remove(list);
         var id = list.Id();
         $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/Home/DeleteList'),
+            type: 'Delete',
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
+            url: appContext.buildUrl('/api/lists/Delete/') + id,
             dataType: "json",
-            data: { "id": id },
-            success: function (data) {
-
+            statusCode: {
+                404: function () {
+                    console.log('404 Not Found');
+                }
             },
-            error: function (data) {
-                alert('ooou');
-            }
         });
 
     };
@@ -190,17 +192,19 @@
                 }
             });
         }
+
         m.findTag = function () {
 
             $('.tag-editor-tag').each(function () {
                 $(this).click(function () {
                     tagName = $(this).html();
-
+                    var token = appContext.token;
                     $.ajax({
                         type: 'GET',
-                        url: appContext.buildUrl('/Home/GetAllToDoLists'),
+                        url: appContext.buildUrl('/api/lists/GetByName/' + tagName),
+                        beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + token); },
                         dataType: "json",
-                        data: { 'tagName': tagName },
+
                         success: function (data) {
 
                             self.toDoLists.removeAll();
@@ -254,6 +258,7 @@
             type: 'POST',
             url: appContext.buildUrl('/Home/AddTag'),
             dataType: "json",
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             data: { 'tag': value, 'listId': listId },
             success: function (data) {
 
@@ -274,15 +279,11 @@
 
     self.AddItem = function (data) {
         var listId = data.Id();
-        var token = appContext.token;
-        var headers = {};
-        headers.Authorization = 'bearer ' + token;
-
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('/api/ToDoItem'),
+            url: appContext.buildUrl('/api/Item'),
             dataType: "json",
-            headers:headers,
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
 
             success: function (item) {
@@ -312,7 +313,8 @@
 
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('/Home/AddList'),
+            url: appContext.buildUrl('/api/ToDoList'),
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
             data: data,
             success: function (list) {
@@ -359,9 +361,9 @@
 
     self.toDoLists = ko.observableArray();
 
-   
 
-    
+
+
 
 
 }

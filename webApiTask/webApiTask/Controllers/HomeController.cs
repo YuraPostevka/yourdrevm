@@ -159,33 +159,6 @@ namespace webApiTask.Controllers
         }
 
         /// <summary>
-        /// Get all toDoLists
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public JsonResult GetAllToDoLists(string tagName)
-        {
-            var userId = User.Identity.GetUserId();
-            if (userId == null)
-            {
-                return Json(new
-                {
-                    message = "You need to LogIn",
-                }, "application/json", JsonRequestBehavior.AllowGet);
-            }
-            List<ListTagDTO> lists;
-            if (tagName == null)
-            {
-                lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
-            }
-            else
-            {
-                lists = listManager.GetListsByTagName(tagName);
-            }
-
-            return Json(lists, "application/json", JsonRequestBehavior.AllowGet);
-        }
-        /// <summary>
         /// Change status of isCompleted property in todoItem
         /// </summary>
         /// <param name="id"></param>
@@ -211,42 +184,8 @@ namespace webApiTask.Controllers
             return Json("");
         }
 
-        /// <summary>
-        /// Change list name
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult ChangeListName(int id, string name)
-        {
-            listManager.ChangeName(id, name);
-            return Json("");
-        }
 
-        /// <summary>
-        /// Delete item
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult DeleteItem(int? id)
-        {
-            itemManager.Delete(id);
-            return Json("");
-        }
 
-        /// <summary>
-        /// Delete list
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult DeleteList(int? id)
-        {
-            listManager.Delete(id);
-            return Json("");
-        }
 
         public JsonResult AddTag(string tag, int listId)
         {
@@ -259,33 +198,6 @@ namespace webApiTask.Controllers
             tagManager.Delete(tag, listId);
 
             return Json("", JsonRequestBehavior.AllowGet);
-        }
-
-        /// <summary>
-        /// Add new item
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult AddItem(ToDoItem item)
-        {
-            var result = itemManager.Insert(item);
-
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }
-
-        /// <summary>
-        /// Add new list
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult AddList(ToDoList list)
-        {
-            list.User_Id = Convert.ToInt32(User.Identity.GetUserId());
-            var result = listManager.Insert(list);
-
-            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>
@@ -338,7 +250,7 @@ namespace webApiTask.Controllers
 
 
             authManager.SignIn(new AuthenticationProperties { IsPersistent = true }, cookiesIdentity);
-     
+
             return RedirectToAction("Index", "Home");
         }
 

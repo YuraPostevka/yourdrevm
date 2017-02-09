@@ -1,125 +1,75 @@
 ﻿using BAL.Interfaces;
 using Microsoft.AspNet.Identity;
 using Models;
-using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Description;
 
 namespace webApiTask.Controllers
 {
-    [Authorize]
+    [RoutePrefix("api/lists")]
     public class ToDoListController : ApiController
     {
-        private IToDoListManager toDoListManager;
+        private IToDoListManager listManager;
 
-        public ToDoListController(IToDoListManager toDoListManager)
+        public ToDoListController(IToDoListManager listManager)
         {
-            this.toDoListManager = toDoListManager;
+            this.listManager = listManager;
         }
 
-        /// <summary>
-        /// Get all Todo lists
-        /// </summary>
-        /// <returns></returns>
+        [Route("")]
         // GET: api/ToDoList
-        [ResponseType(typeof(List<ToDoList>))]
-        public IHttpActionResult GetAll(string tagName)
+        public IHttpActionResult Get()
         {
-            try
+            var userId = User.Identity.GetUserId();
+            if (userId == null)
             {
-                var userId = User.Identity.GetUserId();
-                if (userId == null)
+                return Json(new
                 {
-                    return Json(new
-                    {
-                        message = "You need to LogIn"
-                    });
-                }
-                List<ListTagDTO> lists;
-                if (tagName == null)
-                {
-                    lists = toDoListManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
-                }
-                else
-                {
-                    lists = toDoListManager.GetListsByTagName(tagName);
-                }
-                return Ok(lists);
+                    message = "You need to LogIn",
+                });
             }
-            catch { return NotFound(); }
+
+            var lists = listManager.GetAll().Where(u => u.User_Id == Convert.ToInt32(userId)).ToList();
+            return Ok(lists);
         }
 
-        /// <summary>
-        /// Get Todo list by id
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         // GET: api/ToDoList/5
-        [ResponseType(typeof(ToDoList))]
-        public IHttpActionResult Get(int id)
+        [HttpGet]
+        [Route("GetByName/{tagName}")]
+        public IHttpActionResult Get(string tagName)
         {
-            try
-            {
-                var list = toDoListManager.GetById(id);
-                if (list != null) return Ok(list);
-                else { return NotFound(); }
-            }
-            catch
-            {
-                return NotFound();
-            }
+            var lists = listManager.GetListsByTagName(tagName);
+            return Ok(lists);
         }
 
-        /// <summary>
-        /// Insert Todo list
-        /// </summary>
-        /// <param name="toDoList"></param>
         // POST: api/ToDoList
-        public IHttpActionResult Post(ToDoList toDoList)
+        public IHttpActionResult Post(ToDoList list)
         {
-            try
-            {
-                toDoListManager.Insert(toDoList);
-                return Ok();
-            }
-            catch { return InternalServerError(); }
+            list.User_Id = Convert.ToInt32(User.Identity.GetUserId());
+            var result = listManager.Insert(list);
+
+            return Ok(result);
         }
 
-        /// <summary>
-        /// Update Todo list
-        /// </summary>
-        /// <param name="toDoList"></param>
         // PUT: api/ToDoList/5
-        public IHttpActionResult Put(ToDoList toDoList)
+        [Route("changeListName/{id}/{value}")]
+        public IHttpActionResult Put(int id, string value)
         {
-            try
-            {
-                //toDoListManager.ChangeName(toDoList);
-                return Ok();
-            }
-            catch { return InternalServerError(); }
-
+            listManager.ChangeName(id, value);
+            return Ok();
         }
 
-        /// <summary>
-        /// Delete Todo list
-        /// </summary>
-        /// <param name="id"></param>
         // DELETE: api/ToDoList/5
+        [HttpDelete]
+        [Route("Delete/{id:int}")]
         public IHttpActionResult Delete(int id)
         {
-            try
-            {
-                toDoListManager.Delete(id);
-                return Ok();
-            }
-            catch { return InternalServerError(); }
-
+            listManager.Delete(id);
+            return Ok();
         }
     }
 }

@@ -25,11 +25,18 @@ namespace webApiTask
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+           // config.Routes.MapHttpRoute(
+           //    name: "Route",
+           //    routeTemplate: "api/{ToDoList}/{tagName}",
+           //    defaults: new { tagName = RouteParameter.Optional }
+           //);
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }

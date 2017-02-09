@@ -88,7 +88,6 @@ namespace webApiTask.Controllers
             {
                 return InternalServerError();
             }
-
         }
         /// <summary>
         /// Update user

@@ -525,12 +525,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:webApiTask.Controllers.HomeController.GetAllToDoLists(System.String)">
-            <summary>
-            Get all toDoLists
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:webApiTask.Controllers.HomeController.ChangeStatusOfItem(System.Int32,System.Boolean)">
             <summary>
             Change status of isCompleted property in todoItem
@@ -547,40 +541,11 @@
             <param name="text"></param>
             <returns></returns>
         </member>
-        <member name="M:webApiTask.Controllers.HomeController.ChangeListName(System.Int32,System.String)">
-            <summary>
-            Change list name
-            </summary>
-            <param name="id"></param>
-            <param name="name"></param>
-            <returns></returns>
-        </member>
         <member name="M:webApiTask.Controllers.HomeController.DeleteItem(System.Nullable{System.Int32})">
             <summary>
             Delete item
             </summary>
             <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.HomeController.DeleteList(System.Nullable{System.Int32})">
-            <summary>
-            Delete list
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.HomeController.AddItem(Models.ToDoItem)">
-            <summary>
-            Add new item
-            </summary>
-            <param name="item"></param>
-            <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.HomeController.AddList(Models.ToDoList)">
-            <summary>
-            Add new list
-            </summary>
-            <param name="list"></param>
             <returns></returns>
         </member>
         <member name="M:webApiTask.Controllers.HomeController.Login">
@@ -601,79 +566,6 @@
             Logout
             </summary>
             <returns></returns>
-        </member>
-        <member name="T:webApiTask.Controllers.ToDoItemController">
-            <summary>
-            ToDoItem
-            </summary>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoItemController.GetAll">
-            <summary>
-            Getl all Todo items
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoItemController.Get(System.Int32)">
-             <summary>
-            Get todo item by id
-             </summary>
-             <param name="id"></param>
-             <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoItemController.Post(Models.ToDoItem)">
-            <summary>
-            Insert Todo items
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoItemController.Put(Models.ToDoItem)">
-            <summary>
-            
-            </summary>
-            <param name="item"></param>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoItemController.MarkAsCompleted(System.Int32)">
-            <summary>
-            Mark as completed
-            </summary>
-            <param name="id"></param>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoItemController.Delete(System.Int32)">
-            <summary>
-            Delete Todo item
-            </summary>
-            <param name="id"></param>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoListController.GetAll(System.String)">
-            <summary>
-            Get all Todo lists
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoListController.Get(System.Int32)">
-            <summary>
-            Get Todo list by id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoListController.Post(Models.ToDoList)">
-            <summary>
-            Insert Todo list
-            </summary>
-            <param name="toDoList"></param>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoListController.Put(Models.ToDoList)">
-            <summary>
-            Update Todo list
-            </summary>
-            <param name="toDoList"></param>
-        </member>
-        <member name="M:webApiTask.Controllers.ToDoListController.Delete(System.Int32)">
-            <summary>
-            Delete Todo list
-            </summary>
-            <param name="id"></param>
         </member>
         <member name="T:webApiTask.Controllers.UserController">
             <summary>
