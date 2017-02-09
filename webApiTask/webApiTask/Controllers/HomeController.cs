@@ -221,6 +221,7 @@ namespace webApiTask.Controllers
         public ActionResult Logout()
         {
             authManager.SignOut(CookieAuthenticationDefaults.AuthenticationType);
+            HttpContext.Response.Cookies.Set(new HttpCookie("token") { Value = string.Empty });
             return RedirectToAction("Index", "Home");
         }
 
