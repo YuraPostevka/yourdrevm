@@ -9,8 +9,10 @@ using System.Web.Http;
 namespace webApiTask.Controllers
 {
     [Authorize]
+    [RoutePrefix("api/tags")]
     public class TagController : ApiController
     {
+
         private ITagManager tagManager;
         public TagController(ITagManager tagManager)
         {
@@ -18,31 +20,38 @@ namespace webApiTask.Controllers
         }
 
         // GET: api/Tag
-        public IEnumerable<string> Get()
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok();
         }
 
         // GET: api/Tag/5
-        public string Get(string tagName)
+        public IHttpActionResult Get(string tagName)
         {
-            return "tag";
+            return Ok();
         }
 
         // POST: api/Tag
-        public void Post(string tag, int listId)
+        [Route("addTag/{tag}/{listId}")]
+        public IHttpActionResult Post(string tag, int listId)
         {
             tagManager.AttachToList(tag, listId);
+            return Ok();
         }
 
         // PUT: api/Tag/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(int id, [FromBody]string value)
         {
+            return Ok();
         }
 
+
+        [Route("removeTag/{tag}/{listId}")]
         // DELETE: api/Tag/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(string tag, int listId)
         {
+            tagManager.Delete(tag, listId);
+            return Ok();
         }
     }
 }

@@ -46,25 +46,27 @@
 
     self.SendStatus = function (id, value) {
         $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/Home/ChangeStatusOfItem'),
+            type: 'PUT',
+            url: appContext.buildUrl('/api/items/SetStatus/') + id + '/' + value,
             beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
-            data: { "id": id, "IsCompleted": value },
-            success: function (data) {
+            statusCode: {
+                404: function () {
 
+                }
             }
         });
     }
     self.SendItemText = function (id, value) {
         $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/Home/ChangeItemText'),
+            type: 'PUT',
+            url: appContext.buildUrl('/api/items/SetText/') + id + '/' + value,
             beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
-            data: { "id": id, "text": value },
-            success: function (data) {
+            statusCode: {
+                404: function () {
 
+                }
             }
         });
     }
@@ -240,15 +242,14 @@
     self.removeTag = function (value, listId) {
 
         $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/Home/DeleteTag'),
+            type: 'Delete',
+            url: appContext.buildUrl('/api/tags/removeTag/') + value + '/' + listId,
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
             dataType: "json",
-            data: { 'tag': value, 'listId': listId },
-            success: function (data) {
+            statusCode: {
+                404: function () {
 
-            },
-            error: function (data) {
-                alert('oops');
+                }
             }
         });
     };
@@ -256,15 +257,13 @@
     self.addTag = function (value, listId) {
         $.ajax({
             type: 'POST',
-            url: appContext.buildUrl('/Home/AddTag'),
+            url: appContext.buildUrl('/api/tags/addTag/') + value + '/' + listId,
             dataType: "json",
             beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
-            data: { 'tag': value, 'listId': listId },
-            success: function (data) {
+            statusCode: {
+                404: function () {
 
-            },
-            error: function (data) {
-                alert('oops');
+                }
             }
         });
     };

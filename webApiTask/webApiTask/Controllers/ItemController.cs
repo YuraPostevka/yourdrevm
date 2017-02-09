@@ -40,8 +40,20 @@ namespace webApiTask.Controllers
         }
 
         // PUT: api/Item/5
-        public IHttpActionResult Put(int id, [FromBody]string value)
+        [HttpPut]
+        [Route("SetStatus/{itemId}/{isCompleted}")]
+        public IHttpActionResult PutStatus(int itemId, bool isCompleted)
         {
+            itemManager.ChangeCompletedItem(itemId, isCompleted);
+            return Ok();
+        }
+        // PUT: api/Item/5
+        [HttpPut]
+        [Route("SetText/{itemId}/{text}")]
+        public IHttpActionResult PutText(int itemId, string text)
+        {
+            itemManager.ChangeItemText(itemId, text);
+
             return Ok();
         }
 

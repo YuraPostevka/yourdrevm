@@ -158,47 +158,7 @@ namespace webApiTask.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Change status of isCompleted property in todoItem
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="isCompleted"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult ChangeStatusOfItem(int id, bool isCompleted)
-        {
-            itemManager.ChangeCompletedItem(id, isCompleted);
-            return Json("");
-        }
 
-        /// <summary>
-        /// Change item text
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="text"></param>
-        /// <returns></returns>
-        [HttpPost]
-        public JsonResult ChangeItemText(int id, string text)
-        {
-            itemManager.ChangeItemText(id, text);
-            return Json("");
-        }
-
-
-
-
-        public JsonResult AddTag(string tag, int listId)
-        {
-            tagManager.AttachToList(tag, listId);
-
-            return Json("", JsonRequestBehavior.AllowGet);
-        }
-        public JsonResult DeleteTag(string tag, int listId)
-        {
-            tagManager.Delete(tag, listId);
-
-            return Json("", JsonRequestBehavior.AllowGet);
-        }
 
         /// <summary>
         /// Login page
