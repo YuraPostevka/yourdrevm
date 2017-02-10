@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="DTO\ListTagDTO.cs" />
+    <Compile Include="DTO\TopTags.cs" />
     <Compile Include="InviteUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tag.cs" />

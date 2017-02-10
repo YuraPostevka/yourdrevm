@@ -195,3 +195,14 @@ a {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
 }
+
+#topTags {
+    float: right;
+}
+
+    #topTags:hover, #topTags:focus {
+        opacity: 0.8;
+        cursor: pointer;
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+    }

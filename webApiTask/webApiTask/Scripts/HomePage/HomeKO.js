@@ -108,6 +108,8 @@
 
                     self.toDoLists.push(listModel);
 
+                    //GetAllTags(listModel);
+
                 });
             },
             error: function () {
@@ -166,6 +168,24 @@
         return m;
     };
 
+
+
+
+    var TagsForAutoComplete = [];
+    self.GetAllTags = function () {
+        $.ajax({
+            type: 'GET',
+            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
+            url: appContext.buildUrl('/api/Tag'),
+            dataType: "json",
+            success: function (data) {
+                $.each(data, function (index, element) {
+                    TagsForAutoComplete.push(element.Name);
+                });
+            },
+        });
+    }
+
     var newList = function (data) {
         var m = ko.mapping.fromJS(data, listMapping);
 
@@ -176,11 +196,19 @@
 
         m.bindTagsEditor = function (elements) {
 
+            var tagsForAutocmplete
+
             $.each(elements, function (index, elem) {
                 if (elem.nodeName == "INPUT") {
+
                     $(elem).tagEditor({
                         initialTags: tags,
                         placeholder: 'Enter tags ...',
+                        autocomplete: {
+                            delay: 0,
+                            position: { collision: 'flip' },
+                            source: TagsForAutoComplete
+                        },
 
                         beforeTagDelete: function (field, editor, tags, val) {
                             self.removeTag(val, m.Id());
@@ -196,7 +224,6 @@
         }
 
         m.findTag = function () {
-
             $('.tag-editor-tag').each(function () {
                 $(this).click(function () {
                     tagName = $(this).html();
@@ -359,12 +386,6 @@
 
 
     self.toDoLists = ko.observableArray();
-
-
-
-
-
-
 }
 
 
@@ -373,6 +394,7 @@ var vm = new viewModel();
 $(function () {
 
     vm.loadLists();
+    vm.GetAllTags();
     ko.applyBindings(vm);
 })
 

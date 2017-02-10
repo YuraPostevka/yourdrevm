@@ -11,6 +11,13 @@ family=Reenie+Beanie:regular"
 
 <body>
 
+    <label id="topTags" onclick="Show_Hide()">Top 10 tags</label>
+
+    <div class="row topTags" style="display:none;">
+        @Html.Partial("_TopTags")
+    </div>
+  
+
     <div class="page-content notes-board" data-bind="template: { name:'notes-board', data: $data}">
     </div>
 
@@ -22,6 +29,7 @@ family=Reenie+Beanie:regular"
 
 
         <label data-bind="click: $root.AddList" class="addItemLabel">Add new list</label>
+
 
         <ul class="toDoList" data-bind="foreach:{data: toDoLists }">
 
@@ -64,12 +72,14 @@ family=Reenie+Beanie:regular"
     <script src="~/Scripts/HomePage/jquery.tag-editor.min.js"></script>
     <script src="~/Scripts/HomePage/jquery.tag-editor.js"></script>
     <script src="~/Scripts/HomePage/jquery.caret.min.js"></script>
+    <script src="~/Scripts/HomePage/TopTags.js"></script>
+    <script src="~/Scripts/jquery.canvasjs.min.js"></script>
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/knockoutHomePage")
 
     <script>
-
-
-
+        $(document).ready(function () {
+         
+        });
     </script>
 }

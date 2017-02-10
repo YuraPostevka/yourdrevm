@@ -22,7 +22,16 @@ namespace webApiTask.Controllers
         // GET: api/Tag
         public IHttpActionResult Get()
         {
-            return Ok();
+            var tags = tagManager.GetAll();
+            return Ok(tags);
+        }
+
+        // GET: api/Tag
+        [Route("getTop10")]
+        public IHttpActionResult GetTop10()
+        {
+            var tags = tagManager.GetTop10();
+            return Ok(tags);
         }
 
         // GET: api/Tag/5

@@ -540,6 +540,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\canvasjs.min.js" />
     <Content Include="Scripts\croppie.js" />
     <Content Include="Scripts\HomePage\Cropper.js" />
     <Content Include="Scripts\HomePage\HomeKO.js" />
@@ -555,12 +556,14 @@
     <Content Include="Scripts\HomePage\jquery.caret.min.js" />
     <Content Include="Scripts\HomePage\jquery.tag-editor.js" />
     <Content Include="Scripts\HomePage\jquery.tag-editor.min.js" />
+    <Content Include="Scripts\HomePage\TopTags.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.canvasjs.min.js" />
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\knockout-3.4.1.debug.js" />
     <Content Include="Scripts\knockout-3.4.1.js" />
@@ -590,6 +593,7 @@
     <Content Include="Views\Home\InviteUser.cshtml" />
     <Content Include="Views\Home\RegisterInviteUser.cshtml" />
     <Content Include="Views\Home\Photo.cshtml" />
+    <Content Include="Views\Home\_TopTags.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

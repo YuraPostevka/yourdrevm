@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using DAL.Interfaces;
+using System.Data.SqlClient;
+using System.Configuration;
+using Models.DTO;
 
 namespace BAL.Managers
 {
@@ -29,7 +32,7 @@ namespace BAL.Managers
             uOW.Save();
         }
 
-        public List<Tag> GetAll(int toDoListId)
+        public List<Tag> GetAll()
         {
             return uOW.TagRepo.All.ToList();
         }
@@ -81,6 +84,37 @@ namespace BAL.Managers
             if (name == null) return null;
             var tag = uOW.TagRepo.All.FirstOrDefault(n => n.Name == name);
             return tag;
+        }
+        public List<TopTags> GetTop10()
+        {
+            var result = new List<TopTags>();
+            using (SqlConnection conn = new SqlConnection(@"Data Source=CH976\SQLEXPRESS;Initial Catalog=Schedules;User ID=yourdrevm;Password=qwerty"))
+            {
+                conn.Open();
+                var query = @"select top 10 ToDoListsTags.TagId, COUNT(*) as CountOf, Tags.Name
+                            from ToDoListsTags
+
+                             INNER JOIN Tags
+                              on ToDoListsTags.TagId = Tags.Id
+
+
+                            group by TagId, Tags.Name
+                            order by COUNT(*) DESC";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        var tag = new TopTags();
+
+                        tag.Count = reader.GetInt32(1);
+                        tag.Name = reader.GetString(2);
+
+                        result.Add(tag);
+                    }
+                }
+            }
+            return result;
         }
     }
 }
