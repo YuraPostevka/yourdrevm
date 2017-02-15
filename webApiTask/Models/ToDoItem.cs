@@ -24,6 +24,7 @@ namespace Models
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime Created { get; set; }
 
+        public DateTime? NotifyTime { get; set; }
 
     }
 }

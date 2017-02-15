@@ -5,7 +5,7 @@
             text: "Top 10 Tags"
         },
 
-        theme: "theme1",
+        theme: "theme2",
         animationEnabled: true,
 
         data: [

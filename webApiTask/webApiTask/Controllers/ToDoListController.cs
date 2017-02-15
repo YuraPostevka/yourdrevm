@@ -10,6 +10,7 @@ using System.Web.Http;
 
 namespace webApiTask.Controllers
 {
+    [Authorize]
     [RoutePrefix("api/lists")]
     public class ToDoListController : ApiController
     {

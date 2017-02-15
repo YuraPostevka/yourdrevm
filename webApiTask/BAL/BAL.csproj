@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="Interfaces\IInviteUserManager.cs" />
+    <Compile Include="Interfaces\INotificationServiceManager.cs" />
     <Compile Include="Interfaces\ITagManager.cs" />
     <Compile Include="Interfaces\IToDoItemManager.cs" />
     <Compile Include="Interfaces\IToDoListManager.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\InviteUserManager.cs" />
+    <Compile Include="Managers\NotificationServiceManager.cs" />
     <Compile Include="Managers\TagManager.cs" />
     <Compile Include="Managers\ToDoItemManager.cs" />
     <Compile Include="Managers\ToDoListManager.cs" />

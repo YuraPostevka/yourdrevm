@@ -1,6 +1,7 @@
 ﻿using BAL.Managers;
 using DAL.Interfaces;
 using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,7 @@ namespace BAL.Interfaces
         void ChangeItemText(int id, string text);
         void ChangeCompletedItem(int id, bool isCompleted);
         List<ToDoItem> GetNotCompletedItems();
+
+        void SetNotify(SetNotificationDTO model);
     }
 }

@@ -354,6 +354,7 @@
 
     };
 
+
     ko.bindingHandlers.inline = {
         init: function (element, valueAccessor) {
             var span = $(element);
@@ -386,7 +387,43 @@
 
 
     self.toDoLists = ko.observableArray();
+
+
+    self.bindNotification = function (data) {
+
+        var element = $('.modal-content')[0];
+
+        ko.cleanNode(element);
+        data.picker = function () {
+            $('#datetime24').combodate({ maxYear: 2020 });
+        }
+
+        data.SendNotification = function () {
+            var time = $('#datetime24').combodate('getValue', null);
+            var itemId = $('#itemId').val();
+
+            var data = JSON.stringify({ ItemId:itemId, Date:time });
+            $.ajax({
+                type: 'PUT',
+                contentType:"application/json",
+                url: appContext.buildUrl('/api/items/SetNotify'),
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
+                dataType: "JSON",
+                data: data,
+
+                success: function () {
+
+                }
+
+            });
+
+        }
+
+        ko.applyBindings(data, element);
+    }
+
 }
+
 
 
 var vm = new viewModel();
@@ -395,7 +432,7 @@ $(function () {
 
     vm.loadLists();
     vm.GetAllTags();
-    ko.applyBindings(vm);
+    ko.applyBindings(vm, $('.notes-board')[0]);
 })
 
 

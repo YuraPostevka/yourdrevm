@@ -1,5 +1,6 @@
 ﻿using BAL.Interfaces;
 using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace webApiTask.Controllers
             return Ok(result);
         }
 
-        // PUT: api/Item/5
+
         [HttpPut]
         [Route("SetStatus/{itemId}/{isCompleted}")]
         public IHttpActionResult PutStatus(int itemId, bool isCompleted)
@@ -47,13 +48,22 @@ namespace webApiTask.Controllers
             itemManager.ChangeCompletedItem(itemId, isCompleted);
             return Ok();
         }
-        // PUT: api/Item/5
+
         [HttpPut]
         [Route("SetText/{itemId}/{text}")]
         public IHttpActionResult PutText(int itemId, string text)
         {
             itemManager.ChangeItemText(itemId, text);
 
+            return Ok();
+        }
+
+
+        [HttpPut]
+        [Route("SetNotify")]
+        public IHttpActionResult PutNotify(SetNotificationDTO notification)
+        {
+            itemManager.SetNotify(notification);
             return Ok();
         }
 

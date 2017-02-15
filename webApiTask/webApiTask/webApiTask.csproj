@@ -542,6 +542,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\canvasjs.min.js" />
     <Content Include="Scripts\croppie.js" />
+    <Content Include="Scripts\HomePage\combodate.js" />
     <Content Include="Scripts\HomePage\Cropper.js" />
     <Content Include="Scripts\HomePage\HomeKO.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -556,6 +557,7 @@
     <Content Include="Scripts\HomePage\jquery.caret.min.js" />
     <Content Include="Scripts\HomePage\jquery.tag-editor.js" />
     <Content Include="Scripts\HomePage\jquery.tag-editor.min.js" />
+    <Content Include="Scripts\HomePage\moment.js" />
     <Content Include="Scripts\HomePage\TopTags.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -594,11 +596,10 @@
     <Content Include="Views\Home\RegisterInviteUser.cshtml" />
     <Content Include="Views\Home\Photo.cshtml" />
     <Content Include="Views\Home\_TopTags.cshtml" />
+    <Content Include="Views\Home\_SetNotification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

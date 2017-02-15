@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
+using Models.DTO;
 
 namespace BAL.Managers
 {
@@ -100,6 +101,16 @@ namespace BAL.Managers
             }
             catch { }
 
+        }
+
+        public void SetNotify(SetNotificationDTO model)
+        {
+            var dbItem = uOW.ToDoItemRepo.GetByID(model.ItemId);
+
+            dbItem.IsNotify = true;
+            dbItem.NotifyTime = model.Date;
+
+            uOW.Save();
         }
     }
 }

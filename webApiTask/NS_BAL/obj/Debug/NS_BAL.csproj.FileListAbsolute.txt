@@ -1,0 +1,4 @@
+C:\gitRepo\webApiTask\NS_BAL\bin\Debug\NS_BAL.dll
+C:\gitRepo\webApiTask\NS_BAL\bin\Debug\NS_BAL.pdb
+C:\gitRepo\webApiTask\NS_BAL\obj\Debug\NS_BAL.dll
+C:\gitRepo\webApiTask\NS_BAL\obj\Debug\NS_BAL.pdb

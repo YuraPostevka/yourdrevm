@@ -17,8 +17,16 @@ namespace webApiTask
                       "~/Scripts/knockout-{version}.js",
                       "~/Scripts/knockout.mapping-latest.debug.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/knockoutHomePage").Include(
-                        "~/Scripts/HomePage/HomeKO.js"));
+            bundles.Add(new ScriptBundle("~/bundles/HomePage").Include(
+                        "~/Scripts/HomePage/HomeKO.js",
+
+                        "~/Scripts/HomePage/jquery.tag-editor.min.js",
+                        "~/Scripts/HomePage/jquery.tag-editor.js",
+                        "~/Scripts/HomePage/jquery.caret.min.js",
+                        "~/Scripts/HomePage/TopTags.js",
+                        "~/Scripts/jquery.canvasjs.min.js",
+                        "~/Scripts/HomePage/combodate.js",
+                        "~/Scripts/HomePage/moment.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
