@@ -1,7 +1,10 @@
-﻿using BAL.Managers;
+﻿using BAL.Interfaces;
+using BAL.Managers;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
@@ -39,13 +42,24 @@ namespace NotificationService
 
         private void CheckAndSendNotifications()
         {
-            NotificationServiceManager.WriteErrorLog("Timer ticked and job has been started: " + Thread.CurrentThread.ManagedThreadId);
+            var email = ConfigurationManager.AppSettings["Email"];
+            var pass = ConfigurationManager.AppSettings["Password"];
+            try
+            {
+                var serviceManager = new NotificationServiceManager(new UnitOfWork());
+                //send notification
+                serviceManager.GetNotifyItem(email, pass);
+            }
+            catch (Exception ex)
+            {
+                NotificationServiceManager.WriteErrorLog(ex);
+            }
         }
 
         protected override void OnStop()
         {
             tokenSource.Cancel();
-            NotificationServiceManager.WriteErrorLog("Service stopped.");
+            NotificationServiceManager.WriteLog("Service stopped.");
         }
     }
 }

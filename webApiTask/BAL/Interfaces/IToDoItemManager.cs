@@ -20,6 +20,7 @@ namespace BAL.Interfaces
         void ChangeCompletedItem(int id, bool isCompleted);
         List<ToDoItem> GetNotCompletedItems();
 
-        void SetNotify(SetNotificationDTO model);
+        void SubmitNotify(SetNotificationDTO model);
+        void DismissNotify(int itemId);
     }
 }

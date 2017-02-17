@@ -50,3 +50,4 @@ C:\gitRepo\webApiTask\BAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.dll
 C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.pdb
+C:\gitRepo\webApiTask\BAL\bin\Debug\System.Linq.Dynamic.dll

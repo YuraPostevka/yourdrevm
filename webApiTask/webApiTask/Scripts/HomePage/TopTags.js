@@ -10,7 +10,7 @@
 
         data: [
         {
-            type: "column",
+            type: "pie",
             dataPoints: [
 { label: tags[0].Name, y: tags[0].Count },
 { label: tags[1].Name, y: tags[1].Count },

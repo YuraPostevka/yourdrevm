@@ -9,6 +9,7 @@ namespace BAL.Interfaces
 {
     public interface INotificationServiceManager
     {
-        void SendNotification(Notify item);
+        void GetNotifyItem(string mail, string password);
+        void SendNotification(Notify item, string mail, string password);
     }
 }

@@ -11,6 +11,10 @@ body {
     color: #fff;
 }
 
+.notes-board .isNotify {
+    color: gray;
+}
+
 .glyphicon {
     font-size: 19px;
     margin: 1px;
@@ -45,9 +49,6 @@ body {
             font-style: normal;
         }
 
-    /*.tagName>i:hover {
-            color: #d65454;
-        }*/
     .tagName span {
         margin-right: 5px !important;
     }

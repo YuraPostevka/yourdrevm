@@ -2,7 +2,6 @@
 @{
 //Layout = null;
 }
-@Styles.Render("~/Content/IndexPage")
 <link href="http://fonts.googleapis.com/css?
 family=Reenie+Beanie:regular"
       rel="stylesheet"
@@ -44,10 +43,10 @@ family=Reenie+Beanie:regular"
                         <input type="text" class="tag-editor" />
                     </div>
                 </div>
-                <ul class="items" data-bind="foreach: {data:Items }">
+                <ul class="items" data-bind="foreach: {data:sortedItems }">
                     <li>
                         <input type="checkbox" data-bind="checked: IsCompleted" />
-                        <span class="glyphicon glyphicon-bell bell" data-toggle="modal" data-target="#notificationModal" data-bind="click: $root.bindNotification"></span>
+                        <span class="glyphicon glyphicon-bell" data-toggle="modal" data-target="#notificationModal" data-bind="click: $root.bindNotification, css: {isNotify: IsNotify}"></span>
 
                         <label data-bind="inline: Text, css: {lineThrough:  IsCompleted} "></label>
                         <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
@@ -61,11 +60,6 @@ family=Reenie+Beanie:regular"
 </script>
 
 @section scripts{
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/HomePage")
 }

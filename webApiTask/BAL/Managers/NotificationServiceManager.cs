@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Interfaces;
 using System.IO;
+using System.Net.Mail;
+using System.Net;
+using System.Configuration;
 
 namespace BAL.Managers
 {
@@ -23,9 +26,9 @@ namespace BAL.Managers
             public DateTime? Date { get; set; }
         }
 
-        public void GetNotifyItem()
+        public void GetNotifyItem(string email, string password)
         {
-            var notifyItems = uOW.ToDoItemRepo.All.Where(n => n.IsNotify == true);
+            var notifyItems = uOW.ToDoItemRepo.Get(includeProperties: "ToDoList.User").Where(n => n.IsNotify == true && n.NotifyTime < DateTime.UtcNow);
             foreach (var item in notifyItems)
             {
                 var notifyItem = new Notify()
@@ -35,18 +38,45 @@ namespace BAL.Managers
                     ItemName = item.Text,
                     Date = item.NotifyTime
                 };
+                SendNotification(notifyItem, email, password);
 
-                if (notifyItem.Date == DateTime.UtcNow)
-                {
-                    SendNotification(notifyItem);
-                }
+                WriteLog("Notification was sended.");
+
+                item.IsNotify = false;
+                uOW.Save();
+                return;
 
             }
         }
 
-        public void SendNotification(Notify item)
+        public void SendNotification(Notify item, string email, string pass)
         {
+            try
+            {
+                using (SmtpClient client = new SmtpClient())
+                {
+                    client.EnableSsl = true;
+                    client.Port = 587;
+                    client.Host = "smtp.gmail.com";
+                    client.UseDefaultCredentials = false;
 
+                    client.Credentials = new NetworkCredential(email, pass);
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    var from = email;
+                    var to = item.UserEmail;
+                    MailMessage message = new MailMessage(from, to);
+                    message.Subject = "Notify item to ToDo in list: " + item.ListName + "item : " + item.ItemName;
+                    message.Body = "";
+
+                    client.Send(message);
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                WriteErrorLog(ex);
+            }
         }
 
 
@@ -66,7 +96,7 @@ namespace BAL.Managers
 
             }
         }
-        public static void WriteErrorLog(string message)
+        public static void WriteLog(string message)
         {
             StreamWriter sw = null;
             try

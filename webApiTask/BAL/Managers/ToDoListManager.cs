@@ -9,6 +9,8 @@ using DAL.Interfaces;
 using Models.DTO;
 using AutoMapper;
 
+
+
 namespace BAL.Managers
 {
     public class ToDoListManager : BaseManager, IToDoListManager
@@ -39,7 +41,8 @@ namespace BAL.Managers
         public List<ListTagDTO> GetAll()
         {
             var result = new List<ListTagDTO>();
-            List<ToDoList> toDoLists = uOW.ToDoListRepo.Get(includeProperties: "Items").ToList();
+            List<ToDoList> toDoLists = uOW.ToDoListRepo.All.ToList();
+
 
             foreach (var list in toDoLists)
             {
@@ -49,7 +52,11 @@ namespace BAL.Managers
                 var ids = uOW.ToDoListsTagsRepo.All.Where(i => i.ToDoListId == list.Id).Select(i => i.TagId).ToList();
                 //get tags with list
                 var tags = uOW.TagRepo.All.Where(m => ids.Contains(m.Id)).ToList();
+                //get items by list id
 
+                var items = uOW.ToDoItemRepo.All.Where(i => i.ToDoList_Id == list.Id).OrderBy(c => c.IsCompleted).ToList();
+
+                listTag.Items.AddRange(items);
                 listTag.Tags.AddRange(tags);
 
                 result.Add(listTag);

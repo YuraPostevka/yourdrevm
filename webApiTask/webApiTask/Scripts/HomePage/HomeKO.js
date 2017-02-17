@@ -6,7 +6,7 @@
     }
 
     var itemMapping = {
-        'ignore': ["Created", "Modified", "IsNotify", "Priority", "NextNotifyTime", "ToDoList_Id"]
+        'ignore': ["Created", "Modified", "Priority", "NextNotifyTime", "ToDoList_Id"]
     }
 
     var tagMapping = {
@@ -258,6 +258,20 @@
             });
 
         }
+
+        m.sortedItems = ko.pureComputed(function () {
+            var k = m.Items();
+            var incompleted = [];
+            var completed = [];
+            for (var i = 0; i < k.length; i++) {
+                if (k[i].IsCompleted())
+                    completed.push(k[i]);
+                else
+                    incompleted.push(k[i]);
+            }
+
+            return incompleted.concat(completed);
+        }, m);
         return m;
     };
 
@@ -304,22 +318,27 @@
 
 
     self.AddItem = function (data) {
-        var listId = data.Id();
-        $.ajax({
-            type: 'POST',
-            url: appContext.buildUrl('/api/Item'),
-            dataType: "json",
-            beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
-            data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
+        var listId = data.Id
+        var length = data.Items().length;
+        if (length <= 4) {
 
-            success: function (item) {
-                var m = newItem(item);
-                data.Items.push(m);
-            },
-            error: function (data) {
-                alert('oops');
-            }
-        });
+            $.ajax({
+                type: 'POST',
+                url: appContext.buildUrl('/api/Item'),
+                dataType: "json",
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
+                data: { "ToDoList_Id": listId, "Text": "newItem", "IsCompleted": false },
+
+                success: function (item) {
+                    var m = newItem(item);
+                    data.Items.unshift(m);
+                },
+                error: function (data) {
+                    alert('oops');
+                }
+            });
+            return data;
+        }
         return data;
     };
 
@@ -388,40 +407,61 @@
 
     self.toDoLists = ko.observableArray();
 
+    self.bindNotification = function (item, e) {
 
-    self.bindNotification = function (data) {
+        if (item.IsNotify() == true) {
+
+            var itemId = item.Id();
+            $.ajax({
+                type: 'PUT',
+                contentType: "application/json",
+                url: appContext.buildUrl('/api/items/DismissNotify/') + itemId,
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
+                dataType: "JSON",
+
+                success: function () {
+
+                }
+            });
+            item.IsNotify(false);
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+        }
+
 
         var element = $('.modal-content')[0];
 
         ko.cleanNode(element);
-        data.picker = function () {
+        item.picker = function () {
             $('#datetime24').combodate({ maxYear: 2020 });
         }
 
-        data.SendNotification = function () {
+        item.SubmitNotification = function () {
+
             var time = $('#datetime24').combodate('getValue', null);
             var itemId = $('#itemId').val();
 
-            var data = JSON.stringify({ ItemId:itemId, Date:time });
+
+
+
+            var data = JSON.stringify({ ItemId: itemId, Date: time });
             $.ajax({
                 type: 'PUT',
-                contentType:"application/json",
-                url: appContext.buildUrl('/api/items/SetNotify'),
+                contentType: "application/json",
+                url: appContext.buildUrl('/api/items/SubmitNotify'),
                 beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + appContext.token); },
                 dataType: "JSON",
                 data: data,
 
                 success: function () {
-
                 }
-
             });
-
+            item.IsNotify(true);
         }
 
-        ko.applyBindings(data, element);
+        ko.applyBindings(item, element);
     }
-
 }
 
 

@@ -103,12 +103,20 @@ namespace BAL.Managers
 
         }
 
-        public void SetNotify(SetNotificationDTO model)
+        public void SubmitNotify(SetNotificationDTO model)
         {
             var dbItem = uOW.ToDoItemRepo.GetByID(model.ItemId);
 
             dbItem.IsNotify = true;
             dbItem.NotifyTime = model.Date;
+
+            uOW.Save();
+        }
+
+        public void DismissNotify(int itemId)
+        {
+            var itemDb = uOW.ToDoItemRepo.GetByID(itemId);
+            itemDb.IsNotify = false;
 
             uOW.Save();
         }

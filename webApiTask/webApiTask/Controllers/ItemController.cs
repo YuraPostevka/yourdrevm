@@ -60,10 +60,18 @@ namespace webApiTask.Controllers
 
 
         [HttpPut]
-        [Route("SetNotify")]
+        [Route("SubmitNotify")]
         public IHttpActionResult PutNotify(SetNotificationDTO notification)
         {
-            itemManager.SetNotify(notification);
+            itemManager.SubmitNotify(notification);
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("DismissNotify/{itemId}")]
+        public IHttpActionResult PutNotify(int itemId)
+        {
+            itemManager.DismissNotify(itemId);
             return Ok();
         }
 

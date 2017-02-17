@@ -16,3 +16,5 @@ C:\gitRepo\webApiTask\NotificationService\bin\Debug\AutoMapper.xml
 C:\gitRepo\webApiTask\NotificationService\bin\Debug\DAL.pdb
 C:\gitRepo\webApiTask\NotificationService\bin\Debug\Models.pdb
 C:\gitRepo\webApiTask\NotificationService\bin\Debug\EntityFramework.xml
+C:\gitRepo\webApiTask\NotificationService\bin\Debug\EntityFramework.SqlServer.dll
+C:\gitRepo\webApiTask\NotificationService\bin\Debug\EntityFramework.SqlServer.xml

@@ -155,6 +155,7 @@ namespace webApiTask.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
+
             return View();
         }
 
