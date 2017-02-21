@@ -12,15 +12,24 @@ body {
 }
 
 .notes-board .isNotify {
-    color: gray;
+    color: grey;
 }
 
-.glyphicon {
+.textItem {
+    white-space: nowrap;
+    display: inline-flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+    width: 170px;
+}
+
+.glyphicon-bell {
     font-size: 19px;
     margin: 1px;
 }
 
-    .glyphicon:hover {
+    .glyphicon-bell:hover {
         opacity: 0.9;
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
@@ -113,8 +122,9 @@ a {
     float: right;
 }
 
-.notes-board .lineThrough {
+.notes-board .isCompleted {
     text-decoration: line-through;
+    color: gray;
 }
 
 .notes-board ul, .notes-board li {
@@ -217,6 +227,17 @@ a {
 }
 
     #topTags:hover, #topTags:focus {
+        opacity: 0.8;
+        cursor: pointer;
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+    }
+
+#exportToExcel {
+    padding-left: 10px;
+}
+
+    #exportToExcel:hover, #exportToExcel:focus {
         opacity: 0.8;
         cursor: pointer;
         -moz-transform: scale(1.1);

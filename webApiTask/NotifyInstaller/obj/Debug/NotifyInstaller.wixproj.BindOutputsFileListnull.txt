@@ -1,0 +1,2 @@
+C:\gitRepo\webApiTask\NotifyInstaller\bin\Debug\NotifyInstaller.msi
+C:\gitRepo\webApiTask\NotifyInstaller\bin\Debug\NotifyInstaller.wixpdb

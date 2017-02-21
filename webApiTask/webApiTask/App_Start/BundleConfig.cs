@@ -26,7 +26,12 @@ namespace webApiTask
                         "~/Scripts/HomePage/TopTags.js",
                         "~/Scripts/jquery.canvasjs.min.js",
                         "~/Scripts/HomePage/combodate.js",
-                        "~/Scripts/HomePage/moment.js"));
+                        "~/Scripts/HomePage/moment.js",
+                        "~/Scripts/HomePage/ExportToExcel.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/GoogleMaps").Include(
+                       "~/Scripts/gmaps.js",
+                       "~/Scripts/HomePage/GoogleMarkers.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

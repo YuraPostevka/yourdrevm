@@ -1,0 +1,6 @@
+C:\gitRepo\webApiTask\NotifyInstaller\bin\Debug\NotifyInstaller.msi
+C:\gitRepo\webApiTask\NotifyInstaller\bin\Debug\NotifyInstaller.wixpdb
+obj\Debug\Product.wixobj
+obj\Debug\NotifyInstaller.wixproj.BindContentsFileListnull.txt
+obj\Debug\NotifyInstaller.wixproj.BindOutputsFileListnull.txt
+obj\Debug\NotifyInstaller.wixproj.BindBuiltOutputsFileListnull.txt

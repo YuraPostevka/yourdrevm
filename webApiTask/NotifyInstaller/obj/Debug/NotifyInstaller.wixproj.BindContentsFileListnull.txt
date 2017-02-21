@@ -1,0 +1,2 @@
+..\NotificationService\bin\Debug\NotificationService.exe
+..\NotificationService\bin\Debug\NotificationService.exe.config

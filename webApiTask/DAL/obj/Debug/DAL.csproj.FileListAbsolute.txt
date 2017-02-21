@@ -199,7 +199,7 @@ C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.Migrations.AddedBaseEntityModel.resource
 C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.Migrations.AddInviteUser.resources
 C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.Migrations.addTags.resources
 C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.Migrations.addToDoListTag.resources
+C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.Migrations.AddNotifyTime.resources
 C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.csproj.GenerateResource.Cache
 C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.dll
 C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.pdb
-C:\gitRepo\webApiTask\DAL\obj\Debug\DAL.Migrations.AddNotifyTime.resources

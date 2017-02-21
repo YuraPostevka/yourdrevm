@@ -1,0 +1,67 @@
+﻿@model Models.DTO.ListTagDTO
+
+@{
+    ViewBag.Title = "Map";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        padding-top: 0;
+    }
+</style>
+<h1 class="text-center">Map</h1>
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+
+<div class="page-content notes-board" data-bind="template: { name:'notes-board', data: $data}">
+</div>
+
+<script type="text/html" id="notes-board">
+
+    <ul class="toDoList" data-bind="foreach:{data: toDoLists }">
+
+        <li>
+            @*<a>
+                    <h1 class="text-center">
+                        <span data-bind="inline: Name" class="text-center"></span>
+                        <span class="iconRight" data-bind="click: $root.removeList"><strong>X</strong></span>
+                        <span class="btn glyphicon glyphicon-plus" data-bind="click: $root.AddItem.bind($data.Items)"></span>
+                    </h1>
+
+                    <ul class="items" data-bind="foreach: {data:sortedItems }">
+                        <li>
+                            <input type="checkbox" data-bind="checked: IsCompleted" />
+                            <span class="glyphicon glyphicon-bell" data-toggle="modal" data-target="#notificationModal" data-bind="click: $root.bindNotification, css: {isNotify: IsNotify}"></span>
+
+                            <label class="textItem" data-bind="inline: Text, css: {isCompleted:  IsCompleted}, attr:{title:Text}"></label>
+                            <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
+                        </li>
+                    </ul>
+
+                </a>*@
+
+            <div style="width:200px; height:auto; background:#ffc; color: black;" class="">
+                <span data-bind="text: Name" class="text-center"></span>
+
+                <hr />
+                <ul class="items" data-bind="foreach: {data:sortedItems }">
+                    <li>
+                        <label data-bind="text:Text"></label>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+
+</script>
+
+
+@section scripts{
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyDydJRbk1Eds1WuZrxnGx2mybQO5r7HAzg"></script>
+    @Scripts.Render("~/bundles/GoogleMaps")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/HomePage")
+
+}

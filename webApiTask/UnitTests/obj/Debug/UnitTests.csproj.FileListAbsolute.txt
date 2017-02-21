@@ -93,3 +93,6 @@ C:\gitRepo\webApiTask\UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\gitRepo\webApiTask\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\UnitTests\obj\Debug\UnitTests.dll
 C:\gitRepo\webApiTask\UnitTests\obj\Debug\UnitTests.pdb
+C:\gitRepo\webApiTask\UnitTests\bin\Debug\ClosedXML.dll
+C:\gitRepo\webApiTask\UnitTests\bin\Debug\DocumentFormat.OpenXml.dll
+C:\gitRepo\webApiTask\UnitTests\bin\Debug\ClosedXML.pdb

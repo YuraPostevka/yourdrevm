@@ -1,18 +1,11 @@
 ﻿@using Microsoft.AspNet.Identity;
-@{
-//Layout = null;
-}
-<link href="http://fonts.googleapis.com/css?
-family=Reenie+Beanie:regular"
-      rel="stylesheet"
-      type="text/css">
-<link href="~/Content/Home/jquery.tag-editor.css" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"><link href="~/Content/Home/jquery.tag-editor.css" rel="stylesheet" type="text/css" />
+
 
 @if (User.Identity.IsAuthenticated)
 {
     <label id="topTags" onclick="Show_Hide()">Top 10 tags</label>
 }
-
 
 <div class="row topTags" style="display:none;">
     @Html.Partial("_TopTags")
@@ -27,6 +20,8 @@ family=Reenie+Beanie:regular"
 <script type="text/html" id="notes-board">
     <h1 class="tagName"></h1>
     <label data-bind="click: $root.AddList" class="addItemLabel">Add new list</label>
+
+    <label id="exportToExcel" onclick="Export()">Export to Excel</label>
 
 
     <ul class="toDoList" data-bind="foreach:{data: toDoLists }">
@@ -48,7 +43,7 @@ family=Reenie+Beanie:regular"
                         <input type="checkbox" data-bind="checked: IsCompleted" />
                         <span class="glyphicon glyphicon-bell" data-toggle="modal" data-target="#notificationModal" data-bind="click: $root.bindNotification, css: {isNotify: IsNotify}"></span>
 
-                        <label data-bind="inline: Text, css: {lineThrough:  IsCompleted} "></label>
+                        <label class="textItem" data-bind="inline: Text, css: {isCompleted:  IsCompleted}, attr:{title:Text}"></label>
                         <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
                     </li>
                 </ul>
@@ -62,4 +57,5 @@ family=Reenie+Beanie:regular"
 @section scripts{
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/HomePage")
+
 }

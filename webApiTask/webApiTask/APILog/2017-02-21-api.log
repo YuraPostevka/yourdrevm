@@ -1,0 +1,1834 @@
+2017-02-21 11:12:29.7473|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 11:12:29.7473|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 11:12:31.7013|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2164
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2164}]}
+
+2017-02-21 11:12:32.3013|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2165
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2165}]}
+
+2017-02-21 11:12:32.6846|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2166
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2166}]}
+
+2017-02-21 11:12:33.0370|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2167
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2167}]}
+
+2017-02-21 11:12:33.3878|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2168
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2168}]}
+
+2017-02-21 11:12:33.7652|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2169
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2169}]}
+
+2017-02-21 11:12:34.1401|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2170
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2170}]}
+
+2017-02-21 11:12:34.5326|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2171
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2171}]}
+
+2017-02-21 11:12:40.2783|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/lists/changeListName/1095/list1
+Controller : webApiTask.Controllers.ToDoListController
+Action : Put
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":1095,"value":"list1"}]}
+
+2017-02-21 11:12:43.1577|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/qwe/1095
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"qwe","listId":1095}]}
+
+2017-02-21 11:12:44.2912|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/tag14/1095
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"tag14","listId":1095}]}
+
+2017-02-21 11:12:45.4118|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/newyear/1095
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"newyear","listId":1095}]}
+
+2017-02-21 11:12:46.5010|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/j/1095
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"j","listId":1095}]}
+
+2017-02-21 11:12:48.1325|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/f/1095
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"f","listId":1095}]}
+
+2017-02-21 11:12:49.2686|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/d/1095
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"d","listId":1095}]}
+
+2017-02-21 11:12:53.6360|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/tags/removeTag/asdasd/2172
+Controller : webApiTask.Controllers.TagController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"asdasd","listId":2172}]}
+
+2017-02-21 11:12:56.6528|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/tags/addTag/tag3/2172
+Controller : webApiTask.Controllers.TagController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"tag3","listId":2172}]}
+
+2017-02-21 11:12:59.0996|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/tags/addTag/tag4/2172
+Controller : webApiTask.Controllers.TagController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"tag":"tag4","listId":2172}]}
+
+2017-02-21 11:13:01.3422|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/Item/2451
+Controller : webApiTask.Controllers.ItemController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2451}]}
+
+2017-02-21 11:13:01.5393|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/Item/2452
+Controller : webApiTask.Controllers.ItemController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2452}]}
+
+2017-02-21 11:13:01.7155|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/Item/2461
+Controller : webApiTask.Controllers.ItemController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2461}]}
+
+2017-02-21 11:13:02.2776|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/Item/2462
+Controller : webApiTask.Controllers.ItemController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2462}]}
+
+2017-02-21 11:13:02.9168|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/Item/2422
+Controller : webApiTask.Controllers.ItemController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2422}]}
+
+2017-02-21 11:13:03.9349|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/Item
+Controller : webApiTask.Controllers.ItemController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"item":{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":1095,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}}]}
+
+2017-02-21 11:13:09.3108|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SetText/2466/item1
+Controller : webApiTask.Controllers.ItemController
+Action : PutText
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2466,"text":"item1"}]}
+
+2017-02-21 11:13:10.6193|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/Item
+Controller : webApiTask.Controllers.ItemController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"item":{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":1095,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}}]}
+
+2017-02-21 11:13:16.3901|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SetText/2467/item2
+Controller : webApiTask.Controllers.ItemController
+Action : PutText
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2467,"text":"item2"}]}
+
+2017-02-21 11:13:21.3321|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SetText/2437/itme3
+Controller : webApiTask.Controllers.ItemController
+Action : PutText
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2437,"text":"itme3"}]}
+
+2017-02-21 11:13:25.7412|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SetText/2465/item4
+Controller : webApiTask.Controllers.ItemController
+Action : PutText
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2465,"text":"item4"}]}
+
+2017-02-21 11:13:31.7562|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/lists/changeListName/2172/list2
+Controller : webApiTask.Controllers.ToDoListController
+Action : Put
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2172,"value":"list2"}]}
+
+2017-02-21 11:13:33.1480|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 11:13:33.1480|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 11:46:19.2696|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 11:46:19.2696|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 11:46:23.0270|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SetStatus/2467/true
+Controller : webApiTask.Controllers.ItemController
+Action : PutStatus
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2467,"isCompleted":true}]}
+
+2017-02-21 11:46:24.8164|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SetStatus/2437/true
+Controller : webApiTask.Controllers.ItemController
+Action : PutStatus
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2437,"isCompleted":true}]}
+
+2017-02-21 12:53:46.0854|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:53:46.0854|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:54:07.8753|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:54:07.8773|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:54:21.0636|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:54:21.0636|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:56:23.8960|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:56:23.8960|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:56:39.9407|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:56:39.9407|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:57:11.2737|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:57:11.2737|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:57:20.0947|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:57:20.0947|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:58:11.1326|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 12:58:11.1326|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:01:45.9333|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:01:45.9333|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:02:41.1226|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:02:41.1226|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:02:56.3735|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:02:56.3735|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:10:25.0300|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:10:25.0300|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:12:51.6441|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:12:51.6441|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:17:35.3916|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:17:35.3916|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:18:06.8077|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:18:06.8077|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:20:15.8831|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:20:15.8831|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:25:31.1722|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:25:31.1722|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:29:23.3777|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:29:23.3777|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:34:35.3756|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:34:35.3756|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:40:25.3246|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:40:25.3246|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:46:01.7565|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 13:46:01.7565|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:03:21.9346|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:03:21.9346|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:30:38.3773|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 15:30:38.3773|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 15:30:38.3773|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 15:30:44.3957|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 15:31:08.6081|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:31:08.6081|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:31:11.6236|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2173
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2173}]}
+
+2017-02-21 15:31:11.9741|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2174
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2174}]}
+
+2017-02-21 15:31:12.3175|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2175
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2175}]}
+
+2017-02-21 15:31:12.6877|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2176
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2176}]}
+
+2017-02-21 15:33:30.9718|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/Item
+Controller : webApiTask.Controllers.ItemController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"item":{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":2172,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}}]}
+
+2017-02-21 15:34:49.6827|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:34:49.6827|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:40:28.8161|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:40:28.8161|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:41:48.5342|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:41:48.5342|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:44:34.4064|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:44:34.4064|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:45:02.0429|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:45:02.0429|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:45:34.5160|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:45:34.5160|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:47:39.2346|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:47:39.2346|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:48:33.6456|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:48:33.6456|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:52:33.6527|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:52:33.6572|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:52:52.3229|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:52:52.3229|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:53:30.6907|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:53:30.6907|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:53:48.7438|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:53:48.7438|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:53:54.9424|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:53:54.9424|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:56:37.0689|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 15:56:37.0689|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:46:55.1598|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:46:55.1598|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:50:26.7000|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:50:26.7000|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:51:42.6908|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:51:42.6908|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:52:13.6901|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:52:13.6901|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:52:41.6686|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:52:41.6686|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:53:08.6909|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 16:53:08.6909|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:10:22.3783|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:10:22.3783|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:25:01.7805|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:25:01.7805|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:25:59.5210|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:25:59.5210|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:26:18.9281|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:26:18.9281|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:27:47.8678|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:27:47.8678|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:27:56.2891|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/SubmitNotify
+Controller : webApiTask.Controllers.ItemController
+Action : PutNotify
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"notification":{"Date":"2012-12-21T18:30:00Z","ItemId":2437}}]}
+
+2017-02-21 17:27:57.1287|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:27:57.1287|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:27:58.0627|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/items/DismissNotify/2437
+Controller : webApiTask.Controllers.ItemController
+Action : PutNotify
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"itemId":2437}]}
+
+2017-02-21 17:27:58.7794|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:27:58.7794|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:29:14.8770|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:29:14.8770|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:30:06.4739|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:30:06.4739|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:30:08.2310|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:30:08.2310|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:33:38.1826|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:33:38.1826|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:36:22.6168|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:36:22.6168|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:36:26.6194|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:36:26.6194|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:00.5129|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:00.5129|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:03.3471|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:03.3471|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:04.6575|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:04.6575|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:56.6316|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:37:56.6326|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:38:46.6883|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:38:46.6883|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:39:45.5525|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:39:45.5525|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:39:55.2915|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:39:55.2915|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:40:17.0527|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:40:17.0527|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:40:32.4578|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:40:32.4578|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:40:35.1894|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:40:35.1894|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:41:13.2813|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:41:13.2813|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:42:27.1018|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:42:27.1053|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:42:36.3952|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:42:36.3952|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:43:19.9023|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:43:19.9023|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:44:12.6859|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:44:12.6859|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:48:11.9744|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:48:11.9744|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:48:57.3010|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:48:57.3010|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:49:11.2241|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:49:11.2241|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:49:44.6381|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:49:44.6381|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:50:07.9688|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:50:07.9688|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:51:11.8522|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:51:11.8522|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:52:16.5624|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:52:16.5624|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:38.9876|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:38.9876|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:40.6009|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:53:40.6690|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:53:40.8922|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:53:42.1184|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:42.1184|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:47.6263|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:47.6263|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:53.2117|INFO|webApiTask.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost/webApi/api/lists/changeListName/2177/list3
+Controller : webApiTask.Controllers.ToDoListController
+Action : Put
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2177,"value":"list3"}]}
+
+2017-02-21 17:53:54.6886|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:53:54.6886|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:54:54.5202|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:54:54.5202|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:55:08.2954|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:55:08.2979|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:57:09.2997|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:57:09.2997|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:57:34.1916|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:57:34.1916|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:57:59.6012|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:57:59.6012|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:08.3488|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:08.3488|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:11.9531|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:11.9591|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:12.8114|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:12.8114|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:14.4746|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:14.6306|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:14.7983|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:14.9589|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:15.1271|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:15.2952|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:15.4633|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:15.6315|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:15.8063|INFO|webApiTask.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost/webApi/api/ToDoList
+Controller : webApiTask.Controllers.ToDoListController
+Action : Post
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"list":{"Id":0,"Name":"newList","Items":[{"Id":0,"Text":"newItem","Priority":0,"IsCompleted":false,"IsNotify":false,"NextNotifyTime":null,"ToDoList":null,"ToDoList_Id":0,"Created":"0001-01-01T00:00:00","NotifyTime":null,"Modified":null}],"User":null,"User_Id":0,"Created":"0001-01-01T00:00:00","Modified":null}}]}
+
+2017-02-21 17:58:16.7902|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:16.7902|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:52.9735|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:52.9735|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:55.2583|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:55.2583|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:58:57.5728|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2178
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2178}]}
+
+2017-02-21 17:58:57.8879|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2179
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2179}]}
+
+2017-02-21 17:58:58.2397|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2180
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2180}]}
+
+2017-02-21 17:58:58.5843|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2181
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2181}]}
+
+2017-02-21 17:58:58.9511|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2182
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2182}]}
+
+2017-02-21 17:58:59.3201|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2183
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2183}]}
+
+2017-02-21 17:58:59.8727|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2184
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2184}]}
+
+2017-02-21 17:59:00.3457|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2185
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2185}]}
+
+2017-02-21 17:59:00.5921|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2186
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2186}]}
+
+2017-02-21 17:59:01.1929|INFO|webApiTask.Helpers.NLogger|JSON
+Method: DELETE
+URL: http://localhost/webApi/api/lists/Delete/2187
+Controller : webApiTask.Controllers.ToDoListController
+Action : Delete
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{"id":2187}]}
+
+2017-02-21 17:59:01.9392|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:59:01.9402|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:59:02.9661|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 17:59:02.9661|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+

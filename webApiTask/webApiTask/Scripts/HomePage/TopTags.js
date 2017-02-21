@@ -40,7 +40,7 @@ function GetTags() {
         dataType: "json",
         success: function (tags) {
             ShowDiagram(tags);
-        },
+        }
     });
 }
 

@@ -40,6 +40,7 @@ C:\gitRepo\webApiTask\BAL\bin\Debug\DbExtensions.dll
 C:\gitRepo\webApiTask\BAL\bin\Debug\EntityFramework.dll
 C:\gitRepo\webApiTask\BAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\gitRepo\webApiTask\BAL\bin\Debug\Models.dll
+C:\gitRepo\webApiTask\BAL\bin\Debug\System.Linq.Dynamic.dll
 C:\gitRepo\webApiTask\BAL\bin\Debug\DAL.pdb
 C:\gitRepo\webApiTask\BAL\bin\Debug\Models.pdb
 C:\gitRepo\webApiTask\BAL\bin\Debug\AutoMapper.xml
@@ -50,4 +51,4 @@ C:\gitRepo\webApiTask\BAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.dll
 C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.pdb
-C:\gitRepo\webApiTask\BAL\bin\Debug\System.Linq.Dynamic.dll
+C:\gitRepo\webApiTask\BAL\obj\Debug\BAL.csproj.ResolveComReference.cache

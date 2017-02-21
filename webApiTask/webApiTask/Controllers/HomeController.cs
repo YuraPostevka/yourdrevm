@@ -19,6 +19,7 @@ using Models;
 using webApiTask.Helpers;
 using System.Configuration;
 using System.IO;
+using System.Web.Http.Results;
 using Models.DTO;
 
 namespace webApiTask.Controllers
@@ -55,6 +56,22 @@ namespace webApiTask.Controllers
             this.userManager = userManager;
             this.tagManager = tagManager;
             this.inviteUserManager = inviteUserManager;
+        }
+
+        [HttpGet]
+        public ActionResult Map()
+        {
+            return View(new ListTagDTO());
+        }
+
+        public ActionResult ExportToExcel()
+        {
+            var exportToExcel = new ExportToExcel();
+
+            var lists = listManager.GetAll();
+            exportToExcel.WriteToExcel(lists);
+
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

@@ -480,3 +480,6 @@ C:\gitRepo\webApiTask\webApiTask\bin\AutoMapper.xml
 C:\gitRepo\webApiTask\webApiTask\obj\Debug\webApiTask.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\webApiTask\obj\Debug\webApiTask.dll
 C:\gitRepo\webApiTask\webApiTask\obj\Debug\webApiTask.pdb
+C:\gitRepo\webApiTask\webApiTask\bin\ClosedXML.dll
+C:\gitRepo\webApiTask\webApiTask\bin\DocumentFormat.OpenXml.dll
+C:\gitRepo\webApiTask\webApiTask\bin\ClosedXML.pdb
