@@ -20,3 +20,5 @@ C:\gitRepo\webApiTask\TestApp\bin\Debug\RestSharp.xml
 C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.csprojResolveAssemblyReference.cache
 C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.exe
 C:\gitRepo\webApiTask\TestApp\obj\Debug\TestApp.pdb
+C:\gitRepo\webApiTask\TestApp\bin\Debug\EntityFramework.dll
+C:\gitRepo\webApiTask\TestApp\bin\Debug\EntityFramework.xml

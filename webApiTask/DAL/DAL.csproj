@@ -254,6 +254,10 @@
     <Compile Include="Migrations\201702141428183_AddNotifyTime.Designer.cs">
       <DependentUpon>201702141428183_AddNotifyTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702221143090_AddPositionForMarker.cs" />
+    <Compile Include="Migrations\201702221143090_AddPositionForMarker.Designer.cs">
+      <DependentUpon>201702221143090_AddPositionForMarker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702141428183_AddNotifyTime.resx">
       <DependentUpon>201702141428183_AddNotifyTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702221143090_AddPositionForMarker.resx">
+      <DependentUpon>201702221143090_AddPositionForMarker.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

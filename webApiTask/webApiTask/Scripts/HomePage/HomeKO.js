@@ -290,7 +290,7 @@
                 $.each(data, function (index, element) {
                     tagsForAutoComplete.push(element.Name);
                 });
-            },
+            }
         });
     }
 
@@ -364,6 +364,25 @@
         ko.applyBindings(item, element);
     }
 
+    //methods for googleMaps
+
+    self.GetSelectedList = function () {
+        var result = null;
+        $.each($(".list"), function (index, element) {
+
+            if (element.classList.contains("selected")) {
+                
+                result = element;
+                return false;
+            }
+        });
+        return result;
+    }
+
+    self.GetListById = function (listId) {
+       
+        return list;
+    }
 
 
     //Custom ko binding "inline"

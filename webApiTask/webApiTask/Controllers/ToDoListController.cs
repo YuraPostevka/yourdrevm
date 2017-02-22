@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Models.DTO;
 
 namespace webApiTask.Controllers
 {
@@ -15,10 +16,12 @@ namespace webApiTask.Controllers
     public class ToDoListController : ApiController
     {
         private IToDoListManager listManager;
+        private IMapManager mapManager;
 
-        public ToDoListController(IToDoListManager listManager)
+        public ToDoListController(IToDoListManager listManager, IMapManager mapManager)
         {
             this.listManager = listManager;
+            this.mapManager = mapManager;
         }
 
         [Route("")]
@@ -71,6 +74,33 @@ namespace webApiTask.Controllers
         {
             listManager.Delete(id);
             return Ok();
+        }
+
+        //Insert geoPoint
+        [HttpPost]
+        [Route("sendMarker")]
+        public IHttpActionResult Post(GMapsDTO model)
+        {
+            mapManager.Insert(model);
+            return Ok();
+        }
+
+        // GET
+        [HttpGet]
+        [Route("getPoints")]
+        public IHttpActionResult GetPoints()
+        {
+            var points = mapManager.GetPoints();
+            return Ok(points);
+        }
+
+        // GET
+        [HttpGet]
+        [Route("getPoint/{id:int}")]
+        public IHttpActionResult GetPoint(int id)
+        {
+            var point = mapManager.GetById(id);
+            return Ok(point);
         }
     }
 }

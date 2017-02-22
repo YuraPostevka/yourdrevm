@@ -21,5 +21,7 @@ namespace Models
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime Created { get; set; }
 
+        public virtual System.Data.Entity.Spatial.DbGeography Position { get; set; }
+
     }
 }

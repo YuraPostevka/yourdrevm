@@ -8,39 +8,57 @@
     body {
         padding-top: 0;
     }
+
+    .selected {
+        box-shadow: 10px 10px 7px rgba(0,0,0,.7) !important;
+        -webkit-transform: scale(1.1) !important;
+    }
+
+    .scrollDiv {
+        overflow-y: auto;
+        max-height: 600px;
+    }
+
+    .notes-board .list:hover {
+        box-shadow: 10px 10px 7px rgba(0,0,0,.7) !important;
+        -webkit-transform: scale(1.1) !important;
+        z-index: 5 !important;
+        cursor: default;
+    }
+
+    .glyphicon-globe {
+        font-size: 19px;
+         color: #999999;
+        margin: 5px;
+    }
+
+        .glyphicon-globe:hover {
+            color: black;
+            cursor: pointer;
+        }
 </style>
+
 <h1 class="text-center">Map</h1>
-<div id="map" style="width: 100%; height: 600px;"></div>
 
 
-<div class="page-content notes-board" data-bind="template: { name:'notes-board', data: $data}">
+<div class="row">
+
+    <div class="scrollDiv notes-board col-lg-2" data-bind="template: { name:'notes-board', data: $data}">
+    </div>
+
+    <div id="map" class="col-lg-10" style="height: 600px;"></div>
+
 </div>
+
 
 <script type="text/html" id="notes-board">
 
     <ul class="toDoList" data-bind="foreach:{data: toDoLists }">
 
-        <li>
-            @*<a>
-                    <h1 class="text-center">
-                        <span data-bind="inline: Name" class="text-center"></span>
-                        <span class="iconRight" data-bind="click: $root.removeList"><strong>X</strong></span>
-                        <span class="btn glyphicon glyphicon-plus" data-bind="click: $root.AddItem.bind($data.Items)"></span>
-                    </h1>
-
-                    <ul class="items" data-bind="foreach: {data:sortedItems }">
-                        <li>
-                            <input type="checkbox" data-bind="checked: IsCompleted" />
-                            <span class="glyphicon glyphicon-bell" data-toggle="modal" data-target="#notificationModal" data-bind="click: $root.bindNotification, css: {isNotify: IsNotify}"></span>
-
-                            <label class="textItem" data-bind="inline: Text, css: {isCompleted:  IsCompleted}, attr:{title:Text}"></label>
-                            <span data-bind="click: $root.removeItem.bind($data, $parent)" class="btn icon delicon glyphicon glyphicon-remove"></span>
-                        </li>
-                    </ul>
-
-                </a>*@
-
-            <div style="width:200px; height:auto; background:#ffc; color: black;" class="">
+        <li class="list" onclick="SetMarkerInCenter(this);">
+            <input type="hidden" data-bind="value:Id" id ="listId" />
+            <span class="glyphicon glyphicon-globe" style="float: right;" title="Set new mark on map" onclick="selectList(this)"></span>
+            <div style="width:200px; height:auto; background:#ffc; color: black;">
                 <span data-bind="text: Name" class="text-center"></span>
 
                 <hr />
@@ -50,9 +68,7 @@
                     </li>
                 </ul>
             </div>
-
         </li>
-
     </ul>
 
 </script>
@@ -63,5 +79,4 @@
     @Scripts.Render("~/bundles/GoogleMaps")
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/HomePage")
-
 }

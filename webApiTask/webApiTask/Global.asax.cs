@@ -57,6 +57,7 @@ namespace webApiTask
                 container.Register<IInviteUserManager, InviteUserManager>();
                 container.Register<ITagManager, TagManager>();
                 container.Register<INotificationServiceManager, NotificationServiceManager>();
+                container.Register<IMapManager, MapManager>();
 
                 container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 

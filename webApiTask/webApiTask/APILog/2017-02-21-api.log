@@ -1832,3 +1832,31 @@ Controller : webApiTask.Controllers.ToDoListController
 Action : Get
 Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
 
+2017-02-21 18:07:41.4471|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 18:07:41.4471|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 18:08:12.8313|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/Tag
+Controller : webApiTask.Controllers.TagController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
+2017-02-21 18:08:12.8313|INFO|webApiTask.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost/webApi/api/lists
+Controller : webApiTask.Controllers.ToDoListController
+Action : Get
+Action Parameters : {"messageFormat":"JSON","messageArguments":[{}]}
+
