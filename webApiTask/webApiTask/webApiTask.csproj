@@ -611,6 +611,7 @@
     <Content Include="Views\Home\_TopTags.cshtml" />
     <Content Include="Views\Home\_SetNotification.cshtml" />
     <Content Include="Views\Home\Map.cshtml" />
+    <Content Include="Views\Home\Discussion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

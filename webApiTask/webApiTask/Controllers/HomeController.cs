@@ -58,6 +58,11 @@ namespace webApiTask.Controllers
             this.inviteUserManager = inviteUserManager;
         }
 
+        public ActionResult Discussion()
+        {
+            return View();
+        }
+
         [HttpGet]
         public ActionResult Map()
         {
