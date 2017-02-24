@@ -1,3 +1,5 @@
 15.02.2017 15:05:17: connect
 15.02.2017 15:05:50: connect
 15.02.2017 15:05:57: Service stopped.
+24.02.2017 11:36:12: Service stopped.
+24.02.2017 11:36:17: Service stopped.

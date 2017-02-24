@@ -9,13 +9,23 @@ $(document).ready(function () {
             var list = vm.GetSelectedList();
             if (list == undefined || list == null) return;
 
+            var listName = list.children[2].children[0].innerText;
             map.addMarker({
                 lat: e.latLng.lat(),
-                lng: e.latLng.lng()
+                lng: e.latLng.lng(),
+                click: function (e) {
+
+                },
+                infoWindow: {
+                    content: '<p style="color:black;">' + listName + '</p>'
+                }
             });
 
             list.classList.remove("selected");
             var listId = list.children[0].value;
+
+            var span = list.children[1];
+            selectDeselectSpan(span);
 
             var data = {
                 "ListId": listId,
@@ -50,26 +60,24 @@ var loadCoordinatesForMarkers = function () {
             //add markers to map
             $.each(data,
                 function (index, marker) {
+
                     map.addMarker({
                         lat: marker.Latitude,
                         lng: marker.Longitude,
                         click: function (e) {
 
+
                             //set list selected
                             $.each($(".list"),
                                 function (index, list) {
                                     if (list.children[0].value == marker.ListId) {
+                                        selectDeselectList(list);
 
-                                        if (list.classList.contains("selected")) {
-                                            list.classList.remove("selected");
-                                        }
-                                        $(".list").each(function (index, element) {
-                                            element.classList.remove("selected");
-                                        });
-                                        list.classList.add("selected");
+                                        $('.scrollDiv').animate({ scrollTop: $('.list').offset().top });
+
+
                                         return false;
                                     }
-
                                 });
                         }
                     });
@@ -96,10 +104,35 @@ var SetMarkerInCenter = function (list) {
 }
 
 //selcte list on click on globeIcon
-var selectList = function (span) {
+var selectListViaSpan = function (span) {
 
-    span.style.color = "black";
+    selectDeselectSpan(span);
+
+
     var list = span.closest("li");
+
+
+    selectDeselectList(list);
+}
+
+//  select/deselect span
+var selectDeselectSpan = function (span) {
+
+    if (span.style.color == "") {
+        //delete all selected globeIcons
+        $(".glyphicon-globe").each(function (index, element) {
+            element.style.color = "";
+        });
+
+        span.style.color = "black";
+
+    } else {
+        span.style.color = "";
+    }
+}
+
+//  select/deselect list
+var selectDeselectList = function (list) {
 
     if (list.classList.contains("selected")) {
         list.classList.remove("selected");
@@ -107,7 +140,7 @@ var selectList = function (span) {
     }
 
     //remove all selected lists
-    $('.list').each(function (index, element) {
+    $(".list").each(function (index, element) {
         element.classList.remove("selected");
     });
     list.classList.add("selected");

@@ -1,0 +1,14 @@
+C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe.config
+C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.pdb
+C:\gitRepo\webApiTask\ChatService\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\gitRepo\webApiTask\ChatService\bin\Debug\vtortola.WebSockets.Deflate.dll
+C:\gitRepo\webApiTask\ChatService\bin\Debug\vtortola.WebSockets.dll
+C:\gitRepo\webApiTask\ChatService\bin\Debug\vtortola.WebSockets.Rfc6455.dll
+C:\gitRepo\webApiTask\ChatService\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\gitRepo\webApiTask\ChatService\obj\Debug\ChatService.ProjectInstaller.resources
+C:\gitRepo\webApiTask\ChatService\obj\Debug\ChatService.ChatService.resources
+C:\gitRepo\webApiTask\ChatService\obj\Debug\ChatService.csproj.GenerateResource.Cache
+C:\gitRepo\webApiTask\ChatService\obj\Debug\ChatService.exe
+C:\gitRepo\webApiTask\ChatService\obj\Debug\ChatService.pdb
+C:\gitRepo\webApiTask\ChatService\obj\Debug\ChatService.csprojResolveAssemblyReference.cache

@@ -1,0 +1,48 @@
+﻿Installing assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+Installing service ChatService...
+Service ChatService has been successfully installed.
+Creating EventLog source ChatService in log Application...
+Committing assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+Installing assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+Installing service ChatService...
+Service ChatService has been successfully installed.
+Creating EventLog source ChatService in log Application...
+Committing assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+Uninstalling assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+Removing EventLog source ChatService.
+Service ChatService is being removed from the system...
+Service ChatService was successfully removed from the system.
+Attempt to stop service ChatService.
+Installing assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
+Installing service ChatService...
+Service ChatService has been successfully installed.
+Creating EventLog source ChatService in log Application...
+Committing assembly 'C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.InstallLog
+   assemblypath = C:\gitRepo\webApiTask\ChatService\bin\Debug\ChatService.exe
